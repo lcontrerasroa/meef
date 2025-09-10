@@ -1,0 +1,183 @@
+/* ================================
+   CAPES — thème typographique
+   Hiérarchies nettes + lisibilité mobile
+   ================================ */
+
+/* ---- Variables de thème ---- */
+:root{
+  --bg: #fffdfc;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --brand-1: #ff735c;   /* rubans H1/H2 (corail) */
+  --brand-2: #1f9d8f;   /* liens/accents (vert sarcelle) */
+  --note: #fff7e6;      /* encarts */
+  --note-border: #f0b429;
+  --kbd-bg: #f6f6f6;
+  --kbd-br: #e5e7eb;
+  --table-br: #e5e7eb;
+  --table-head: #f8fafc;
+  --code: #374151;
+  --shadow: 0 6px 20px rgba(31,41,55,.06);
+}
+
+/* ---- Reset léger ---- */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+img,svg{max-width:100%;height:auto}
+
+/* ---- Base ---- */
+body{
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem 4rem;
+}
+
+/* ---- Liens ---- */
+a{color:var(--brand-2);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ---- Hiérarchie des titres ---- */
+h1,h2,h3,h4{line-height:1.2;margin:1.25rem 0 .75rem}
+h1{
+  font-size: clamp(1.6rem, 2.4vw + 1rem, 2.2rem);
+  color:#fff;
+  background:var(--brand-1);
+  padding:.6rem .9rem;
+  border-radius:.8rem;
+  box-shadow: var(--shadow);
+  display:inline-block;
+}
+h2{
+  font-size: clamp(1.2rem, 1.6vw + .9rem, 1.5rem);
+  color:#fff;
+  background: color-mix(in srgb, var(--brand-1) 92%, white);
+  padding:.45rem .75rem;
+  border-radius:.7rem;
+  display:inline-block;
+  box-shadow: var(--shadow);
+  margin-top:2rem;
+}
+h3{font-size:1.125rem;color:#111827;margin-top:1.25rem}
+h4{font-size:1rem;color:#111827;margin-top:.75rem}
+header p em{color:var(--muted)}
+
+/* ---- Paragraphes & listes ---- */
+p{margin:.75rem 0}
+ul,ol{margin:.5rem 0 .75rem 1.25rem}
+ul.compact>li{margin:.25rem 0}
+li+li{margin-top:.2rem}
+
+/* ---- Encarts / notes ---- */
+.note{
+  background:var(--note);
+  border-left:5px solid var(--note-border);
+  padding:.9rem 1rem;
+  border-radius:.5rem;
+  margin:1rem 0;
+}
+
+/* ---- Code inline type “k” (suffixes, etc.) ---- */
+code.k{
+  background:var(--kbd-bg);
+  border:1px solid var(--kbd-br);
+  color:var(--code);
+  border-radius:.35rem;
+  padding:.05rem .35rem;
+  font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:.95em;
+}
+
+/* ---- IPA / ruby ---- */
+.ipa{font-variant-ligatures:none}
+ruby{ruby-position:over}
+rt{
+  font-size:.72em;
+  color:var(--muted);
+  letter-spacing:.3px;
+}
+
+/* ---- Tableaux ---- */
+.table-wrap{overflow:auto;margin:1rem 0}
+table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  margin: .75rem 0;
+  border:1px solid var(--table-br);
+  border-radius:.6rem;
+  overflow:hidden;
+  box-shadow: var(--shadow);
+}
+th,td{
+  padding:.6rem .7rem;
+  vertical-align:top;
+  border-bottom:1px solid var(--table-br);
+}
+th{
+  background:var(--table-head);
+  text-align:left;
+  font-weight:700;
+}
+tr:last-child td{border-bottom:none}
+tbody tr:nth-child(odd){background: #fcfdff}
+caption{caption-side:bottom;color:var(--muted);font-size:.9rem;padding:.4rem .2rem}
+
+/* Tables larges -> scroll horizontal doux sur mobile */
+@media (max-width: 720px){
+  .table-wrap{margin: .5rem -1rem;padding:0 1rem}
+}
+
+/* ---- Encadrés “exemples” (optionnel) ---- */
+.ex{
+  background:#f9fafb;
+  border:1px dashed var(--table-br);
+  border-radius:.5rem;
+  padding:.6rem .8rem;
+}
+
+/* ---- Petites barres latérales pour sections (optionnel) ---- */
+section>h2::before{
+  content:"";
+  display:inline-block;
+  width:.4rem;height:1.1rem;
+  background:var(--brand-2);
+  border-radius:.4rem;
+  margin-right:.5rem;
+  vertical-align:middle;
+}
+
+/* ---- Petits chips / tags (optionnel) ---- */
+.tag{
+  display:inline-block;
+  background:#eef6f5;
+  color:#0b6b61;
+  padding:.15rem .45rem;
+  border-radius:999px;
+  font-size:.85em;
+  border:1px solid #d6efec;
+}
+
+/* ---- Séparateurs doux ---- */
+hr{
+  border:none;height:1px;background:#eee;margin:1.25rem 0;
+}
+
+/* ---- Mode sombre (optionnel) ---- */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1115; --text:#e5e7eb; --muted:#9aa3b2;
+    --brand-1:#ff816c; --brand-2:#3fd0c2;
+    --note:#191e24; --note-border:#c6931a;
+    --kbd-bg:#151922; --kbd-br:#2a3240;
+    --table-br:#283244; --table-head:#111826; --code:#e5e7eb;
+    --shadow: 0 6px 22px rgba(0,0,0,.35);
+  }
+  a:hover{text-decoration:none;border-bottom:1px dotted currentColor}
+  table{background:#0d1117}
+  tbody tr:nth-child(odd){background:#0b0f14}
+  .ex{background:#10151b;border-color:#223047}
+}
