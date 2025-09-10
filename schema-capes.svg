@@ -1,0 +1,117 @@
+<svg width="794" height="1123" viewBox="0 0 794 1123" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Schéma — Épreuve de phonologie du CAPES (texte long + numéros de ligne)</title>
+  <desc id="desc">Page A4 stylisée avec texte banal en anglais, numéros de ligne en marge, gribouillis et liste des types de questions en bas.</desc>
+
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity="0.25"/>
+    </filter>
+    <style>
+      .page { fill: #fff; stroke: #d9d9d9; }
+      .title { font: 700 20px/1.2 "Inter", Arial, sans-serif; fill: #222; }
+      .body  { font: 400 14px/1.5 "Inter", Arial, sans-serif; fill: #333; }
+      .lineno{ font: 400 12px/1 "Inter", Arial, sans-serif; fill: #9ca3af; }
+      .scribble { stroke: #6b7280; stroke-width: 1.5; fill: none; stroke-linecap: round; }
+      .underline { stroke: #1f2937; stroke-width: 2; }
+      .bullet { font: 600 13.5px/1.4 "Inter", Arial, sans-serif; fill: #111; }
+      .footerTitle { font: 700 14px/1.4 "Inter", Arial, sans-serif; fill: #111; letter-spacing: .3px; }
+      .rule { stroke: #e5e7eb; stroke-width: 1; }
+      .margin { stroke: #e5e7eb; stroke-width: .75; stroke-dasharray: 4 4; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="100%" height="100%" fill="#f5f6f8"/>
+
+  <g filter="url(#shadow)">
+    <rect class="page" x="55" y="40" rx="10" ry="10" width="684" height="1043"/>
+  </g>
+
+  <!-- Marges -->
+  <g opacity="0.6">
+    <line class="margin" x1="95" y1="80" x2="95" y2="1030"/>
+    <line class="margin" x1="694" y1="80" x2="694" y2="1030"/>
+    <line class="margin" x1="95" y1="130" x2="694" y2="130"/>
+  </g>
+
+  <!-- En-tête -->
+  <text class="title" x="110" y="110">Épreuve de phonologie — CAPES (schéma)</text>
+  <line class="rule" x1="95" y1="140" x2="694" y2="140"/>
+
+  <!-- Zone texte + numéros de ligne -->
+  <g aria-label="Long English text with line numbers">
+    <!-- Lignes 1–18 (y = 172 + i*24) -->
+    <g class="lineno" text-anchor="end">
+      <text x="120" y="172">1</text>
+      <text x="120" y="196">2</text>
+      <text x="120" y="220">3</text>
+      <text x="120" y="244">4</text>
+      <text x="120" y="268">5</text>
+      <text x="120" y="292">6</text>
+      <text x="120" y="316">7</text>
+      <text x="120" y="340">8</text>
+      <text x="120" y="364">9</text>
+      <text x="120" y="388">10</text>
+      <text x="120" y="412">11</text>
+      <text x="120" y="436">12</text>
+      <text x="120" y="460">13</text>
+      <text x="120" y="484">14</text>
+      <text x="120" y="508">15</text>
+      <text x="120" y="532">16</text>
+      <text x="120" y="556">17</text>
+      <text x="120" y="580">18</text>
+    </g>
+
+    <g class="body">
+      <text x="130" y="172">On a quiet morning, the town woke to a soft light spilling over the roofs.</text>
+      <text x="130" y="196">People opened their windows, letting in a breeze that smelled faintly of rain.</text>
+      <text x="130" y="220">At the café on the corner, a couple shared a newspaper and two cups of coffee.</text>
+      <text x="130" y="244">A boy balanced a book on his bike, riding slowly past the old cinema.</text>
+      <text x="130" y="268">The sound of footsteps drifted across the square where pigeons fluttered lazily.</text>
+      <text x="130" y="292">Shops were opening one after another, shutters rising with a gentle metallic sigh.</text>
+      <text x="130" y="316">A baker carried trays of bread still steaming, the scent threading down the street.</text>
+      <text x="130" y="340">The bus arrived late, and nobody seemed to mind on such an unhurried day.</text>
+      <text x="130" y="364">Children laughed as they ran to school, their voices rising above the traffic.</text>
+      <text x="130" y="388">An old man fed crumbs to a stray cat, pausing now and then to smile.</text>
+      <text x="130" y="412">Down by the river, anglers leaned on the railings, waiting without impatience.</text>
+      <text x="130" y="436">A woman folded laundry by an open door, listening to a radio in the kitchen.</text>
+      <text x="130" y="460">Two cyclists traced the waterfront path, talking in short bursts between breaths.</text>
+      <text x="130" y="484">A delivery van idled at the curb; someone signed a slip and waved thanks.</text>
+      <text x="130" y="508">Clouds passed like slow ships, and the light shifted across the tiled roofs.</text>
+      <text x="130" y="532">From a balcony, a plant was watered; droplets fell in a brief glitter.</text>
+      <text x="130" y="556">A dog barked once, then settled under a bench as the hour drew on.</text>
+      <text x="130" y="580">Nothing remarkable happened, and that, perhaps, was the comfort of the day.</text>
+    </g>
+
+    <!-- Mots soulignés (positionnés sur quelques lignes) -->
+    <line class="underline" x1="350" y1="177" x2="470" y2="177"/>
+    <line class="underline" x1="185" y1="201" x2="270" y2="201"/>
+    <line class="underline" x1="430" y1="225" x2="520" y2="225"/>
+    <line class="underline" x1="240" y1="249" x2="360" y2="249"/>
+
+    <!-- Gribouillis entre les paragraphes -->
+    <path class="scribble" d="M130 606 C240 616, 320 596, 430 610" />
+    <path class="scribble" d="M130 626 C220 636, 370 631, 560 641" />
+    <path class="scribble" d="M130 646 C300 659, 380 641, 620 655" />
+    <path class="scribble" d="M130 666 C270 679, 440 671, 670 681" />
+
+    <!-- Petite annotation neutre -->
+    <path class="scribble" d="M540 214 q18 -12 36 -4" />
+    <path class="scribble" d="M576 210 l10 -22" />
+    <text x="595" y="188" class="body">← note</text>
+  </g>
+
+  <!-- Séparateur -->
+  <line class="rule" x1="95" y1="880" x2="694" y2="880"/>
+
+  <!-- Pied de page : liste des types de questions -->
+  <g aria-label="Types de questions">
+    <text class="footerTitle" x="110" y="905">En bas de la copie, l'une des rubriques suivantes peut apparaître :</text>
+    <text class="bullet" x="120" y="934">• Question de graphophonémique / graphématique <tspan font-weight="700">OU</tspan></text>
+    <text class="bullet" x="120" y="958">• Question d'accentuation <tspan font-weight="700">OU</tspan></text>
+    <text class="bullet" x="120" y="982">• Question de différences entre SSBE et GA <tspan font-weight="700">OU</tspan></text>
+    <text class="bullet" x="120" y="1006">• Question sur l’intonation <tspan font-weight="700">OU</tspan></text>
+    <text class="bullet" x="120" y="1030">• Question sur les phénomènes phonétiques dans la chaîne parlée</text>
+  </g>
+
+  <text x="694" y="1065" text-anchor="end" class="body" fill="#6b7280">Maquette CAPES — Phonologie</text>
+</svg>
