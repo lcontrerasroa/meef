@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <title>CAPES — Index détaillé (H1→H3)</title>
+  <title>CAPES — Index détaillé</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.55; max-width: 900px; margin: 2rem auto; padding: 0 1rem;}
@@ -149,6 +149,10 @@
     </li>
   </ul>
 </main>
+
+
+<hr>
+<p><small><strong>Option recommandée (ancres stables, tous navigateurs) :</strong> ajoute, dans chacun de tes fichiers HTML, ce mini-script avant <code>&lt;/body&gt;</code> pour générer des <code>id</code> auto sur H1–H3. Ensuite, remplace les liens <em>#:~:text=…</em> par <em>#id-slug</em>.</small></p>
 
 <pre><code>&lt;script&gt;
 (function(){
