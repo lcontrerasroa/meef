@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercice — Trains de voyelles : -eous, -ious, -ion, -ial, -eal</title>
+  <style>
+    :root{ --border:#222; --muted:#666; }
+    body{ font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+          margin:0; padding:24px; color:#111; background:#fff; line-height:1.4; }
+    h1{ font-size:1.25rem; margin:0 0 8px; }
+    p.hint{ color:var(--muted); margin:0 0 16px; }
+    .controls{ display:flex; gap:8px; margin:12px 0 18px; flex-wrap:wrap; }
+    button{ border:1px solid var(--border); background:#f7f7f7; padding:6px 10px; border-radius:8px; cursor:pointer; }
+    button:active{ transform: translateY(1px); }
+    .section{ margin:22px 0 10px; font-weight:600; }
+    table{ width:100%; border-collapse:collapse; table-layout:fixed; border:1px solid var(--border); }
+    th, td{ border:1px solid var(--border); padding:8px; vertical-align:top; }
+    th{ background:#fafafa; }
+    code{ background:#f2f2f2; padding:1px 4px; border-radius:4px; }
+    .mono{ font-variant-numeric: tabular-nums; }
+    details summary{ cursor:pointer; color:#0a58ca; list-style:none; }
+    details summary::-webkit-details-marker{ display:none; }
+    details summary::after{ content:"⟩"; display:inline-block; margin-left:6px; transition:transform .15s ease; }
+    details[open] summary::after{ transform:rotate(90deg); }
+    @media (max-width:640px){ th, td{ padding:6px; font-size:.95rem; } }
+  </style>
+</head>
+<body>
+  <h1>Exercice — Trains de voyelles : <em>-eous, -ious, -ion, -ial, -eal</em></h1>
+  <p class="hint">
+    Objectif : repérer que ces terminaisons peuvent fusionner (synérèse) ou se séparer (diérèse), ce qui change le nombre de syllabes,
+    mais l’<strong>accent</strong> reste prévisible. Cliquez sur « Révéler » pour voir la solution.
+  </p>
+
+  <div class="controls">
+    <button id="revealAll">Tout révéler</button>
+    <button id="hideAll">Tout cacher</button>
+  </div>
+
+  <div class="section">Fin en <code>-eous</code></div>
+  <table>
+    <thead>
+      <tr><th>Mot</th><th>Nombre de syllabes</th><th>Accentuation</th><th>Transcription IPA</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>gorgeous</td>
+          <td class="mono"><details><summary>Révéler</summary>2</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/10/</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/ˈɡɔː(r)dʒəs/</details></td></tr>
+      <tr><td>beauteous</td>
+          <td class="mono"><details><summary>Révéler</summary>3</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/100/</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/ˈbjuːtiəs/</details></td></tr>
+      <tr><td>courageous</td>
+          <td class="mono"><details><summary>Révéler</summary>3</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/010/</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/kəˈreɪdʒəs/</details></td></tr>
+      <tr><td>nauseous</td>
+          <td class="mono"><details><summary>Révéler</summary>2 (courant) ou 3 (diérèse)</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/10/ (2 syll.) • /100/ (3 syll.)</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/ˈnɔːʃəs/ ~ /ˈnɔːziəs/</details></td></tr>
+    </tbody>
+  </table>
+
+  <div class="section">Fin en <code>-ious</code> / <code>-cious</code> / <code>-tious</code></div>
+  <table>
+    <thead>
+      <tr><th>Mot</th><th>Nombre de syllabes</th><th>Accentuation</th><th>Transcription IPA</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>curious</td>
+          <td class="mono"><details><summary>Révéler</summary>3</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/100/</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/ˈkjʊəriəs/</details></td></tr>
+      <tr><td>various</td>
+          <td class="mono"><details><summary>Révéler</summary>3</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/100/</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/ˈveəriəs/</details></td></tr>
+      <tr><td>delicious</td>
+          <td class="mono"><details><summary>Révéler</summary>3</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/010/</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/dɪˈlɪʃəs/</details></td></tr>
+      <tr><td>spacious</td>
+          <td class="mono"><details><summary>Révéler</summary>2</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/10/</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/ˈspeɪʃəs/</details></td></tr>
+      <tr><td>vicious</td>
+          <td class="mono"><details><summary>Révéler</summary>2</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/10/</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/ˈvɪʃəs/</details></td></tr>
+      <tr><td>industrious</td>
+          <td class="mono"><details><summary>Révéler</summary>4</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/0100/</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/ɪnˈdʌstriəs/</details></td></tr>
+    </tbody>
+  </table>
+
+  <div class="section">Fin en <code>-ion</code></div>
+  <table>
+    <thead>
+      <tr><th>Mot</th><th>Nombre de syllabes</th><th>Accentuation</th><th>Transcription IPA</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>nation</td>
+          <td class="mono"><details><summary>Révéler</summary>2</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/10/</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/ˈneɪʃən/</details></td></tr>
+      <tr><td>motion</td>
+          <td class="mono"><details><summary>Révéler</summary>2</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/10/</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/ˈmoʊʃən/</details></td></tr>
+      <tr><td>question</td>
+          <td class="mono"><details><summary>Révéler</summary>2</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/10/</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/ˈkwes.tʃən/</details></td></tr>
+      <tr><td>attention</td>
+          <td class="mono"><details><summary>Révéler</summary>3</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/010/</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/əˈtenʃən/</details></td></tr>
+      <tr><td>creation</td>
+          <td class="mono"><details><summary>Révéler</summary>2 (synérèse) ou 3 (diérèse)</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/10/ (2) • /010/ (3)</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/kriˈeɪʃən/ → souvent /kri.eɪ.ʃən/ en style soigné</details></td></tr>
+    </tbody>
+  </table>
+
+  <div class="section">Fin en <code>-ial</code></div>
+  <table>
+    <thead>
+      <tr><th>Mot</th><th>Nombre de syllabes</th><th>Accentuation</th><th>Transcription IPA</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>martial</td>
+          <td class="mono"><details><summary>Révéler</summary>2</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/10/</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/ˈmɑːrʃəl/</details></td></tr>
+      <tr><td>partial</td>
+          <td class="mono"><details><summary>Révéler</summary>2</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/10/</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/ˈpɑːrʃəl/</details></td></tr>
+      <tr><td>initial</td>
+          <td class="mono"><details><summary>Révéler</summary>3</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/010/</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/ɪˈnɪʃəl/</details></td></tr>
+      <tr><td>commercial</td>
+          <td class="mono"><details><summary>Révéler</summary>3</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/010/</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/kəˈmɜːrʃəl/</details></td></tr>
+      <tr><td>aerial</td>
+          <td class="mono"><details><summary>Révéler</summary>3 (courant) ou 4 (diérèse soignée)</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/100/ (3) • /1000/ (4)</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/ˈeəriəl/ ~ /eˈe.ri.əl/ (variantes dialectales)</details></td></tr>
+      <tr><td>facial</td>
+          <td class="mono"><details><summary>Révéler</summary>2</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/10/</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/ˈfeɪʃəl/</details></td></tr>
+    </tbody>
+  </table>
+
+  <div class="section">Fin en <code>-eal</code></div>
+  <table>
+    <thead>
+      <tr><th>Mot</th><th>Nombre de syllabes</th><th>Accentuation</th><th>Transcription IPA</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ideal</td>
+          <td class="mono"><details><summary>Révéler</summary>2 (synérèse) ou 3 (diérèse)</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/01/ (2) • /010/ (3)</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/aɪˈdiːl/ ~ /aɪˈdiː.əl/</details></td></tr>
+      <tr><td>ethereal</td>
+          <td class="mono"><details><summary>Révéler</summary>4</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/0100/</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/ɪˈθɪəriəl/</details></td></tr>
+      <tr><td>material</td>
+          <td class="mono"><details><summary>Révéler</summary>4</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/0100/</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/məˈtɪəriəl/</details></td></tr>
+      <tr><td>surreal</td>
+          <td class="mono"><details><summary>Révéler</summary>2 (synérèse) ou 3 (diérèse)</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/01/ (2) • /010/ (3)</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/səˈriːl/ ~ /səˈriː.əl/</details></td></tr>
+      <tr><td>real <small>(adj.)</small></td>
+          <td class="mono"><details><summary>Révéler</summary>1 (courant) ou 2 (soigné)</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/1/ (1) • /10/ (2)</details></td>
+          <td class="mono"><details><summary>Révéler</summary>/riːl/ ~ /ˈriː.əl/</details></td></tr>
+    </tbody>
+  </table>
+
+  <script>
+    const revealBtn = document.getElementById('revealAll');
+    const hideBtn   = document.getElementById('hideAll');
+    function setAll(open){ document.querySelectorAll('details').forEach(d => d.open = open); }
+    revealBtn.addEventListener('click', () => setAll(true));
+    hideBtn.addEventListener('click',   () => setAll(false));
+  </script>
+</body>
+</html>
