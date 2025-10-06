@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercices — Suffixes contraignants (-LY/-ARILY, -IVE/-ATIVE)</title>
+  <style>
+    :root{ --border:#222; --muted:#666; --soft:#fafafa; }
+    body{ font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+          margin:0; padding:24px; color:#111; background:#fff; line-height:1.48; }
+    h1{ font-size:1.28rem; margin:0 0 8px; }
+    h2{ font-size:1.12rem; margin:22px 0 10px; }
+    p.hint{ color:var(--muted); margin:0 0 16px; }
+    .controls{ display:flex; gap:8px; margin:12px 0 18px; flex-wrap:wrap; }
+    button{ border:1px solid var(--border); background:#f7f7f7; padding:6px 10px; border-radius:8px; cursor:pointer; }
+    button:active{ transform: translateY(1px); }
+    table{ width:100%; border-collapse:collapse; table-layout:fixed; border:1px solid var(--border); margin-bottom:18px; }
+    th, td{ border:1px solid var(--border); padding:8px; vertical-align:top; }
+    th{ background:var(--soft); }
+    .mono{ font-variant-numeric: tabular-nums; }
+    code{ background:#f2f2f2; padding:1px 4px; border-radius:4px; }
+    details summary{ cursor:pointer; color:#0a58ca; list-style:none; }
+    details summary::-webkit-details-marker{ display:none; }
+    details summary::after{ content:"⟩"; display:inline-block; margin-left:6px; transition:transform .15s ease; }
+    details[open] summary::after{ transform:rotate(90deg); }
+    .note{ color:var(--muted); font-size:0.95rem; }
+    @media (max-width:740px){ th, td{ padding:6px; font-size:.95rem; } }
+  </style>
+</head>
+<body>
+  <h1>Exercices — Suffixes contraignants (-LY / -ARILY, -IVE / -ATIVE)</h1>
+  <p class="hint">Objectif: appliquer la contrainte (ou l’absence de contrainte) de chaque terminaison. Cliquez sur « Révéler » pour afficher les réponses.</p>
+
+  <div class="controls">
+    <button id="revealAll">Tout révéler</button>
+    <button id="hideAll">Tout cacher</button>
+  </div>
+
+  <!-- 1) -LY NEUTRE -->
+  <h2>1) -LY est neutre (l’accent de la base est conservé)</h2>
+  <table>
+    <thead>
+      <tr><th>Base (accent)</th><th>Dérivé en -ly (à proposer)</th><th>Schéma attendu</th><th>Solution (IPA + schéma)</th></tr>
+    </thead>
+    <tbody class="mono">
+      <tr>
+        <td>'happy `/10/`</td>
+        <td>________</td>
+        <td>/100/</td>
+        <td><details><summary>Révéler</summary>happily /ˈhæpɪli/ → `/100/`</details></td>
+      </tr>
+      <tr>
+        <td>in'teresting `/010/`</td>
+        <td>________</td>
+        <td>/0100/</td>
+        <td><details><summary>Révéler</summary>interestingly /ɪnˈtrɛstɪŋli/ → `/0100/`</details></td>
+      </tr>
+      <tr>
+        <td>a'gonizing `/1000/`</td>
+        <td>________</td>
+        <td>/10000/</td>
+        <td><details><summary>Révéler</summary>agonizingly /ˈæɡənaɪzɪŋli/ → `/10000/`</details></td>
+      </tr>
+      <tr>
+        <td>com'petitive `/0100/`</td>
+        <td>________</td>
+        <td>/01000/</td>
+        <td><details><summary>Révéler</summary>competitively /kəmˈpɛtɪtɪvli/ → `/01000/`</details></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note">Rappel: ne pas attribuer `/-100/` à -ly. Quand on observe `/-100/`, ce n’est pas -ly qui le provoque.</p>
+
+  <!-- 2) -ARILY US vs GB -->
+  <h2>2) -ARILY : neutre en GB, `/-100/` fréquent en US</h2>
+  <table>
+    <thead>
+      <tr><th>Base</th><th>Variété</th><th>Adverbe en -arily</th><th>Schéma</th><th>Solution (IPA + schéma)</th></tr>
+    </thead>
+    <tbody class="mono">
+      <tr>
+        <td>'necessary</td>
+        <td>US</td>
+        <td>________________</td>
+        <td>/-100/</td>
+        <td><details><summary>Révéler</summary>neces'sarily /ˌnɛsəˈsɛrəli/ → `/-100/`</details></td>
+      </tr>
+      <tr>
+        <td>'ordinary</td>
+        <td>US</td>
+        <td>________________</td>
+        <td>/-100/</td>
+        <td><details><summary>Révéler</summary>ordi'narily /ˌɔːrdɪˈnɛrəli/ → `/-100/`</details></td>
+      </tr>
+      <tr>
+        <td>ele'mentary</td>
+        <td>US</td>
+        <td>________________</td>
+        <td>/-100/</td>
+        <td><details><summary>Révéler</summary>elemen'tarily /ˌɛləˈmɛntərəli/ → `/-100/`</details></td>
+      </tr>
+      <tr>
+        <td>'literary</td>
+        <td>GB</td>
+        <td>________________</td>
+        <td>neutre</td>
+        <td><details><summary>Révéler</summary>'literarily /ˈlɪtərərɪli/ → conserve l’accent initial</details></td>
+      </tr>
+      <tr>
+        <td>he'reditary</td>
+        <td>GB</td>
+        <td>________________</td>
+        <td>neutre</td>
+        <td><details><summary>Révéler</summary>he'reditarily /həˈrɛdɪtɛrɪli/ → neutre</details></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note">En GB, certaines formes acceptent la variante US en usage contemporain (p. ex. *arbitrarily, necessarily*).</p>
+
+  <!-- 3) -IVE NEUTRE -->
+  <h2>3) -IVE (hors -ative) : neutre</h2>
+  <table>
+    <thead>
+      <tr><th>Base (accent)</th><th>Dérivé en -ive</th><th>Schéma attendu</th><th>Solution (IPA + schéma)</th></tr>
+    </thead>
+    <tbody class="mono">
+      <tr>
+        <td>de'scribe `/01/`</td>
+        <td>____________</td>
+        <td>neutre (ex: `/010/` ou `/0100/` selon longueur)</td>
+        <td><details><summary>Révéler</summary>de'scriptive /dɪˈskrɪptɪv/ → garde l’accent sur *-scribe*</details></td>
+      </tr>
+      <tr>
+        <td>ex'plode `/01/`</td>
+        <td>____________</td>
+        <td>neutre</td>
+        <td><details><summary>Révéler</summary>ex'plosive /ɪkˈsploʊsɪv/ → neutre</details></td>
+      </tr>
+      <tr>
+        <td>com'pet(e) `/010/`</td>
+        <td>____________</td>
+        <td>neutre</td>
+        <td><details><summary>Révéler</summary>com'petitive /kəmˈpɛtɪtɪv/ → `/0100/`</details></td>
+      </tr>
+      <tr>
+        <td>e'motion `/010/`</td>
+        <td>____________</td>
+        <td>neutre</td>
+        <td><details><summary>Révéler</summary>e'motive /ɪˈmoʊtɪv/ → conserve l’accent</details></td>
+      </tr>
+      <tr>
+        <td>exe'cute (exception)</td>
+        <td>____________</td>
+        <td>non-neutre (réorganisation)</td>
+        <td><details><summary>Révéler</summary>exe'cutive /ˌɛksɪˈkjuːtɪv/ → accent interne différent</details></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 4) -ATIVE CONTRAIGNANT (cas typiques) -->
+  <h2>4) -ATIVE : cas contraignants typiques → `/-100/`</h2>
+  <table>
+    <thead>
+      <tr><th>Type</th><th>Base</th><th>Dérivé</th><th>Schéma attendu</th><th>Solution (IPA + schéma)</th></tr>
+    </thead>
+    <tbody class="mono">
+      <tr>
+        <td>Monosyllabe + -ative</td>
+        <td>'talk</td>
+        <td>___________</td>
+        <td>/100/</td>
+        <td><details><summary>Révéler</summary>'talkative /ˈtɔːkətɪv/ → `/100/`</details></td>
+      </tr>
+      <tr>
+        <td>Monosyllabe + -ative</td>
+        <td>'cause</td>
+        <td>___________</td>
+        <td>/100/</td>
+        <td><details><summary>Révéler</summary>'causative /ˈkɔːzətɪv/ → `/100/`</details></td>
+      </tr>
+      <tr>
+        <td>-ate accentué `/01/` + -ive</td>
+        <td>re'late</td>
+        <td>___________</td>
+        <td>/100/</td>
+        <td><details><summary>Révéler</summary>'relative /ˈrɛlətɪv/ → `/100/`</details></td>
+      </tr>
+      <tr>
+        <td>-ate accentué `/01/` + -ive</td>
+        <td>ne'gate</td>
+        <td>___________</td>
+        <td>/100/</td>
+        <td><details><summary>Révéler</summary>'negative /ˈnɛɡətɪv/ → `/100/`</details></td>
+      </tr>
+      <tr>
+        <td>-ate accentué `/01/` + -ive</td>
+        <td>nar'rate</td>
+        <td>___________</td>
+        <td>/100/</td>
+        <td><details><summary>Révéler</summary>'narrative /ˈnærətɪv/ → `/100/`</details></td>
+      </tr>
+      <tr>
+        <td>-ate accentué `/01/` + -ive</td>
+        <td>se'date</td>
+        <td>___________</td>
+        <td>/100/</td>
+        <td><details><summary>Révéler</summary>'sedative /ˈsɛdətɪv/ → `/100/`</details></td>
+      </tr>
+      <tr>
+        <td>-ate accentué `/01/` + -ive</td>
+        <td>lo'cate</td>
+        <td>___________</td>
+        <td>/100/</td>
+        <td><details><summary>Révéler</summary>'locative /ˈlɒkətɪv/ → `/100/`</details></td>
+      </tr>
+      <tr>
+        <td>Exception utile</td>
+        <td>cre'ate</td>
+        <td>___________</td>
+        <td>ne suit pas /100/</td>
+        <td><details><summary>Révéler</summary>cre'ative /kriˈeɪtɪv/ → `/010/` (ou `/0100/` selon analyse)</details></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="note">Astuce de correction: faites repérer l’accent de la base d’abord, puis discuter si la terminaison est neutre ou contraignante pour expliquer le schéma obtenu.</p>
+
+  <script>
+    const revealBtn = document.getElementById('revealAll');
+    const hideBtn   = document.getElementById('hideAll');
+    function setAll(open){ document.querySelectorAll('details').forEach(d => d.open = open); }
+    revealBtn.addEventListener('click', () => setAll(true));
+    hideBtn.addEventListener('click',   () => setAll(false));
+  </script>
+</body>
+</html>
