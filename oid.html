@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercice — Adjectifs en -oid / -oïde</title>
+  <style>
+    :root{
+      --border:#222;
+      --muted:#666;
+    }
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+      margin: 0; padding: 24px;
+      line-height: 1.4;
+      color:#111; background:#fff;
+    }
+    h1{ font-size: 1.25rem; margin: 0 0 8px; }
+    p.hint{ color: var(--muted); margin: 0 0 16px; }
+    .controls{ display:flex; gap:8px; margin:12px 0 18px; flex-wrap: wrap;}
+    button{
+      border:1px solid var(--border);
+      background:#f7f7f7; padding:6px 10px; border-radius:8px;
+      cursor:pointer; font-size:0.95rem;
+    }
+    button:active{ transform: translateY(1px); }
+    table{
+      width:100%; border-collapse: collapse; table-layout: fixed;
+      border:1px solid var(--border);
+    }
+    th, td{ border:1px solid var(--border); padding:8px; vertical-align: top; }
+    th{ background:#fafafa; }
+    td details summary{
+      cursor:pointer; color:#0a58ca; outline:none;
+      list-style: none;
+    }
+    /* enlever la puce triangle par défaut, style minimal */
+    details summary::-webkit-details-marker{ display:none; }
+    details summary::after{
+      content:"⟩"; display:inline-block; margin-left:6px; transition: transform .15s ease;
+    }
+    details[open] summary::after{ transform: rotate(90deg); }
+    code{ background:#f2f2f2; padding:1px 4px; border-radius:4px; }
+    .mono{ font-variant-numeric: tabular-nums; }
+    @media (max-width:640px){
+      th, td{ padding:6px; font-size:0.95rem; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Exercice — Comptage syllabique : <em>-oid</em> (anglais) vs <em>-oïde</em> (français)</h1>
+  <p class="hint">
+    Objectif: constater que <strong>-oid</strong> compte pour <strong>1 syllabe</strong> en anglais, tandis que <strong>-oïde</strong> en fait <strong>2</strong> en français.
+    Cliquez sur “Révéler” pour vérifier vos découpages.
+  </p>
+
+  <div class="controls">
+    <button id="revealAll">Tout révéler</button>
+    <button id="hideAll">Tout cacher</button>
+  </div>
+
+  <table aria-describedby="table-help">
+    <thead>
+      <tr>
+        <th>Anglais</th>
+        <th>Syllabes (révéler)</th>
+        <th>Français</th>
+        <th>Syllabes (révéler)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 1 -->
+      <tr>
+        <td>paranoid</td>
+        <td class="mono">
+          <details><summary>Révéler</summary>3 → <code>pa-ra-noid</code></details>
+        </td>
+        <td>paranoïde</td>
+        <td class="mono">
+          <details><summary>Révéler</summary>4 → <code>pa-ra-no-ïde</code></details>
+        </td>
+      </tr>
+      <!-- 2 -->
+      <tr>
+        <td>asteroid</td>
+        <td class="mono"><details><summary>Révéler</summary>3 → <code>as-ter-oid</code></details></td>
+        <td>astéroïde</td>
+        <td class="mono"><details><summary>Révéler</summary>4 → <code>as-té-ro-ïde</code></details></td>
+      </tr>
+      <!-- 3 -->
+      <tr>
+        <td>android</td>
+        <td class="mono"><details><summary>Révéler</summary>2 → <code>an-droid</code></details></td>
+        <td>androïde</td>
+        <td class="mono"><details><summary>Révéler</summary>3 → <code>an-dro-ïde</code></details></td>
+      </tr>
+      <!-- 4 -->
+      <tr>
+        <td>planetoid</td>
+        <td class="mono"><details><summary>Révéler</summary>4 → <code>pla-ne-toid</code></details></td>
+        <td>planétoïde</td>
+        <td class="mono"><details><summary>Révéler</summary>5 → <code>pla-né-to-ïde</code></details></td>
+      </tr>
+      <!-- 5 -->
+      <tr>
+        <td>metalloid</td>
+        <td class="mono"><details><summary>Révéler</summary>3 → <code>me-tal-loid</code></details></td>
+        <td>métalloïde</td>
+        <td class="mono"><details><summary>Révéler</summary>4 → <code>mé-tal-lo-ïde</code></details></td>
+      </tr>
+      <!-- 6 -->
+      <tr>
+        <td>schizoid</td>
+        <td class="mono"><details><summary>Révéler</summary>3 → <code>schiz-oid</code></details></td>
+        <td>schizoïde</td>
+        <td class="mono"><details><summary>Révéler</summary>4 → <code>schi-zo-ïde</code></details></td>
+      </tr>
+      <!-- 7 -->
+      <tr>
+        <td>cuboid</td>
+        <td class="mono"><details><summary>Révéler</summary>2 → <code>cu-boid</code></details></td>
+        <td>cuboïde</td>
+        <td class="mono"><details><summary>Révéler</summary>3 → <code>cu-bo-ïde</code></details></td>
+      </tr>
+      <!-- 8 -->
+      <tr>
+        <td>ellipsoid</td>
+        <td class="mono"><details><summary>Révéler</summary>4 → <code>el-lip-soid</code></details></td>
+        <td>ellipsoïde</td>
+        <td class="mono"><details><summary>Révéler</summary>5 → <code>el-lip-so-ïde</code></details></td>
+      </tr>
+      <!-- 9 -->
+      <tr>
+        <td>spheroid</td>
+        <td class="mono"><details><summary>Révéler</summary>3 → <code>sphe-roid</code></details></td>
+        <td>sphéroïde</td>
+        <td class="mono"><details><summary>Révéler</summary>4 → <code>sphé-ro-ïde</code></details></td>
+      </tr>
+      <!-- 10 -->
+      <tr>
+        <td>trapezoid <small>(US)</small></td>
+        <td class="mono"><details><summary>Révéler</summary>3 → <code>tra-pe-zoid</code></details></td>
+        <td>trapézoïde</td>
+        <td class="mono"><details><summary>Révéler</summary>4 → <code>tra-pé-zo-ïde</code></details></td>
+      </tr>
+      <!-- 11 -->
+      <tr>
+        <td>steroid</td>
+        <td class="mono"><details><summary>Révéler</summary>2 → <code>ste-roid</code></details></td>
+        <td>stéroïde</td>
+        <td class="mono"><details><summary>Révéler</summary>3 → <code>sté-ro-ïde</code></details></td>
+      </tr>
+      <!-- 12 -->
+      <tr>
+        <td>rhomboid</td>
+        <td class="mono"><details><summary>Révéler</summary>2 → <code>rhom-boid</code></details></td>
+        <td>rhomboïde</td>
+        <td class="mono"><details><summary>Révéler</summary>3 → <code>rhom-bo-ïde</code></details></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p id="table-help" class="hint" style="margin-top:10px;">
+    Astuce: demande d’abord aux étudiants de compter sans ouvrir. Ensuite “Tout révéler”, vérification rapide au tableau, puis “Tout cacher” avant le groupe suivant.
+  </p>
+
+  <script>
+    const revealBtn = document.getElementById('revealAll');
+    const hideBtn   = document.getElementById('hideAll');
+
+    function setAll(open){
+      document.querySelectorAll('details').forEach(d => { d.open = open; });
+    }
+    revealBtn.addEventListener('click', () => setAll(true));
+    hideBtn.addEventListener('click',   () => setAll(false));
+  </script>
+</body>
+</html>
