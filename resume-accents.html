@@ -1,0 +1,523 @@
+<!doctype html>
+
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diagramme hiérarchique dépliable (+/−)</title>
+  <style>
+    :root{
+      --bg: #0b0c10;
+      --card: #111319;
+      --ink: #e8ecf1;
+      --muted: #9aa4af;
+      --accent: #4aa3ff;
+      --line: #243041;
+      --ring: rgba(74,163,255,.35);
+    }
+    html,body{height:100%}
+    body{
+      margin:0; font: 15px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 80% -10%, #142033 0%, #0b0c10 60%);
+      color:var(--ink);
+    }
+    h1{font-size:22px; font-weight:700; letter-spacing:.2px;}
+    .wrap{max-width:1100px; margin:32px auto; padding:0 16px;}/* ACTIONS */
+.actions{display:flex; gap:12px; margin:16px 0 24px}
+.btn{
+  border:1px solid #2a3344; background:#111827; color:var(--ink);
+  padding:10px 14px; border-radius:12px; cursor:pointer;
+  transition:transform .06s ease, box-shadow .1s ease, border-color .2s ease;
+}
+.btn:focus-visible{outline:none; box-shadow:0 0 0 4px var(--ring);}
+.btn:hover{border-color:#344358}
+.btn:active{transform:translateY(1px)}
+
+/* TREE LAYOUT */
+.tree{ --sp: 22px; --gap: 16px; --pad: 14px; list-style:none; padding-left:0; }
+.tree, .tree ul{ position: relative; margin: 0; }
+.tree ul{ list-style:none; padding-left: var(--sp); margin-left: var(--sp); }
+
+/* connector lines */
+.tree ul{ border-left: 2px solid var(--line); }
+.tree li{ position: relative; padding-left: var(--gap); margin: 10px 0; }
+.tree li::before{
+  content: ""; position:absolute; top: 16px; left: -var(--gap); width: var(--gap); height: 2px; background: var(--line);
+}
+
+/* NODE CARD */
+details.node{ background:linear-gradient(0deg, #0f1320 0%, #121728 100%); border:1px solid #1c2636; border-radius:14px; box-shadow: 0 10px 25px rgba(0,0,0,.25);
+  overflow:hidden; padding:0; }
+details.node[open]{ border-color:#2a3a52; }
+
+summary{
+  display:flex; align-items:center; gap:10px; list-style:none; padding:12px 14px; cursor:pointer; user-select:none; font-weight:600;
+}
+summary::-webkit-details-marker{ display:none }
+
+/* plus/minus icon */
+.caret{ inline-size:22px; block-size:22px; border-radius:8px; border:1px solid #2a3344; display:grid; place-items:center; background:#0f1523; flex:0 0 auto; }
+.caret::before{ content:"+"; font-weight:700; line-height:1; }
+details[open] > summary .caret::before{ content:"−"; }
+
+/* title + meta */
+.title{ flex: 1 1 auto; }
+.meta{ color: var(--muted); font-size: 12px; }
+
+.content{ padding: 12px 14px 14px; color:#dbe5f5; border-top:1px solid #1b2333; background: linear-gradient(0deg,#0f1422 0%, #0d1220 100%); }
+.content p{ margin:8px 0 0 }
+
+/* small tag chips */
+.tags{ display:flex; gap:8px; flex-wrap:wrap; margin-top:6px }
+.tag{ font-size:12px; padding:4px 8px; border:1px solid #1e2a3d; border-radius:999px; background:#0e1524; color:#cbd5e1 }
+
+/* responsive niceties */
+@media (max-width: 640px){
+  .tree ul{ margin-left: 18px; padding-left: 18px }
+  .tree li::before{ left: -18px; width: 18px }
+}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Diagramme hiérarchique dépliable (HTML + un soupçon de JS)</h1>
+    <p>Oui, c'est possible sans bibliothèque lourde. Ici on utilise <code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code> pour l'accessibilité, un +/− stylisé, des lignes d'arbre en CSS et deux boutons pour tout ouvrir/fermer.</p><div class="actions">
+  <button class="btn" id="expandAll" aria-label="Tout déplier">Tout déplier</button>
+  <button class="btn" id="collapseAll" aria-label="Tout replier">Tout replier</button>
+</div>
+
+<ul class="tree" role="tree" aria-label="Arborescence morphologique">
+
+  <li>
+    <details class="node" open>
+      <summary><span class="caret"></span><span class="title">Mots</span></summary>
+      <div class="content"><p>Hiérarchie telle que fournie.</p></div>
+    </details>
+    <ul>
+      <li>
+        <details class="node">
+          <summary><span class="caret"></span><span class="title">non-affixés</span></summary>
+          <div class="content"><p>Lexèmes simples.</p></div>
+        </details>
+      </li>
+      <li>
+        <details class="node" open>
+          <summary><span class="caret"></span><span class="title">affixés</span></summary>
+          <div class="content"><p>Deux familles : neutres et contraignants.</p></div>
+        </details>
+        <ul>
+          <li>
+            <details class="node">
+              <summary><span class="caret"></span><span class="title">suffixes neutres</span></summary>
+              <div class="content"></div>
+            </details>
+            <ul>
+              <li>
+                <details class="node">
+                  <summary><span class="caret"></span><span class="title">flexionnels</span><span class="meta">(+exemples dépliants)</span></summary>
+                  <div class="content">
+                    <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li>walk‑s, talk‑ed, cat‑s</li></ul></div></details>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="node">
+                  <summary><span class="caret"></span><span class="title">dérivationnels</span><span class="meta">(+exemples dépliants)</span></summary>
+                  <div class="content">
+                    <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li>teach‑er, king‑dom, happi‑ness</li></ul></div></details>
+                  </div>
+                </details>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <details class="node" open>
+              <summary><span class="caret"></span><span class="title">suffixes contraignants</span></summary>
+              <div class="content"></div>
+            </details>
+            <ul>
+              <li>
+                <details class="node" open>
+                  <summary><span class="caret"></span><span class="title">qui placent l'accent avant eux-mêmes</span></summary>
+                  <div class="content"></div>
+                </details>
+                <ul>
+                  <li>
+                    <details class="node">
+                      <summary><span class="caret"></span><span class="title">ic</span><span class="meta">(+exemples dépliants)</span></summary>
+                      <div class="content">
+                        <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li>graphˈic, phonˈetic, meˈtallic</li></ul></div></details>
+                      </div>
+                    </details>
+                  </li>
+                  <li>
+                    <details class="node">
+                      <summary><span class="caret"></span><span class="title">ify/efy</span><span class="meta">(+exemples dépliants)</span></summary>
+                      <div class="content">
+                        <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li>magniˈfy, personiˈfy, liˈquefy</li></ul></div></details>
+                      </div>
+                    </details>
+                  </li>
+                  <li>
+                    <details class="node">
+                      <summary><span class="caret"></span><span class="title">ity/ety</span><span class="meta">(+exemples dépliants)</span></summary>
+                      <div class="content">
+                        <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li>activˈity, serenˈity, variˈety</li></ul></div></details>
+                      </div>
+                    </details>
+                  </li>
+                  <li>
+                    <details class="node">
+                      <summary><span class="caret"></span><span class="title">ible</span><span class="meta">(+exemples dépliants)</span></summary>
+                      <div class="content">
+                        <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li>ˈpossible, reˈversible, auˈdible</li></ul></div></details>
+                      </div>
+                    </details>
+                  </li>
+                  <li>
+                    <details class="node">
+                      <summary><span class="caret"></span><span class="title">igible</span><span class="meta">(+exemples dépliants)</span></summary>
+                      <div class="content">
+                        <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li>eˈligible, intelliˈgible</li></ul></div></details>
+                      </div>
+                    </details>
+                  </li>
+                  <li>
+                    <details class="node">
+                      <summary><span class="caret"></span><span class="title">train de voyelles</span><span class="meta">(+sous catégories dépliantes)</span></summary>
+                      <div class="content"></div>
+                    </details>
+                    <ul>
+                      <li>
+                        <details class="node">
+                          <summary><span class="caret"></span><span class="title">e+V+(C)</span><span class="meta">(+exemples dépliants)</span></summary>
+                          <div class="content">
+                            <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li>créate …</li></ul></div></details>
+                          </div>
+                        </details>
+                      </li>
+                      <li>
+                        <details class="node">
+                          <summary><span class="caret"></span><span class="title">i+V+(C)</span><span class="meta">(+exemples dépliants)</span></summary>
+                          <div class="content">
+                            <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li>vioˈlate …</li></ul></div></details>
+                          </div>
+                        </details>
+                      </li>
+                      <li>
+                        <details class="node">
+                          <summary><span class="caret"></span><span class="title">u+V+(C)</span><span class="meta">(+exemples dépliants)</span></summary>
+                          <div class="content">
+                            <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li>comˈmunicate …</li></ul></div></details>
+                          </div>
+                        </details>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <details class="node">
+                  <summary><span class="caret"></span><span class="title">dynamiques</span></summary>
+                  <div class="content"></div>
+                </details>
+                <ul>
+                  <li>
+                    <details class="node" open>
+                      <summary><span class="caret"></span><span class="title">ATE</span><span class="meta">(sous-catégories dépliantes)</span></summary>
+                      <div class="content"></div>
+                    </details>
+                    <ul>
+                      <li>
+                        <details class="node">
+                          <summary><span class="caret"></span><span class="title">2 syllabes</span></summary>
+                          <div class="content"></div>
+                        </details>
+                        <ul>
+                          <li>
+                            <details class="node">
+                              <summary><span class="caret"></span><span class="title">verbe</span><span class="meta">(01 et /eIt/)</span></summary>
+                              <div class="content">
+                                <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li>creˈate, debˈate</li></ul></div></details>
+                              </div>
+                            </details>
+                          </li>
+                          <li>
+                            <details class="node">
+                              <summary><span class="caret"></span><span class="title">non-verbe</span><span class="meta">(10 et /@t/)</span></summary>
+                              <div class="content">
+                                <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li>ˈprivate, ˈchocolate (var.)</li></ul></div></details>
+                              </div>
+                            </details>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <details class="node">
+                          <summary><span class="caret"></span><span class="title">plus de 2 syllabes</span></summary>
+                          <div class="content"></div>
+                        </details>
+                        <ul>
+                          <li>
+                            <details class="node">
+                              <summary><span class="caret"></span><span class="title">verbe</span><span class="meta">(-100 et /eIt/)</span></summary>
+                              <div class="content">
+                                <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li>negoˈtiate, orcheˈstrate</li></ul></div></details>
+                              </div>
+                            </details>
+                          </li>
+                          <li>
+                            <details class="node">
+                              <summary><span class="caret"></span><span class="title">non-verbe</span><span class="meta">(-100 et /@t/)</span></summary>
+                              <div class="content">
+                                <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li>ˈaccurate, ˈdelicate</li></ul></div></details>
+                              </div>
+                            </details>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <details class="node">
+                      <summary><span class="caret"></span><span class="title">terminaisons adjectival es</span></summary>
+                      <div class="content"></div>
+                    </details>
+                    <ul>
+                      <li>
+                        <details class="node">
+                          <summary><span class="caret"></span><span class="title">avec agrégat consonantique</span><span class="meta">(-010)</span></summary>
+                          <div class="content">
+                            <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li>à compléter…</li></ul></div></details>
+                          </div>
+                        </details>
+                      </li>
+                      <li>
+                        <details class="node">
+                          <summary><span class="caret"></span><span class="title">sans agrégat consonantique</span><span class="meta">(-100)</span></summary>
+                          <div class="content">
+                            <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li>à compléter…</li></ul></div></details>
+                          </div>
+                        </details>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+</div></details>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="node">
+                  <summary><span class="caret"></span><span class="title">dérivationnels</span><span class="meta">(+ exemples)</span></summary>
+                  <div class="content">
+                    <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li><em>teacher</em>, <em>kingdom</em>, <em>happiness</em></li></ul></div></details>
+                  </div>
+                </details>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <details class="node" open>
+              <summary><span class="caret"></span><span class="title">suffixes contraignants</span></summary>
+              <div class="content"><p>Imposent un déplacement de l’accent.</p></div>
+            </details>
+            <ul>
+              <li>
+                <details class="node" open>
+                  <summary><span class="caret"></span><span class="title">qui placent l’accent avant eux‑mêmes</span></summary>
+                  <div class="content"><p>Accent sur la syllabe précédente.</p></div>
+                </details>
+                <ul>
+                  <li>
+                    <details class="node">
+                      <summary><span class="caret"></span><span class="title"><code>-ic</code></span><span class="meta">(+ exemples)</span></summary>
+                      <div class="content">
+                        <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li><em>graphˈic</em>, <em>metˈallic</em>, <em>phonˈetic</em></li></ul></div></details>
+                      </div>
+                    </details>
+                  </li>
+                  <li>
+                    <details class="node">
+                      <summary><span class="caret"></span><span class="title"><code>-ify / -efy</code></span><span class="meta">(+ exemples)</span></summary>
+                      <div class="content">
+                        <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li><em>mágniˌfy</em>, <em>persónify</em>, <em>liqúefy</em></li></ul></div></details>
+                      </div>
+                    </details>
+                  </li>
+                  <li>
+                    <details class="node">
+                      <summary><span class="caret"></span><span class="title"><code>-ity / -ety</code></span><span class="meta">(+ exemples)</span></summary>
+                      <div class="content">
+                        <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li><em>actívity</em>, <em>serénity</em>, <em>varíety</em></li></ul></div></details>
+                      </div>
+                    </details>
+                  </li>
+                  <li>
+                    <details class="node">
+                      <summary><span class="caret"></span><span class="title"><code>-ible</code></span><span class="meta">(+ exemples)</span></summary>
+                      <div class="content">
+                        <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li><em>póssible</em>, <em>reversíble</em>, <em>audíble</em></li></ul></div></details>
+                      </div>
+                    </details>
+                  </li>
+                  <li>
+                    <details class="node">
+                      <summary><span class="caret"></span><span class="title"><code>-igible</code></span><span class="meta">(+ exemples)</span></summary>
+                      <div class="content">
+                        <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li><em>èlígible</em>, <em>intellígible</em></li></ul></div></details>
+                      </div>
+                    </details>
+                  </li>
+                  <li>
+                    <details class="node">
+                      <summary><span class="caret"></span><span class="title">train de voyelles</span><span class="meta">(+ sous‑catégories)</span></summary>
+                      <div class="content"><p>Catégories de séquences vocaliques avant suffixe.</p></div>
+                    </details>
+                    <ul>
+                      <li>
+                        <details class="node">
+                          <summary><span class="caret"></span><span class="title">e+V+(C)</span><span class="meta">(+ exemples)</span></summary>
+                          <div class="content">
+                            <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li><em>créate</em>, <em>neóphyte</em> (à confirmer)</li></ul></div></details>
+                          </div>
+                        </details>
+                      </li>
+                      <li>
+                        <details class="node">
+                          <summary><span class="caret"></span><span class="title">i+V+(C)</span><span class="meta">(+ exemples)</span></summary>
+                          <div class="content">
+                            <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li><em>viólate</em>, <em>diálect</em> (à confirmer)</li></ul></div></details>
+                          </div>
+                        </details>
+                      </li>
+                      <li>
+                        <details class="node">
+                          <summary><span class="caret"></span><span class="title">u+V+(C)</span><span class="meta">(+ exemples)</span></summary>
+                          <div class="content">
+                            <details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li><em>accúmulate</em>, <em>commúnicate</em> (à confirmer)</li></ul></div></details>
+                          </div>
+                        </details>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <details class="node">
+                  <summary><span class="caret"></span><span class="title">dynamiques</span></summary>
+                  <div class="content"><p>Effets dépendant de la catégorie grammaticale et du nombre de syllabes.</p></div>
+                </details>
+                <ul>
+                  <li>
+                    <details class="node" open>
+                      <summary><span class="caret"></span><span class="title">ATE</span><span class="meta">(sous‑catégories)</span></summary>
+                      <div class="content"><p>Patrons accentuels variables avec <code>-ate</code>.</p></div>
+                    </details>
+                    <ul>
+                      <li>
+                        <details class="node">
+                          <summary><span class="caret"></span><span class="title">2 syllabes</span></summary>
+                          <div class="content"><p>Différencier verbe vs non‑verbe.</p></div>
+                        </details>
+                        <ul>
+                          <li>
+                            <details class="node">
+                              <summary><span class="caret"></span><span class="title">verbe</span><span class="meta">01 et /eɪt/</span></summary>
+                              <div class="content"><details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li><em>creˈate</em>, <em>debˈate</em></li></ul></div></details></div>
+                            </details>
+                          </li>
+                          <li>
+                            <details class="node">
+                              <summary><span class="caret"></span><span class="title">non‑verbe</span><span class="meta">10 et /ət/</span></summary>
+                              <div class="content"><details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li><em>prívate</em>, <em>ádept</em> (selon variété)</li></ul></div></details></div>
+                            </details>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <details class="node">
+                          <summary><span class="caret"></span><span class="title">plus de 2 syllabes</span></summary>
+                          <div class="content"><p>Accent récessif pour noms/adj vs patrons verbaux.</p></div>
+                        </details>
+                        <ul>
+                          <li>
+                            <details class="node">
+                              <summary><span class="caret"></span><span class="title">verbe</span><span class="meta">-100 et /eɪt/</span></summary>
+                              <div class="content"><details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li><em>orchestrˈate</em>, <em>negotiˈate</em></li></ul></div></details></div>
+                            </details>
+                          </li>
+                          <li>
+                            <details class="node">
+                              <summary><span class="caret"></span><span class="title">non‑verbe</span><span class="meta">-100 et /ət/</span></summary>
+                              <div class="content"><details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li><em>delicáte</em>, <em>accúrate</em></li></ul></div></details></div>
+                            </details>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <details class="node">
+                      <summary><span class="caret"></span><span class="title">terminaisons adjectivales</span></summary>
+                      <div class="content"><p>Patrons contrastés selon agrégat consonantique.</p></div>
+                    </details>
+                    <ul>
+                      <li>
+                        <details class="node">
+                          <summary><span class="caret"></span><span class="title">avec agrégat consonantique</span><span class="meta">-010</span></summary>
+                          <div class="content"><details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li><em>baróque</em>, <em>obscúre</em> (à préciser)</li></ul></div></details></div>
+                        </details>
+                      </li>
+                      <li>
+                        <details class="node">
+                          <summary><span class="caret"></span><span class="title">sans agrégat consonantique</span><span class="meta">-100</span></summary>
+                          <div class="content"><details class="node"><summary><span class="caret"></span><span class="title">Exemples</span></summary><div class="content"><ul><li><em>amíable</em>, <em>líthe</em> (à préciser)</li></ul></div></details></div>
+                        </details>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+</div>  <script>
+    // Ouvrir / fermer tout
+    const expandAllBtn = document.getElementById('expandAll');
+    const collapseAllBtn = document.getElementById('collapseAll');
+
+    expandAllBtn.addEventListener('click', () => {
+      document.querySelectorAll('details.node').forEach(d => d.open = true);
+    });
+    collapseAllBtn.addEventListener('click', () => {
+      document.querySelectorAll('details.node').forEach(d => d.open = false);
+    });
+
+    // Amélioration: clic sur toute la ligne du résumé reste accessible
+    document.querySelectorAll('summary').forEach(s => {
+      s.addEventListener('keydown', (e) => {
+        // Espace/Entrée pilotent l'ouverture, comportement natif, on le laisse faire
+        if(e.key === 'ArrowRight'){
+          const d = s.parentElement; if(d instanceof HTMLDetailsElement) d.open = true;
+        }
+        if(e.key === 'ArrowLeft'){
+          const d = s.parentElement; if(d instanceof HTMLDetailsElement) d.open = false;
+        }
+      });
+    });
+  </script></body>
+</html>
