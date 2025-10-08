@@ -20,6 +20,9 @@
     details[open] > summary .caret::before { content: "−"; }
     .content { padding: 8px 12px; border-top: 1px solid #eee; }
 
+    /* Inline code style (type Notion) */
+    code { background: #f2f3f5; color: #b91c1c; padding: 0 .35em; border-radius: .4em; border: 1px solid #e5e7eb; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: .95em; white-space: nowrap; }
+
     /* Color coding */
     .neutre { background-color: #d1fae5; border-color: #10b981; }
     .neutre summary { color: #065f46; }
@@ -36,6 +39,10 @@
     .accent-avant { background-color: #ede9fe; border-color: #7c3aed; }
     .accent-avant summary { color: #4c1d95; }
     .accent-avant .content { background-color: #f5f3ff; }
+
+    .accent-sur { background-color: #fef9c3; border-color: #eab308; }
+    .accent-sur summary { color: #854d0e; }
+    .accent-sur .content { background-color: #fefce8; }
 
     .dynamique { background-color: #ffedd5; border-color: #f97316; }
     .dynamique summary { color: #9a3412; }
@@ -69,13 +76,13 @@
                             <li>
                               <details class="node neutre-sub">
                                 <summary><span class="caret"></span>flexionnels</summary>
-                                <div class="content">Exemples : walk`‑s`, talk`‑ed`, cat`‑s`</div>
+                                <div class="content">Exemples : ˈwalk<code>s</code>, ˈtalk<code>ed</code>, ˈcat<code>s</code></div>
                               </details>
                             </li>
                             <li>
                               <details class="node neutre-sub">
                                 <summary><span class="caret"></span>dérivationnels</summary>
-                                <div class="content">Exemples : teach`‑er`, king`‑dom`, happi`‑ness`</div>
+                                <div class="content">Exemples : ˈteach<code>er</code>, ˈking<code>dom</code>, ˈhappi<code>ness</code></div>
                               </details>
                             </li>
                           </ul>
@@ -95,31 +102,31 @@
                                     <li>
                                       <details class="node accent-avant">
                                         <summary><span class="caret"></span>ic</summary>
-                                        <div class="content">Ex. : ˈgraphic, phoˈnetic, meˈtallic</div>
+                                        <div class="content">Ex. : geˈner<code>ic</code>, aˈtom<code>ic</code>, neoˈlith<code>ic</code>, ˈeth<code>ics</code></div>
                                       </details>
                                     </li>
                                     <li>
                                       <details class="node accent-avant">
                                         <summary><span class="caret"></span>ify/efy</summary>
-                                        <div class="content">Ex. : ˈmagnify, perˈsonify, ˈliquefy</div>
+                                        <div class="content">Ex. : ˈterr<code>ify</code>, ˈqual<code>ify</code>, inˈdemn<code>ify</code>, ˈstupe<code>fy</code></div>
                                       </details>
                                     </li>
                                     <li>
                                       <details class="node accent-avant">
                                         <summary><span class="caret"></span>ity/ety</summary>
-                                        <div class="content">Ex. : acˈtiv`ity`, seˈren`ity`, vaˈri`ety`</div>
+                                        <div class="content">Ex. : vaˈri<code>ety</code>, anˈxie<code>ty</code>, moˈbil<code>ity</code>, priˈor<code>ity</code></div>
                                       </details>
                                     </li>
                                     <li>
                                       <details class="node accent-avant">
                                         <summary><span class="caret"></span>ible</summary>
-                                        <div class="content">Ex. : ˈposs`ible`, reˈvers`ible`, ˈaud`ible`</div>
+                                        <div class="content">Ex. : ˈfeas<code>ible</code>, adˈmiss<code>ible</code>, ˈsens<code>ible</code>, ˈgull<code>ible</code></div>
                                       </details>
                                     </li>
                                     <li>
                                       <details class="node accent-avant">
                                         <summary><span class="caret"></span>igible</summary>
-                                        <div class="content">Ex. : ˈel`igible`, inˈtell`igible`</div>
+                                        <div class="content">Ex. : ˈcorr<code>igible</code>, ˈdir<code>igible</code>, inˈtell<code>igible</code></div>
                                       </details>
                                     </li>
                                     <li>
@@ -130,23 +137,44 @@
                                             <li>
                                               <details class="node accent-avant">
                                                 <summary><span class="caret"></span>e+V+(C)</summary>
-                                                <div class="content">Ex. : hysˈter`ia`</div>
+                                                <div class="content">Ex. : ˈcer<code>eal</code>, eˈther<code>eal</code>, ˈar<code>ea</code>, ˈapn<code>ea</code>, ˈnaus<code>ea</code></div>
                                               </details>
                                             </li>
                                             <li>
                                               <details class="node accent-avant">
                                                 <summary><span class="caret"></span>i+V+(C)</summary>
-                                                <div class="content">Ex. : vioˈlate …</div>
+                                                <div class="content">Ex. : ˈper<code>iod</code>, ˈSerb<code>ia</code>, maˈter<code>ial</code>, ˈmart<code>ian</code>, peˈcul<code>iar</code></div>
                                               </details>
                                             </li>
                                             <li>
                                               <details class="node accent-avant">
                                                 <summary><span class="caret"></span>u+V+(C)</summary>
-                                                <div class="content">Ex. : comˈmunicate …</div>
+                                                <div class="content">Ex. : ˈsens<code>ual</code>, Nicaˈrag<code>ua</code>, ˈQuech<code>ua</code>, garˈgant<code>uan</code>, ˈus<code>ual</code></div>
                                               </details>
                                             </li>
                                           </ul>
                                         </div>
+                                      </details>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </details>
+                            </li>
+                            <li>
+                              <details class="node accent-sur">
+                                <summary><span class="caret"></span>qui prennent l’accent sur eux-mêmes</summary>
+                                <div class="content">
+                                  <ul>
+                                    <li>
+                                      <details class="node accent-sur">
+                                        <summary><span class="caret"></span>'VV#</summary>
+                                        <div class="content">(soon to come!)</div>
+                                      </details>
+                                    </li>
+                                    <li>
+                                      <details class="node accent-sur">
+                                        <summary><span class="caret"></span> </summary>
+                                        <div class="content">(soon to come!)</div>
                                       </details>
                                     </li>
                                   </ul>
@@ -170,14 +198,14 @@
                                                   <ul>
                                                     <li>
                                                       <details class="node dynamique">
-                                                        <summary><span class="caret"></span>verbe (01 et /eIt/)</summary>
-                                                        <div class="content">Ex. : creˈate, debˈate</div>
+                                                        <summary><span class="caret"></span>verbe (01 et /eɪt/)</summary>
+                                                        <div class="content">Ex. : locˈ<code>ate</code>, donˈ<code>ate</code>, relˈ<code>ate</code></div>
                                                       </details>
                                                     </li>
                                                     <li>
                                                       <details class="node dynamique">
-                                                        <summary><span class="caret"></span>non-verbe (10 et /@t/)</summary>
-                                                        <div class="content">Ex. : ˈprivate, ˈchocolate</div>
+                                                        <summary><span class="caret"></span>non-verbe (10 et /ət/)</summary>
+                                                        <div class="content">Ex. : ˈsen<code>ate</code>, ˈcur<code>ate</code></div>
                                                       </details>
                                                     </li>
                                                   </ul>
