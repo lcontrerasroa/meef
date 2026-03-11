@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arborescence graphophonémique (S2)</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 20px; background: #f9fafb; color: #111; }
+    h1 { font-size: 22px; margin-bottom: 6px; }
+    .subtitle { font-size: 14px; color: #6b7280; margin-bottom: 20px; }
+    .tree, .tree ul { list-style: none; margin: 0; padding-left: 20px; position: relative; }
+    .tree ul { border-left: 2px solid #ccc; }
+    .tree li { position: relative; margin: 8px 0; }
+    .tree li::before { content: ""; position: absolute; top: 14px; left: -20px; width: 20px; height: 2px; background: #ccc; }
+
+    details.node { border-radius: 8px; border: 1px solid #ddd; background: #fff; padding: 0; }
+    summary { padding: 8px 12px; cursor: pointer; font-weight: 600; display: flex; align-items: center; }
+    summary::-webkit-details-marker { display: none; }
+    .caret { display: inline-block; width: 20px; text-align: center; margin-right: 6px; }
+    .caret::before { content: "+"; }
+    details[open] > summary .caret::before { content: "−"; }
+    .content { padding: 8px 12px; border-top: 1px solid #eee; }
+
+    code { background: #f2f3f5; color: #b91c1c; padding: 0 .35em; border-radius: .4em; border: 1px solid #e5e7eb; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .95em; white-space: nowrap; }
+
+    /* === Color coding === */
+    /* Checked (entravé) */
+    .checked { background-color: #fee2e2; border-color: #ef4444; }
+    .checked summary { color: #991b1b; }
+    .checked .content { background-color: #fef2f2; }
+
+    /* Free (libre) */
+    .free { background-color: #d1fae5; border-color: #10b981; }
+    .free summary { color: #065f46; }
+    .free .content { background-color: #ecfdf5; }
+
+    /* Checked + R */
+    .checked-r { background-color: #ffedd5; border-color: #f97316; }
+    .checked-r summary { color: #9a3412; }
+    .checked-r .content { background-color: #fff7ed; }
+
+    /* Free + R */
+    .free-r { background-color: #ede9fe; border-color: #7c3aed; }
+    .free-r summary { color: #4c1d95; }
+    .free-r .content { background-color: #f5f3ff; }
+
+    /* Sous-règles */
+    .sous-regle { background-color: #fef9c3; border-color: #eab308; }
+    .sous-regle summary { color: #854d0e; }
+    .sous-regle .content { background-color: #fefce8; }
+
+    /* Digraphes */
+    .digraphe { background-color: #cffafe; border-color: #06b6d4; }
+    .digraphe summary { color: #0e7490; }
+    .digraphe .content { background-color: #ecfeff; }
+
+    /* Digraphe + R */
+    .digraphe-r { background-color: #e0e7ff; border-color: #6366f1; }
+    .digraphe-r summary { color: #3730a3; }
+    .digraphe-r .content { background-color: #eef2ff; }
+
+    .hint { font-size: .92em; color: #374151; }
+    .aside { background: #fff7ed; border-left: 3px solid #f97316; padding: 10px 12px; border-radius: 6px; margin-top: 6px; }
+    .aside-blue { background: #eff6ff; border-left: 3px solid #3b82f6; padding: 10px 12px; border-radius: 6px; margin-top: 6px; }
+    .exc { font-size: .92em; color: #6b7280; margin-top: 4px; }
+    .phon { font-weight: 700; }
+    table { border-collapse: collapse; margin: 8px 0; font-size: .93em; }
+    th, td { border: 1px solid #d1d5db; padding: 4px 10px; text-align: left; }
+    th { background: #f3f4f6; }
+    .legend { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; font-size: .88em; }
+    .legend span { padding: 3px 10px; border-radius: 6px; border: 1px solid; }
+  </style>
+</head>
+<body>
+  <h1>Arborescence graphophonémique (S2)</h1>
+  <div class="subtitle">Monographes · Modification par ‹-r› · Sous-règles · Digraphes vocaliques — SSBE</div>
+
+  <div class="legend">
+    <span class="checked" style="border-color:#ef4444">Entravé (checked)</span>
+    <span class="free" style="border-color:#10b981">Libre (free)</span>
+    <span class="checked-r" style="border-color:#f97316">Entravé + R</span>
+    <span class="free-r" style="border-color:#7c3aed">Libre + R</span>
+    <span class="sous-regle" style="border-color:#eab308">Sous-règles</span>
+    <span class="digraphe" style="border-color:#06b6d4">Digraphes</span>
+  </div>
+
+  <ul class="tree">
+    <li>
+      <details class="node" open>
+        <summary><span class="caret"></span>Graphophonémique de l'anglais</summary>
+        <div class="content">Correspondances graphème → phonème pour les voyelles accentuées
+          <ul>
+
+            <!-- ============================================ -->
+            <!-- MONOGRAPHES                                  -->
+            <!-- ============================================ -->
+            <li>
+              <details class="node" open>
+                <summary><span class="caret"></span>Monographes ‹a, e, i, o, u›</summary>
+                <div class="content">5 voyelles graphiques × 4 contextes
+                  <ul>
+
+                    <!-- CHECKED -->
+                    <li>
+                      <details class="node checked">
+                        <summary><span class="caret"></span>Entravé (checked) — ˈVC# / ˈVCC</summary>
+                        <div class="content">Syllabe fermée : la voyelle est "coupée" par la coda consonantique
+                          <ul>
+                            <li><details class="node checked"><summary><span class="caret"></span>‹a› → <span class="phon">/æ/</span></summary><div class="content"><em>cat</em> /kæt/, <em>cap</em> /kæp/, <em>attack</em> /əˈtæk/</div></details></li>
+                            <li><details class="node checked"><summary><span class="caret"></span>‹e› → <span class="phon">/e/</span></summary><div class="content"><em>pet</em> /pet/, <em>spent</em> /spent/, <em>dress</em> /dres/</div></details></li>
+                            <li><details class="node checked"><summary><span class="caret"></span>‹i› → <span class="phon">/ɪ/</span></summary><div class="content"><em>bid</em> /bɪd/, <em>kit</em> /kɪt/, <em>twist</em> /twɪst/</div></details></li>
+                            <li><details class="node checked"><summary><span class="caret"></span>‹o› → <span class="phon">/ɒ/</span></summary><div class="content"><em>dot</em> /dɒt/, <em>lot</em> /lɒt/, <em>adopt</em> /əˈdɒpt/</div></details></li>
+                            <li><details class="node checked"><summary><span class="caret"></span>‹u› → <span class="phon">/ʌ/</span></summary><div class="content"><em>cut</em> /kʌt/, <em>strut</em> /strʌt/, <em>bus</em> /bʌs/</div></details></li>
+                          </ul>
+                        </div>
+                      </details>
+                    </li>
+
+                    <!-- FREE -->
+                    <li>
+                      <details class="node free">
+                        <summary><span class="caret"></span>Libre (free) — ˈVCe# / ˈV#</summary>
+                        <div class="content">Syllabe ouverte ou patron "magic <em>e</em>" : la voyelle résonne librement
+                          <ul>
+                            <li><details class="node free"><summary><span class="caret"></span>‹a› → <span class="phon">/eɪ/</span></summary><div class="content"><em>Kate</em> /keɪt/, <em>make</em> /meɪk/, <em>late</em> /leɪt/, <em>name</em> /neɪm/</div></details></li>
+                            <li><details class="node free"><summary><span class="caret"></span>‹e› → <span class="phon">/iː/</span></summary><div class="content"><em>Pete</em> /piːt/, <em>these</em> /ðiːz/, <em>me</em> /miː/, <em>we</em> /wiː/</div></details></li>
+                            <li><details class="node free"><summary><span class="caret"></span>‹i› → <span class="phon">/aɪ/</span></summary><div class="content"><em>bide</em> /baɪd/, <em>time</em> /taɪm/, <em>my</em> /maɪ/, <em>try</em> /traɪ/</div></details></li>
+                            <li><details class="node free"><summary><span class="caret"></span>‹o› → <span class="phon">/əʊ/</span></summary><div class="content"><em>note</em> /nəʊt/, <em>home</em> /həʊm/, <em>go</em> /gəʊ/, <em>hero</em> /ˈhɪərəʊ/</div></details></li>
+                            <li><details class="node free"><summary><span class="caret"></span>‹u› → <span class="phon">/(j)uː/</span></summary><div class="content"><em>mute</em> /mjuːt/, <em>cute</em> /kjuːt/, <em>flute</em> /fluːt/, <em>use</em> /juːz/</div></details></li>
+                          </ul>
+                        </div>
+                      </details>
+                    </li>
+
+                    <!-- CHECKED + R -->
+                    <li>
+                      <details class="node checked-r">
+                        <summary><span class="caret"></span>Entravé + R — ˈVr# / ˈVrC</summary>
+                        <div class="content">‹r› muet en SSBE, mais modifie la voyelle → voyelles longues
+                          <ul>
+                            <li><details class="node checked-r"><summary><span class="caret"></span>‹ar› → <span class="phon">/ɑː/</span></summary><div class="content"><em>car</em> /kɑː/, <em>card</em> /kɑːd/, <em>start</em> /stɑːt/, <em>garden</em> /ˈgɑːdən/<br/><span class="exc">Passage /æ/ → /ɑː/ : recul du point d'articulation</span></div></details></li>
+                            <li><details class="node checked-r"><summary><span class="caret"></span>‹er› → <span class="phon">/ɜː/</span></summary><div class="content"><em>her</em> /hɜː/, <em>term</em> /tɜːm/, <em>verb</em> /vɜːb/, <em>perfect</em> /ˈpɜːfəkt/</div></details></li>
+                            <li><details class="node checked-r"><summary><span class="caret"></span>‹ir› → <span class="phon">/ɜː/</span></summary><div class="content"><em>bird</em> /bɜːd/, <em>girl</em> /gɜːl/, <em>first</em> /fɜːst/, <em>dirty</em> /ˈdɜːti/</div></details></li>
+                            <li><details class="node checked-r"><summary><span class="caret"></span>‹or› → <span class="phon">/ɔː/</span></summary><div class="content"><em>or</em> /ɔː/, <em>fork</em> /fɔːk/, <em>sport</em> /spɔːt/, <em>normal</em> /ˈnɔːməl/</div></details></li>
+                            <li><details class="node checked-r"><summary><span class="caret"></span>‹ur› → <span class="phon">/ɜː/</span></summary><div class="content"><em>burn</em> /bɜːn/, <em>fur</em> /fɜː/, <em>turn</em> /tɜːn/, <em>purple</em> /ˈpɜːpəl/</div></details></li>
+                          </ul>
+                          <div class="aside">🔑 <strong>Convergence</strong> : ‹er›, ‹ir›, ‹ur› entravés → tous /ɜː/ (neutralisation).<br/>
+                          ⚠️ ‹-rr-› (double r) = pas de modification : <em>carry</em> /ˈkæri/, <em>merry</em> /ˈmeri/, <em>sorry</em> /ˈsɒri/</div>
+                        </div>
+                      </details>
+                    </li>
+
+                    <!-- FREE + R -->
+                    <li>
+                      <details class="node free-r">
+                        <summary><span class="caret"></span>Libre + R — ˈVre#</summary>
+                        <div class="content">Voyelle libre + ‹r› → diphtongues centralisantes (sauf ‹o›)
+                          <ul>
+                            <li><details class="node free-r"><summary><span class="caret"></span>‹are› → <span class="phon">/eə/</span></summary><div class="content"><em>care</em> /keə/, <em>bare</em> /beə/, <em>share</em> /ʃeə/, <em>stare</em> /steə/<br/><span class="exc">Diphtongue centralisante : /e/ → /ə/</span></div></details></li>
+                            <li><details class="node free-r"><summary><span class="caret"></span>‹ere› → <span class="phon">/ɪə/</span></summary><div class="content"><em>here</em> /hɪə/, <em>mere</em> /mɪə/, <em>severe</em> /sɪˈvɪə/, <em>sincere</em> /sɪnˈsɪə/<br/><span class="exc">Diphtongue centralisante : /ɪ/ → /ə/. Évolution : /ɪə/ → /ɪː/ chez beaucoup de locuteurs.</span></div></details></li>
+                            <li><details class="node free-r"><summary><span class="caret"></span>‹ire› → <span class="phon">/aɪə/</span></summary><div class="content"><em>fire</em> /faɪə/, <em>tire</em> /taɪə/, <em>wire</em> /waɪə/, <em>admire</em> /ədˈmaɪə/<br/><span class="exc">Triphtongue : /a/ → /ɪ/ → /ə/</span></div></details></li>
+                            <li><details class="node free-r"><summary><span class="caret"></span>‹ore› → <span class="phon">/ɔː/</span></summary><div class="content"><em>more</em> /mɔː/, <em>bore</em> /bɔː/, <em>store</em> /stɔː/, <em>explore</em> /ɪkˈsplɔː/<br/><span class="exc">Exception : monophtongue (pas de diphtongue). Identique à ‹or› entravé.</span></div></details></li>
+                            <li><details class="node free-r"><summary><span class="caret"></span>‹ure› → <span class="phon">/(j)ʊə/</span></summary><div class="content"><em>pure</em> /pjʊə/, <em>cure</em> /kjʊə/, <em>sure</em> /ʃʊə/, <em>mature</em> /məˈtjʊə/<br/><span class="exc">Diphtongue centralisante : /ʊ/ → /ə/. Évolution : /ʊə/ → /ɔː/ chez beaucoup de locuteurs.</span></div></details></li>
+                          </ul>
+                        </div>
+                      </details>
+                    </li>
+
+                  </ul>
+                </div>
+              </details>
+            </li>
+
+            <!-- ============================================ -->
+            <!-- SOUS-RÈGLES                                  -->
+            <!-- ============================================ -->
+            <li>
+              <details class="node sous-regle">
+                <summary><span class="caret"></span>Sous-règles et exceptions</summary>
+                <div class="content">Régularités qui "écrasent" les règles de base des monographes
+                  <ul>
+
+                    <!-- 1) alC / olC -->
+                    <li>
+                      <details class="node sous-regle">
+                        <summary><span class="caret"></span>1) ‹a›/‹o› + ‹l› + C</summary>
+                        <div class="content">
+                          <ul>
+                            <li><details class="node sous-regle"><summary><span class="caret"></span>1A) ‹a› + ‹l› + {l#, t, d, k} → <span class="phon">/ɔː/</span></summary><div class="content"><em>mall</em> /mɔːl/, <em>talk</em> /tɔːk/, <em>waltz</em> /wɔːls/, <em>bald</em> /bɔːld/, <em>Baltic</em> /ˈbɔːltɪk/<br/><span class="exc">GA : /ɑː/ à la place de /ɔː/. NB : ‹l› muet devant ‹k› : walk, talk, folk…</span></div></details></li>
+                            <li><details class="node sous-regle"><summary><span class="caret"></span>1B) ‹a› + ‹l› + {m, f} → <span class="phon">/ɑː/</span></summary><div class="content"><em>half</em> /hɑːf/, <em>calm</em> /kɑːm/, <em>calf</em> /kɑːf/, <em>balm</em> /bɑːm/</div></details></li>
+                            <li><details class="node sous-regle"><summary><span class="caret"></span>1C) ‹o› + ‹l› + {l#, t, d, s, k} → <span class="phon">/əʊ/</span></summary><div class="content"><em>roll</em> /rəʊl/, <em>bolt</em> /bəʊlt/, <em>told</em> /təʊld/, <em>gold</em> /gəʊld/, <em>folk</em> /fəʊk/, <em>most</em> /məʊst/, <em>host</em> /həʊst/, <em>post</em> /pəʊst/</div></details></li>
+                          </ul>
+                        </div>
+                      </details>
+                    </li>
+
+                    <!-- 2) W rule -->
+                    <li>
+                      <details class="node sous-regle">
+                        <summary><span class="caret"></span>2) "W rule" : /w/ + ‹a› et /w/ + ‹ar›/‹or›</summary>
+                        <div class="content">
+                          <ul>
+                            <li><details class="node sous-regle"><summary><span class="caret"></span>2A) ‹w› + ‹a› → <span class="phon">/wɒ/</span> (SSBE)</summary><div class="content"><em>water</em> /ˈwɒtə/, <em>want</em> /wɒnt/, <em>quality</em> /ˈkwɒlɪti/, <em>swan</em> /swɒn/<br/><span class="exc">Exception : si C suivante est vélaire /k, g, ŋ/ → retour à /æ/ : <em>quack</em> /kwæk/, <em>wax</em> /wæks/, <em>wag</em> /wæg/</span></div></details></li>
+                            <li><details class="node sous-regle"><summary><span class="caret"></span>2B) ‹w› + ‹ar› → <span class="phon">/wɔː/</span></summary><div class="content"><em>wart</em> /wɔːt/, <em>warm</em> /wɔːm/, <em>swarm</em> /swɔːm/, <em>quarter</em> /ˈkwɔːtə/</div></details></li>
+                            <li><details class="node sous-regle"><summary><span class="caret"></span>2C) ‹w› + ‹or› → <span class="phon">/wɜː/</span></summary><div class="content"><em>word</em> /wɜːd/, <em>work</em> /wɜːk/, <em>world</em> /wɜːld/, <em>worm</em> /wɜːm/, <em>worse</em> /wɜːs/</div></details></li>
+                          </ul>
+                        </div>
+                      </details>
+                    </li>
+
+                    <!-- 3) Terminaisons spéciales -->
+                    <li>
+                      <details class="node sous-regle">
+                        <summary><span class="caret"></span>3) Terminaisons "spéciales" → valeur libre</summary>
+                        <div class="content">La voyelle prend sa valeur libre au lieu d'entravée
+                          <ul>
+                            <li><details class="node sous-regle"><summary><span class="caret"></span>3A) <code>-ange#</code> → ‹a› = <span class="phon">/eɪ/</span></summary><div class="content"><em>arrange, change, derange, range, strange</em> ; aussi <em>angel, danger</em></div></details></li>
+                            <li><details class="node sous-regle"><summary><span class="caret"></span>3B) <code>-aste#</code> → ‹a› = <span class="phon">/eɪ/</span></summary><div class="content"><em>baste, chaste, haste, paste, taste, waste</em></div></details></li>
+                            <li><details class="node sous-regle"><summary><span class="caret"></span>3C) <code>-igh(t)#</code> → ‹i› = <span class="phon">/aɪ/</span></summary><div class="content"><em>high, sigh, bright, tight, fight, flight, knight, righteous</em></div></details></li>
+                            <li><details class="node sous-regle"><summary><span class="caret"></span>3D) <code>-ign#</code> → ‹i› = <span class="phon">/aɪ/</span></summary><div class="content"><em>align, sign, resign, assign, benign, malign</em></div></details></li>
+                            <li><details class="node sous-regle"><summary><span class="caret"></span>3E) <code>-ind#</code> → ‹i› = <span class="phon">/aɪ/</span></summary><div class="content"><em>bind, blind, kind, find, grind, mind</em> ; aussi <em>child, climb, mild, pint, wild</em></div></details></li>
+                          </ul>
+                        </div>
+                      </details>
+                    </li>
+
+                    <!-- 4) Pull rule -->
+                    <li>
+                      <details class="node sous-regle">
+                        <summary><span class="caret"></span>4) "Pull rule" : ‹f/p/b/m› + ‹u› + (-ll/-sh/-tch) → <span class="phon">/ʊ/</span></summary>
+                        <div class="content"><em>pull</em>, <em>bull</em>, <em>bush</em>, <em>push</em>, <em>butch</em>, <em>putsch</em><br/><span class="exc">Contre-ex. : <em>clutch</em> /klʌtʃ/</span></div>
+                      </details>
+                    </li>
+
+                    <!-- 5) ASK words -->
+                    <li>
+                      <details class="node sous-regle">
+                        <summary><span class="caret"></span>5) "ASK words" : ‹a› + /f, s, θ/ → <span class="phon">/ɑː/</span> (SSBE)</summary>
+                        <div class="content"><em>staff, bath, class, glass, grass, pass, after, craft, ask, basket, mask, task, gasp</em><br/>
+                        Aussi : <code>-ance#</code>, <code>-anch#</code>, <code>-and/t#</code>, <code>-ample#</code> → <em>advance, France, dance, branch, command, grant, plant, example</em><br/>
+                        <span class="exc">GA : /æ/ (pas de changement)</span></div>
+                      </details>
+                    </li>
+
+                    <!-- 6) Luick -->
+                    <li>
+                      <details class="node sous-regle">
+                        <summary><span class="caret"></span>6) Règle de Luick : antépénultième accentuée → valeur entravée</summary>
+                        <div class="content">Si la voyelle monographe accentuée est en syllabe antépénultième (ou plus tôt), et suivie d'une seule consonne → valeur checked.
+                          <ul>
+                            <li><details class="node sous-regle"><summary><span class="caret"></span>6A) Alternances base ↔ dérivé</summary><div class="content"><em>sane</em> /eɪ/ → <em>sanity</em> /æ/ ; <em>sphere</em> /ɪə/ → <em>spherical</em> /e/ ; <em>bible</em> /aɪ/ → <em>biblical</em> /ɪ/</div></details></li>
+                            <li><details class="node sous-regle"><summary><span class="caret"></span>6B) Exceptions (isomorphisme fort)</summary><div class="content"><em>favor</em> /eɪ/ → <em>favorite</em> /eɪ/ ; <em>rare</em> /eə/ → <em>rarity</em> /eə/ ; <em>glory</em> /ɔː/ → <em>glorify</em> /ɔː/ ; <em>motive</em> /əʊ/ → <em>motivate</em> /əʊ/</div></details></li>
+                          </ul>
+                        </div>
+                      </details>
+                    </li>
+
+                    <!-- 7) <o> spécial -->
+                    <li>
+                      <details class="node sous-regle">
+                        <summary><span class="caret"></span>7) Prononciations particulières de ‹o›</summary>
+                        <div class="content">
+                          <ul>
+                            <li><details class="node sous-regle"><summary><span class="caret"></span>7A) ‹o› → <span class="phon">/ʌ/</span></summary><div class="content"><em>son, front, company, monk, month, sponge, tongue, wonder, worry, come, glove, love, other, brother</em></div></details></li>
+                            <li><details class="node sous-regle"><summary><span class="caret"></span>7B) ‹o› → <span class="phon">/uː/</span></summary><div class="content"><em>do, to, two, who, lose, move, prove, tomb, womb</em></div></details></li>
+                          </ul>
+                        </div>
+                      </details>
+                    </li>
+
+                  </ul>
+                </div>
+              </details>
+            </li>
+
+            <!-- ============================================ -->
+            <!-- DIGRAPHES                                    -->
+            <!-- ============================================ -->
+            <li>
+              <details class="node digraphe">
+                <summary><span class="caret"></span>Digraphes vocaliques</summary>
+                <div class="content">Séquence de 2 lettres-voyelles = 1 phonème. 9 catégories principales.
+                  <ul>
+
+                    <!-- 1) ai, ay, ei, ey -->
+                    <li>
+                      <details class="node digraphe">
+                        <summary><span class="caret"></span>1) ‹ai›, ‹ay›, ‹ei›, ‹ey› → <span class="phon">/eɪ/</span></summary>
+                        <div class="content">
+                          <em>claim, straight, maid</em> ; <em>stay, gray</em> ; <em>eight, vein, neighbour</em> ; <em>convey, prey, grey</em><br/>
+                          <div class="aside-blue">💡 = valeur libre de ‹a› (<em>Kate</em> /eɪ/)</div>
+                          <span class="exc">Exc. : /aɪ/ <em>aisle</em> · /iː/ <em>quay, conceive, seize, ceiling</em> · /æ/ <em>plaid</em> · /e/ <em>said, says</em></span>
+                          <ul>
+                            <li><details class="node digraphe-r"><summary><span class="caret"></span>+ ‹r› → <span class="phon">/eə/</span></summary><div class="content"><em>hair, lair, affair</em> ; <em>heiress, theirs</em><br/><div class="aside-blue">💡 = valeur libre+R de ‹a› (<em>care</em> /eə/)</div><span class="exc">Exc. : /ɪə/ <em>weird, eyrie</em></span></div></details></li>
+                          </ul>
+                        </div>
+                      </details>
+                    </li>
+
+                    <!-- 2) ea, ee, ie non-final -->
+                    <li>
+                      <details class="node digraphe">
+                        <summary><span class="caret"></span>2) ‹ea›, ‹ee›, ‹ie› (non final) → <span class="phon">/iː/</span></summary>
+                        <div class="content">
+                          <em>beast, meal, team</em> ; <em>feel, between, see</em> ; <em>piece, achieve, believe, siege</em><br/>
+                          <div class="aside-blue">💡 = valeur libre de ‹e› (<em>Pete</em> /iː/)</div>
+                          <span class="exc">Exc. ‹ea› : /e/ <em>bread, breakfast, dead, head, heaven, measure, weather</em> · /eə/ <em>bear, pear, swear, wear</em> · /ɜː/ <em>earn, earth, heard, pearl, search</em></span>
+                          <ul>
+                            <li><details class="node digraphe-r"><summary><span class="caret"></span>+ ‹r› → <span class="phon">/ɪə/</span></summary><div class="content"><em>appear, dear, hearing, shear</em> ; <em>leer, beer, engineer</em> ; <em>fierce, pierce</em><br/><div class="aside-blue">💡 = valeur libre+R de ‹e› (<em>here</em> /ɪə/)</div></div></details></li>
+                          </ul>
+                        </div>
+                      </details>
+                    </li>
+
+                    <!-- 3) ie#, ye# final -->
+                    <li>
+                      <details class="node digraphe">
+                        <summary><span class="caret"></span>3) ‹ie#›, ‹ye#› (en finale) → <span class="phon">/aɪ/</span></summary>
+                        <div class="content">
+                          <em>pie, die, lie, tie</em> ; <em>bye, Skye, lye, rye</em><br/>
+                          <div class="aside-blue">💡 ‹ie› non final = /iː/ (catégorie 2) vs ‹ie› final = /aɪ/ (catégorie 3). La position change tout.</div>
+                        </div>
+                      </details>
+                    </li>
+
+                    <!-- 4) oe#, oa -->
+                    <li>
+                      <details class="node digraphe">
+                        <summary><span class="caret"></span>4) ‹oe#›, ‹oa› (non final) → <span class="phon">/əʊ/</span></summary>
+                        <div class="content">
+                          <em>doe, Joe, toe</em> ; <em>boast, coal, groan, roach</em><br/>
+                          <div class="aside-blue">💡 = valeur libre de ‹o› (<em>note</em> /əʊ/)</div>
+                          <span class="exc">Exc. : /ɔː/ <em>broad, abroad</em> · /ʌ/ <em>does</em></span><br/>
+                          <span class="exc">Cas particulier : ‹oe›/‹ae› gréco-latins → /iː/ en SSBE : <em>amoeba, foetus, Caesar</em></span>
+                          <ul>
+                            <li><details class="node digraphe-r"><summary><span class="caret"></span>‹oa› + ‹r› → <span class="phon">/ɔː/</span></summary><div class="content"><em>aboard, boar, hoard, roar, soar</em><br/><div class="aside-blue">💡 = valeur libre+R de ‹o› (<em>more</em> /ɔː/)</div></div></details></li>
+                          </ul>
+                        </div>
+                      </details>
+                    </li>
+
+                    <!-- 5) eu, eau, ew, ue# -->
+                    <li>
+                      <details class="node digraphe">
+                        <summary><span class="caret"></span>5) ‹eu›, ‹eau›, ‹ew›, ‹ue#› → <span class="phon">/(j)uː/</span></summary>
+                        <div class="content">
+                          <em>neural, euphemism, eulogy</em> ; <em>beauty</em> ; <em>stew, few, newt</em> ; <em>glue, due, blue</em><br/>
+                          <div class="aside-blue">💡 = valeur libre de ‹u› (<em>mute</em> /(j)uː/)</div>
+                          <span class="exc">Exc. : ‹eau#› → /əʊ/ dans emprunts français : <em>plateau, beau, Bordeaux</em></span>
+                          <ul>
+                            <li><details class="node digraphe-r"><summary><span class="caret"></span>‹eu› + ‹r› → <span class="phon">/(j)ʊə/</span> ou <span class="phon">/(j)ɔː/</span></summary><div class="content"><em>Europe, Eurovision, Eurostar</em><br/><div class="aside-blue">💡 = valeur libre+R de ‹u› (<em>pure</em> /(j)ʊə/)</div><span class="exc">Exc. emprunts français ‹eu› + ‹r#› → /ɜː/ : <em>entrepreneur, auteur, coiffeur</em></span></div></details></li>
+                          </ul>
+                        </div>
+                      </details>
+                    </li>
+
+                    <!-- 6) au, aw -->
+                    <li>
+                      <details class="node digraphe">
+                        <summary><span class="caret"></span>6) ‹au›, ‹aw› → <span class="phon">/ɔː/</span></summary>
+                        <div class="content">
+                          <em>applause, cause, nausea</em> ; <em>hawk, gnaw, awkward</em><br/>
+                          <span class="exc">Exc. : /ɒ/ <em>because, laurel, sausage</em> · /ɑː/ <em>aunt, laugh, draught</em> · /əʊ/ <em>mauve</em> · /aʊ/ <em>gaucho, sauerkraut</em> · /eɪ/ <em>gauge</em></span>
+                          <ul>
+                            <li><details class="node digraphe-r"><summary><span class="caret"></span>‹au› + ‹r› → <span class="phon">/ɔː/</span></summary><div class="content"><em>aural, dinosaur, thesaurus, aurora</em></div></details></li>
+                          </ul>
+                        </div>
+                      </details>
+                    </li>
+
+                    <!-- 7) oo -->
+                    <li>
+                      <details class="node digraphe">
+                        <summary><span class="caret"></span>7) ‹oo› → <span class="phon">/uː/</span></summary>
+                        <div class="content">
+                          <em>bloom, bamboo, pool, spoon, moon, cartoon</em><br/>
+                          <span class="exc">Exc. : /ʌ/ <em>blood, flood</em> · /ʊ/ <em>foot, good, hood, wood, wool, cook, shook</em> · /əʊ/ <em>brooch</em></span>
+                          <ul>
+                            <li><details class="node digraphe-r"><summary><span class="caret"></span>‹oo› + ‹r› → <span class="phon">/ɔː/</span></summary><div class="content"><em>door, floor, poor, moor</em><br/><span class="exc"><em>poor, moor</em> parfois /ʊə/, mais /ɔː/ largement dominant aujourd'hui.</span></div></details></li>
+                          </ul>
+                        </div>
+                      </details>
+                    </li>
+
+                    <!-- 8) oi, oy -->
+                    <li>
+                      <details class="node digraphe">
+                        <summary><span class="caret"></span>8) ‹oi›, ‹oy› → <span class="phon">/ɔɪ/</span></summary>
+                        <div class="content">
+                          <em>choice, appoint, toil</em> ; <em>boy, toy, oyster, employ</em>
+                          <ul>
+                            <li><details class="node digraphe-r"><summary><span class="caret"></span>‹oi› + ‹r› → rares, emprunts français <span class="phon">/wɑː/</span></summary><div class="content"><em>abattoir, répertoire</em><br/><span class="exc">Exc. : /aɪə/ <em>choir</em></span></div></details></li>
+                          </ul>
+                        </div>
+                      </details>
+                    </li>
+
+                    <!-- 9) ou, ow -->
+                    <li>
+                      <details class="node digraphe">
+                        <summary><span class="caret"></span>9) ‹ou›, ‹ow› → <span class="phon">/aʊ/</span></summary>
+                        <div class="content">
+                          <em>about, hound, foul, doubt, mouse</em> ; <em>browse, owl, cow, down, now</em><br/>
+                          <span class="exc">Exc. : /ʌ/ <em>cousin, couple, double, enough, touch, young</em> · /əʊ/ <em>although, boulder, soul, mould</em> + après /m,n,l,r/ + ‹ow› : <em>blow, grow, low, snow</em> · /uː/ <em>coup, route, you, youth</em> · /ɔː/ <em>bought, ought, thought</em> · /ʊ/ <em>could, should, would</em></span>
+                          <div class="aside-blue">💡 Paires minimales : <em>bow</em> /baʊ/ (s'incliner) vs /bəʊ/ (arc) · <em>row</em> /raʊ/ (dispute) vs /rəʊ/ (ramer) · <em>sow</em> /saʊ/ (truie) vs /səʊ/ (semer)</div>
+                          <ul>
+                            <li><details class="node digraphe-r"><summary><span class="caret"></span>‹ou› + ‹r›</summary><div class="content">→ <span class="phon">/ɔː/</span> : <em>court, source, four, discourse</em><br/>→ <span class="phon">/aʊə/</span> : <em>our, hour, flour, scour</em><br/><span class="exc">Exc. : /ɜː/ <em>adjourn, courtesy, journey, journal</em></span></div></details></li>
+                          </ul>
+                        </div>
+                      </details>
+                    </li>
+
+                  </ul>
+                  <div class="aside">
+                    📌 <strong>Points clés</strong> :<br/>
+                    1. Les valeurs de base des digraphes = souvent les valeurs <strong>libres</strong> des monographes correspondants.<br/>
+                    2. La modification par ‹r› → diphtongues centralisantes ou voyelles longues (même principe que les monographes).<br/>
+                    3. Les exceptions sont souvent liées à l'étymologie (emprunts français, grec, latin).
+                  </div>
+                </div>
+              </details>
+            </li>
+
+          </ul>
+        </div>
+      </details>
+    </li>
+  </ul>
+</body>
+</html>
