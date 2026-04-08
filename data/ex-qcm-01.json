@@ -1,0 +1,63 @@
+{
+  "title": "Voyelles libres et entravées",
+  "td": "TD 02",
+  "description": "Pour chaque mot, identifiez la prononciation correcte du graphème vocalique souligné.",
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "Comment se prononce le graphème &lt;a&gt; dans <em>n<u>a</u>me</em> ?",
+      "options": ["/æ/", "/eɪ/", "/ɑː/", "/ə/"],
+      "answer": 1,
+      "feedback": "&lt;a&gt; se trouve en syllabe libre (consonne + e final) → voyelle longue /eɪ/ selon la règle de la voyelle libre."
+    },
+    {
+      "id": 2,
+      "prompt": "Comment se prononce le graphème &lt;a&gt; dans <em>c<u>a</u>t</em> ?",
+      "options": ["/eɪ/", "/ɑː/", "/æ/", "/ə/"],
+      "answer": 2,
+      "feedback": "&lt;a&gt; est entravé par deux consonnes → voyelle brève /æ/ selon la règle de la voyelle entravée."
+    },
+    {
+      "id": 3,
+      "prompt": "Comment se prononce le graphème &lt;i&gt; dans <em>f<u>i</u>ne</em> ?",
+      "options": ["/ɪ/", "/iː/", "/aɪ/", "/e/"],
+      "answer": 2,
+      "feedback": "&lt;i&gt; en syllabe libre (C + e final) → /aɪ/. Attention : la voyelle libre de &lt;i&gt; est /aɪ/, non /iː/."
+    },
+    {
+      "id": 4,
+      "prompt": "Comment se prononce le graphème &lt;i&gt; dans <em>f<u>i</u>t</em> ?",
+      "options": ["/aɪ/", "/ɪ/", "/iː/", "/e/"],
+      "answer": 1,
+      "feedback": "&lt;i&gt; entravé par la consonne finale t → voyelle brève /ɪ/."
+    },
+    {
+      "id": 5,
+      "prompt": "Comment se prononce le graphème &lt;o&gt; dans <em>n<u>o</u>te</em> ?",
+      "options": ["/ɒ/", "/ɔː/", "/əʊ/", "/ʌ/"],
+      "answer": 2,
+      "feedback": "&lt;o&gt; en syllabe libre → /əʊ/. C'est la forme longue standard de &lt;o&gt; libre en anglais britannique."
+    },
+    {
+      "id": 6,
+      "prompt": "Comment se prononce le graphème &lt;o&gt; dans <em>h<u>o</u>t</em> ?",
+      "options": ["/əʊ/", "/ɔː/", "/ʌ/", "/ɒ/"],
+      "answer": 3,
+      "feedback": "&lt;o&gt; entravé → voyelle brève /ɒ/ (voyelle entravée de &lt;o&gt;)."
+    },
+    {
+      "id": 7,
+      "prompt": "Comment se prononce &lt;u&gt; dans <em>c<u>u</u>te</em> ?",
+      "options": ["/ʌ/", "/uː/", "/juː/", "/ʊ/"],
+      "answer": 2,
+      "feedback": "&lt;u&gt; en syllabe libre après consonne vélaire → /juː/ (semi-voyelle + voyelle longue)."
+    },
+    {
+      "id": 8,
+      "prompt": "Comment se prononce &lt;u&gt; dans <em>c<u>u</u>t</em> ?",
+      "options": ["/juː/", "/uː/", "/ʊ/", "/ʌ/"],
+      "answer": 3,
+      "feedback": "&lt;u&gt; entravé → voyelle brève /ʌ/. C'est la voyelle entravée de &lt;u&gt;."
+    }
+  ]
+}

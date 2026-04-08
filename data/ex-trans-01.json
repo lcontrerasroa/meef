@@ -1,0 +1,55 @@
+{
+  "title": "Transcription de mots simples",
+  "td": "TD 04",
+  "description": "Transcrivez chaque mot en phonèmes. Utilisez le clavier IPA ci-dessous. La transcription doit être comprise entre barres obliques.",
+  "items": [
+    {
+      "id": 1,
+      "word": "name",
+      "answer": "/neɪm/",
+      "hint": "&lt;a&gt; en syllabe libre → /eɪ/"
+    },
+    {
+      "id": 2,
+      "word": "cat",
+      "answer": "/kæt/",
+      "hint": "&lt;a&gt; entravé → /æ/ ; &lt;c&gt; initial → /k/"
+    },
+    {
+      "id": 3,
+      "word": "note",
+      "answer": "/nəʊt/",
+      "hint": "&lt;o&gt; en syllabe libre → /əʊ/ ; &lt;e&gt; final muet"
+    },
+    {
+      "id": 4,
+      "word": "fine",
+      "answer": "/faɪn/",
+      "hint": "&lt;i&gt; en syllabe libre → /aɪ/"
+    },
+    {
+      "id": 5,
+      "word": "cut",
+      "answer": "/kʌt/",
+      "hint": "&lt;u&gt; entravé → /ʌ/"
+    },
+    {
+      "id": 6,
+      "word": "these",
+      "answer": "/ðiːz/",
+      "hint": "&lt;th&gt; → /ð/ (sonore) ; &lt;e&gt; libre → /iː/ ; &lt;s&gt; final sonore → /z/"
+    },
+    {
+      "id": 7,
+      "word": "church",
+      "answer": "/tʃɜːtʃ/",
+      "hint": "&lt;ch&gt; → /tʃ/ ; &lt;ur&gt; → /ɜː/ (r-modification)"
+    },
+    {
+      "id": 8,
+      "word": "think",
+      "answer": "/θɪŋk/",
+      "hint": "&lt;th&gt; → /θ/ (sourd) ; &lt;i&gt; entravé → /ɪ/ ; &lt;nk&gt; → /ŋk/"
+    }
+  ]
+}

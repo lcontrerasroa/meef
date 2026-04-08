@@ -1,0 +1,42 @@
+{
+  "title": "L'intrus phonétique — voyelles",
+  "td": "TD 02",
+  "description": "Dans chaque série, trouvez le mot dont la voyelle en gras se prononce différemment des trois autres.",
+  "sets": [
+    {
+      "id": 1,
+      "instruction": "Quel mot a une voyelle différente ?",
+      "words": ["br<b>ea</b>d", "d<b>ea</b>d", "h<b>ea</b>d", "b<b>ea</b>d"],
+      "intrus": 3,
+      "explanation": "<em>bead</em> /biːd/ → &lt;ea&gt; = /iː/ ; les trois autres ont &lt;ea&gt; = /e/ : <em>bread</em> /bred/, <em>dead</em> /ded/, <em>head</em> /hed/."
+    },
+    {
+      "id": 2,
+      "instruction": "Quel mot a une voyelle différente ?",
+      "words": ["c<b>a</b>t", "h<b>a</b>t", "b<b>a</b>th", "b<b>a</b>t"],
+      "intrus": 2,
+      "explanation": "<em>bath</em> /bɑːθ/ → &lt;a&gt; = /ɑː/ (mot ASK) ; les trois autres ont &lt;a&gt; entravé = /æ/ : <em>cat</em>, <em>hat</em>, <em>bat</em>."
+    },
+    {
+      "id": 3,
+      "instruction": "Quel mot a une voyelle différente ?",
+      "words": ["n<b>o</b>se", "r<b>o</b>se", "l<b>o</b>se", "h<b>o</b>se"],
+      "intrus": 2,
+      "explanation": "<em>lose</em> /luːz/ → &lt;o&gt; = /uː/ (prononciation spéciale) ; les autres ont &lt;o&gt; libre = /əʊ/ : <em>nose</em>, <em>rose</em>, <em>hose</em>."
+    },
+    {
+      "id": 4,
+      "instruction": "Quel mot a une voyelle différente ?",
+      "words": ["f<b>i</b>ve", "h<b>i</b>ve", "l<b>i</b>ve (v.)", "d<b>i</b>ve"],
+      "intrus": 2,
+      "explanation": "<em>live</em> (verbe) /lɪv/ → &lt;i&gt; = /ɪ/ (entravé) ; les autres ont &lt;i&gt; libre = /aɪ/ : <em>five</em>, <em>hive</em>, <em>dive</em>."
+    },
+    {
+      "id": 5,
+      "instruction": "Quel mot a une voyelle différente ?",
+      "words": ["f<b>oo</b>t", "s<b>oo</b>t", "h<b>oo</b>d", "f<b>oo</b>d"],
+      "intrus": 3,
+      "explanation": "<em>food</em> /fuːd/ → &lt;oo&gt; = /uː/ ; les autres ont &lt;oo&gt; = /ʊ/ : <em>foot</em> /fʊt/, <em>soot</em> /sʊt/, <em>hood</em> /hʊd/."
+    }
+  ]
+}

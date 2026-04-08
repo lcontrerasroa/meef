@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercices interactifs — Phonologie anglaise</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .hero { background: var(--primary); color: white; padding: 2.5rem 2rem 2rem; }
+    .hero h1 { font-size: 1.6rem; margin-bottom: .3rem; }
+    .hero p { opacity: .8; font-size: .95rem; }
+    .type-icon { font-size: 1.3rem; width: 2.2rem; text-align: center; }
+    .legend { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; font-size: .82rem; color: var(--muted); }
+    .legend span { display: flex; align-items: center; gap: .3rem; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>Exercices interactifs — Phonologie anglaise</h1>
+    <p>Sélectionnez un exercice pour commencer.</p>
+  </div>
+  <div class="container">
+    <div class="legend">
+      <span><span class="badge badge-qcm">QCM</span> Choix multiple</span>
+      <span><span class="badge badge-trans">Trans.</span> Transcription IPA</span>
+      <span><span class="badge badge-intrus">Intrus</span> Trouver l'intrus</span>
+    </div>
+    <div id="ex-list"><p style="color:var(--muted)">Chargement…</p></div>
+  </div>
+  <script>
+    const ICONS = { qcm: '❓', trans: '⌨️', intrus: '🔍' };
+    fetch('data/manifest.json')
+      .then(r => r.json())
+      .then(manifest => {
+        const list = document.getElementById('ex-list');
+        list.innerHTML = manifest.map(group => `
+          <div class="td-group">
+            <h2>${group.td}</h2>
+            ${group.exercises.map(ex => `
+              <a href="${ex.url}" class="ex-card">
+                <div class="type-icon">${ICONS[ex.type] || '📄'}</div>
+                <div class="ex-info">
+                  <div class="ex-title">${ex.title}</div>
+                  <div class="ex-desc">${ex.description}</div>
+                </div>
+                <span class="badge badge-${ex.type}">${ex.type}</span>
+                <span class="ex-arrow">›</span>
+              </a>
+            `).join('')}
+          </div>
+        `).join('');
+      });
+  </script>
+</body>
+</html>

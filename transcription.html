@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transcription — Phonologie</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .word-display { font-size: 2rem; font-weight: 700; color: var(--primary); text-align: center; padding: 1rem 0 .5rem; }
+    .hint-toggle { font-size: .82rem; color: var(--muted); cursor: pointer; text-decoration: underline; text-align: right; margin-bottom: .3rem; }
+    .hint-box { background: #fff3cd; border: 1px solid #ffe69c; border-radius: 6px; padding: .6rem .9rem; font-size: .88rem; margin-bottom: .6rem; display: none; }
+    .compare-row { display: flex; gap: .5rem; align-items: center; margin-top: .8rem; font-family: 'Noto Sans', 'DejaVu Sans', sans-serif; font-size: 1.1rem; }
+    .compare-label { font-size: .8rem; color: var(--muted); min-width: 5rem; }
+    .char-ok { color: var(--success); }
+    .char-ko { color: var(--accent); background: #fce4e4; border-radius: 2px; }
+    .answer-display-wrap { position: relative; }
+    .cursor { display: inline-block; width: 2px; height: 1.1em; background: var(--primary); vertical-align: text-bottom; animation: blink 1s step-end infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    .kb-section { margin-top: .4rem; }
+    .kb-section-title { font-size: .7rem; text-transform: uppercase; color: var(--muted); letter-spacing: .06em; margin-bottom: .2rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← Accueil</a>
+    <h1 id="ex-title">Chargement…</h1>
+    <span id="ex-td" class="badge badge-trans"></span>
+  </header>
+
+  <div class="container">
+    <div class="progress-bar"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+    <div id="item-area"></div>
+    <div id="score-box" class="score-box" style="display:none">
+      <h2>Résultat</h2>
+      <div class="score-number" id="score-num">—</div>
+      <div class="score-label" id="score-label"></div>
+      <div class="nav-row" style="justify-content:center">
+        <button class="btn btn-primary" onclick="restart()">Recommencer</button>
+        <a href="index.html" class="btn btn-outline">Accueil</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  // ── IPA keyboard layout ──────────────────────────────────────────
+  const KB = [
+    { label: 'Voyelles brèves', keys: ['ɪ','e','æ','ɒ','ʊ','ʌ','ə'] },
+    { label: 'Voyelles longues', keys: ['iː','ɑː','ɔː','ɜː','uː'] },
+    { label: 'Diphtongues',      keys: ['eɪ','aɪ','ɔɪ','əʊ','aʊ','ɪə','eə','ʊə'] },
+    { label: 'Consonnes',        keys: ['p','b','t','d','k','g','f','v','θ','ð','s','z','ʃ','ʒ','m','n','ŋ','h','l','r','w','j'] },
+    { label: 'Affriquées',       keys: ['tʃ','dʒ'] },
+    { label: 'Diacritiques',     keys: ['ˈ','ˌ','ː'] },
+    { label: 'Balisage',         keys: ['/'] },
+  ];
+
+  const params = new URLSearchParams(location.search);
+  const dataFile = params.get('data') || 'data/ex-trans-01.json';
+  let data, current = 0, score = 0, answered = [], userAnswer = '';
+
+  fetch(dataFile).then(r => r.json()).then(d => {
+    data = d;
+    document.title = d.title + ' — Transcription';
+    document.getElementById('ex-title').textContent = d.title;
+    document.getElementById('ex-td').textContent = d.td || '';
+    answered = Array(d.items.length).fill(null);
+    render(0);
+  });
+
+  function render(i) {
+    current = i;
+    userAnswer = '/';
+    const it = data.items[i];
+    const pct = Math.round(i / data.items.length * 100);
+    document.getElementById('progress').style.width = pct + '%';
+
+    document.getElementById('item-area').innerHTML = `
+      <div class="card">
+        <p class="counter">Mot ${i + 1} / ${data.items.length}</p>
+        <div class="word-display">${it.word}</div>
+
+        <div class="hint-toggle" onclick="toggleHint()">💡 Indice</div>
+        <div class="hint-box" id="hint">${it.hint}</div>
+
+        <label style="font-size:.85rem;color:var(--muted);">Votre transcription :</label>
+        <div class="answer-display" id="display">/</div>
+
+        <div class="ipa-kb" id="keyboard"></div>
+
+        <div id="compare-area"></div>
+
+        <div class="nav-row" id="nav" style="display:none">
+          ${i < data.items.length - 1
+            ? `<button class="btn btn-primary" onclick="render(${i+1})">Suivant →</button>`
+            : `<button class="btn btn-primary" onclick="showScore()">Voir le résultat</button>`}
+        </div>
+      </div>`;
+
+    buildKeyboard();
+    updateDisplay();
+  }
+
+  function buildKeyboard() {
+    const kb = document.getElementById('keyboard');
+    KB.forEach(section => {
+      const title = document.createElement('div');
+      title.className = 'kb-section-title';
+      title.textContent = section.label;
+      kb.appendChild(title);
+
+      const row = document.createElement('div');
+      row.className = 'ipa-row';
+      section.keys.forEach(k => {
+        const btn = document.createElement('button');
+        btn.className = 'ipa-key';
+        btn.textContent = k;
+        btn.onclick = () => appendChar(k);
+        row.appendChild(btn);
+      });
+      kb.appendChild(row);
+    });
+
+    // Delete / clear row
+    const row = document.createElement('div');
+    row.className = 'ipa-row';
+    row.style.marginTop = '.4rem';
+
+    const del = document.createElement('button');
+    del.className = 'ipa-key delete-key';
+    del.textContent = '⌫ Effacer';
+    del.onclick = deleteChar;
+    row.appendChild(del);
+
+    const clr = document.createElement('button');
+    clr.className = 'ipa-key clear-key';
+    clr.textContent = '✕ Tout effacer';
+    clr.onclick = clearAll;
+    row.appendChild(clr);
+
+    const sub = document.createElement('button');
+    sub.className = 'btn btn-primary';
+    sub.style.marginLeft = 'auto';
+    sub.textContent = '✓ Valider';
+    sub.id = 'submit-btn';
+    sub.onclick = validate;
+    row.appendChild(sub);
+
+    kb.appendChild(row);
+  }
+
+  function appendChar(c) {
+    if (answered[current] !== null) return;
+    // Auto-close slash at end
+    let ans = userAnswer;
+    if (ans.endsWith('/')) ans = ans.slice(0, -1); // remove closing slash if present
+    // Ensure we don't add / in the middle
+    userAnswer = ans + c;
+    updateDisplay();
+  }
+
+  function deleteChar() {
+    if (answered[current] !== null) return;
+    // Protect opening slash
+    if (userAnswer.length <= 1) return;
+    userAnswer = userAnswer.slice(0, -1);
+    updateDisplay();
+  }
+
+  function clearAll() {
+    if (answered[current] !== null) return;
+    userAnswer = '/';
+    updateDisplay();
+  }
+
+  function updateDisplay() {
+    const d = document.getElementById('display');
+    if (!d) return;
+    const shown = userAnswer + (userAnswer !== '/' ? '' : '');
+    d.innerHTML = `${escHtml(shown)}<span class="cursor"></span>`;
+  }
+
+  function escHtml(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function validate() {
+    if (answered[current] !== null) return;
+    const it = data.items[current];
+    // Normalize: ensure closing slash
+    let ua = userAnswer.trim();
+    if (!ua.endsWith('/')) ua += '/';
+
+    const correct = ua === it.answer;
+    answered[current] = correct;
+    if (correct) score++;
+
+    // Disable keyboard
+    document.querySelectorAll('.ipa-key, #submit-btn').forEach(b => b.disabled = true);
+
+    // Update display (no cursor)
+    const d = document.getElementById('display');
+    d.innerHTML = escHtml(ua);
+    d.className = 'answer-display ' + (correct ? 'correct' : 'wrong');
+
+    // Show character comparison
+    const area = document.getElementById('compare-area');
+    const comp = compareIPA(ua, it.answer);
+    area.innerHTML = `
+      <div class="feedback ${correct ? 'ok' : 'ko'}" style="margin-top:.8rem">
+        ${correct
+          ? '<span class="ok-text">✓ Correct !</span>'
+          : `<span class="ko-text">✗ Incorrect.</span> La transcription correcte est&nbsp;:
+             <span style="font-family:'Noto Sans','DejaVu Sans',sans-serif;font-size:1.1rem">${it.answer}</span>`}
+        ${!correct ? `<div class="compare-row"><span class="compare-label">Votre réponse :</span><span>${comp}</span></div>` : ''}
+        <div style="margin-top:.5rem;font-size:.88rem">${it.hint}</div>
+      </div>`;
+
+    document.getElementById('nav').style.display = 'flex';
+  }
+
+  // Simple character comparison (works for most IPA sequences)
+  function compareIPA(user, correct) {
+    // Tokenize multi-char symbols
+    const MULTI = ['tʃ','dʒ','iː','ɑː','ɔː','ɜː','uː','eɪ','aɪ','ɔɪ','əʊ','aʊ','ɪə','eə','ʊə','ˈ','ˌ'];
+    function tokenize(s) {
+      const tokens = [];
+      let i = 0;
+      while (i < s.length) {
+        let found = false;
+        for (const m of MULTI) {
+          if (s.startsWith(m, i)) { tokens.push(m); i += m.length; found = true; break; }
+        }
+        if (!found) { tokens.push(s[i]); i++; }
+      }
+      return tokens;
+    }
+    const ut = tokenize(user);
+    const ct = tokenize(correct);
+    return ut.map((ch, i) => {
+      const ok = ch === ct[i];
+      return ok
+        ? `<span class="char-ok">${escHtml(ch)}</span>`
+        : `<span class="char-ko">${escHtml(ch)}</span>`;
+    }).join('');
+  }
+
+  function toggleHint() {
+    const h = document.getElementById('hint');
+    h.style.display = h.style.display === 'none' ? 'block' : 'none';
+  }
+
+  function showScore() {
+    document.getElementById('item-area').style.display = 'none';
+    document.getElementById('progress').style.width = '100%';
+    const box = document.getElementById('score-box');
+    box.style.display = 'block';
+    const pct = Math.round(score / data.items.length * 100);
+    document.getElementById('score-num').textContent = score + ' / ' + data.items.length;
+    document.getElementById('score-label').textContent =
+      pct >= 80 ? '🎉 Excellent !' : pct >= 60 ? '👍 Bien !' : '📚 À retravailler.';
+  }
+
+  function restart() {
+    score = 0;
+    answered = Array(data.items.length).fill(null);
+    document.getElementById('score-box').style.display = 'none';
+    document.getElementById('item-area').style.display = 'block';
+    render(0);
+  }
+  </script>
+</body>
+</html>

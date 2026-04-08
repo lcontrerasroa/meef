@@ -1,0 +1,33 @@
+[
+  {
+    "td": "TD 02",
+    "exercises": [
+      {
+        "title": "Voyelles libres et entravées",
+        "description": "Identifiez la prononciation correcte de la voyelle graphique.",
+        "type": "qcm",
+        "file": "data/ex-qcm-01.json",
+        "url": "qcm.html?data=data/ex-qcm-01.json"
+      },
+      {
+        "title": "L'intrus phonétique — voyelles",
+        "description": "Trouvez le mot dont la voyelle se prononce différemment.",
+        "type": "intrus",
+        "file": "data/ex-intrus-01.json",
+        "url": "intrus.html?data=data/ex-intrus-01.json"
+      }
+    ]
+  },
+  {
+    "td": "TD 04",
+    "exercises": [
+      {
+        "title": "Transcription de mots simples",
+        "description": "Transcrivez les mots en utilisant le clavier IPA.",
+        "type": "trans",
+        "file": "data/ex-trans-01.json",
+        "url": "transcription.html?data=data/ex-trans-01.json"
+      }
+    ]
+  }
+]
