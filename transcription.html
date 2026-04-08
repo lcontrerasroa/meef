@@ -148,13 +148,9 @@
   }
 
   function appendChar(c) {
-    if (answered[current] !== null) return;
-    // Auto-close slash at end
-    let ans = userAnswer;
-    if (ans.endsWith('/')) ans = ans.slice(0, -1); // remove closing slash if present
-    // Ensure we don't add / in the middle
-    userAnswer = ans + c;
-    updateDisplay();
+      if (answered[current] !== null) return;
+      userAnswer += c;
+      updateDisplay();
   }
 
   function deleteChar() {
