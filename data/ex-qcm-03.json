@@ -1,0 +1,63 @@
+{
+  "title": "Sous-règles 5–7 — QCM",
+  "td": "TD 08",
+  "description": "Identifiez la prononciation correcte en appliquant les sous-règles 5 (mots ASK), 6 (règle de Luick) et 7 (⟨o⟩ spéciaux).",
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "Comment se prononce &lt;a&gt; dans <em>b<u>a</u>th</em> ? (SR5)",
+      "options": ["/æ/", "/eɪ/", "/ɑː/", "/ə/"],
+      "answer": 2,
+      "feedback": "Sous-règle 5 (mots ASK) : &lt;a&gt; devant fricative dentale /θ/ → /ɑː/. <em>bath</em> /bɑːθ/."
+    },
+    {
+      "id": 2,
+      "prompt": "Comment se prononce &lt;a&gt; dans <em>cl<u>a</u>ss</em> ? (SR5)",
+      "options": ["/æ/", "/ɑː/", "/eɪ/", "/ɑ/"],
+      "answer": 1,
+      "feedback": "Sous-règle 5 : &lt;a&gt; devant /s/ (+ consonne ou fin de mot) → /ɑː/. <em>class</em> /klɑːs/."
+    },
+    {
+      "id": 3,
+      "prompt": "Comment se prononce &lt;u&gt; libre dans <em>c<u>u</u>te</em> ? (SR6)",
+      "options": ["/uː/", "/juː/", "/ʊ/", "/ʌ/"],
+      "answer": 1,
+      "feedback": "Règle de Luick (SR6) : &lt;u&gt; libre après occlusive vélaire /k/ → /juː/ (<em>cute</em> /kjuːt/)."
+    },
+    {
+      "id": 4,
+      "prompt": "Comment se prononce &lt;u&gt; libre dans <em>r<u>u</u>le</em> ? (SR6)",
+      "options": ["/juː/", "/uː/", "/ʊ/", "/ʌ/"],
+      "answer": 1,
+      "feedback": "Règle de Luick (SR6) : après /r/, &lt;u&gt; libre → /uː/ (pas de yod). <em>rule</em> /ruːl/. Même chose après /l/, /ʃ/, /tʃ/, /dʒ/."
+    },
+    {
+      "id": 5,
+      "prompt": "Comment se prononce &lt;o&gt; dans <em>l<u>o</u>ve</em> ? (SR7)",
+      "options": ["/əʊ/", "/ɒ/", "/uː/", "/ʌ/"],
+      "answer": 3,
+      "feedback": "Sous-règle 7a : &lt;o&gt; → /ʌ/ dans un groupe de mots lexicaux courants (<em>love</em>, <em>come</em>, <em>some</em>, <em>done</em>, <em>son</em>…)."
+    },
+    {
+      "id": 6,
+      "prompt": "Comment se prononce &lt;o&gt; dans <em>m<u>o</u>ve</em> ? (SR7)",
+      "options": ["/əʊ/", "/ʌ/", "/uː/", "/ɒ/"],
+      "answer": 2,
+      "feedback": "Sous-règle 7b : &lt;o&gt; → /uː/ dans <em>move</em>, <em>prove</em>, <em>lose</em>, <em>whose</em>, <em>tomb</em>… (liste à mémoriser)."
+    },
+    {
+      "id": 7,
+      "prompt": "Comment se prononce &lt;wo&gt; dans <em><u>wo</u>rd</em> ? (SR7)",
+      "options": ["/wɔː/", "/wɒ/", "/wɜː/", "/wəʊ/"],
+      "answer": 2,
+      "feedback": "Sous-règle 7d : &lt;wor&gt; → /wɜː/ (<em>word</em>, <em>work</em>, <em>world</em>, <em>worm</em>, <em>worth</em>…). Le r modifie /ɒ/ → /ɜː/ après w."
+    },
+    {
+      "id": 8,
+      "prompt": "Comment se prononce &lt;o&gt; dans <em><u>o</u>ne</em> ? (SR7)",
+      "options": ["/ɒn/", "/wʌn/", "/wɔːn/", "/əʊn/"],
+      "answer": 1,
+      "feedback": "Sous-règle 7c : &lt;o&gt; initial → /wʌ/ dans <em>one</em> /wʌn/, <em>once</em> /wʌns/. Le /w/ est épenthétique."
+    }
+  ]
+}

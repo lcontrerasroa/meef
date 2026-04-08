@@ -1,0 +1,67 @@
+{
+  "title": "Correction de transcriptions — r-modification",
+  "td": "TD 07",
+  "description": "Chaque transcription contient un phonème incorrect. Cliquez l'erreur et sélectionnez la correction.",
+  "items": [
+    {
+      "word": "car",
+      "transcription_shown": "/kɜː/",
+      "correct_transcription": "/kɑː/",
+      "error_index": 1,
+      "replacement": "ɑː",
+      "options": ["ɜː", "ɑː", "eə", "ɔː"],
+      "hint": "&lt;ar&gt; (sans w avant) → quelle voyelle longue ?",
+      "explanation": "&lt;ar&gt; → /ɑː/. /ɜː/ est le résultat de &lt;er&gt;, &lt;ir&gt;, &lt;ur&gt; sous accent, non de &lt;ar&gt;."
+    },
+    {
+      "word": "teacher",
+      "transcription_shown": "/ˈtiːtʃɜː/",
+      "correct_transcription": "/ˈtiːtʃə/",
+      "error_index": 4,
+      "replacement": "ə",
+      "options": ["ɜː", "ə", "eə", "ɪə"],
+      "hint": "La syllabe -er est-elle accentuée dans ce mot ?",
+      "explanation": "-er en syllabe NON accentuée → schwa /ə/. /ɜː/ n'apparaît que sous l'accent (ex. : <em>her</em> /hɜː/, <em>prefer</em> /prɪˈfɜː/)."
+    },
+    {
+      "word": "hair",
+      "transcription_shown": "/hɪə/",
+      "correct_transcription": "/heə/",
+      "error_index": 1,
+      "replacement": "eə",
+      "options": ["ɪə", "eə", "ɑː", "ɜː"],
+      "hint": "&lt;ai&gt; → /eɪ/ ; que devient /eɪ/ devant r ?",
+      "explanation": "&lt;air&gt; → /eə/ (r-modification de /eɪ/). /ɪə/ est le résultat de &lt;ear&gt;, &lt;eer&gt; devant r."
+    },
+    {
+      "word": "bird",
+      "transcription_shown": "/bɪrd/",
+      "correct_transcription": "/bɜːd/",
+      "error_index": 1,
+      "replacement": "ɜː",
+      "options": ["ɪr", "ɪ", "ɜː", "ɪə"],
+      "hint": "Le r est-il prononcé en anglais britannique standard ?",
+      "explanation": "En anglais non-rhotique, le r de &lt;ir&gt; n'est pas articulé : &lt;ir&gt; → /ɜː/ (voyelle longue seule)."
+    },
+    {
+      "word": "poor",
+      "transcription_shown": "/pɔː/",
+      "correct_transcription": "/pʊə/",
+      "error_index": 1,
+      "replacement": "ʊə",
+      "options": ["ɔː", "ʊə", "uː", "ɜː"],
+      "hint": "&lt;oo&gt; → /uː/ ; que devient /uː/ devant r ?",
+      "explanation": "&lt;oor&gt; → /ʊə/ en général. Attention aux exceptions : <em>floor</em>, <em>door</em> → /ɔː/."
+    },
+    {
+      "word": "word",
+      "transcription_shown": "/wɔːd/",
+      "correct_transcription": "/wɜːd/",
+      "error_index": 1,
+      "replacement": "ɜː",
+      "options": ["ɔː", "ɜː", "ɑː", "ʊə"],
+      "hint": "Quelle sous-règle s'applique à &lt;wor&gt; ?",
+      "explanation": "&lt;wor&gt; → /wɜː/ (sous-règle 7d) : <em>word</em>, <em>work</em>, <em>world</em>, <em>worm</em>. Ne pas confondre avec &lt;or&gt; → /ɔː/."
+    }
+  ]
+}

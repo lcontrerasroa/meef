@@ -1,0 +1,42 @@
+{
+  "title": "L'intrus phonétique — sous-règles 5–7",
+  "td": "TD 08",
+  "description": "Dans chaque série, trouvez le mot dont la voyelle en gras se prononce différemment.",
+  "sets": [
+    {
+      "id": 1,
+      "instruction": "Quel mot n'applique pas la sous-règle 5 (mots ASK) ?",
+      "words": ["b<b>a</b>th", "p<b>a</b>th", "f<b>a</b>st", "h<b>a</b>t"],
+      "intrus": 3,
+      "explanation": "<em>hat</em> /hæt/ → &lt;a&gt; entravé ordinaire → /æ/ ; les autres sont des mots ASK : <em>bath</em> /bɑːθ/, <em>path</em> /pɑːθ/, <em>fast</em> /fɑːst/."
+    },
+    {
+      "id": 2,
+      "instruction": "Quel mot a &lt;u&gt; libre → /uː/ (sans yod) selon la règle de Luick ?",
+      "words": ["c<b>u</b>te", "m<b>u</b>sic", "r<b>u</b>le", "h<b>u</b>man"],
+      "intrus": 2,
+      "explanation": "<em>rule</em> /ruːl/ → après /r/ : yod absent → /uː/ ; les autres ont &lt;u&gt; libre → /juː/ : <em>cute</em> /kjuːt/, <em>music</em> /ˈmjuːzɪk/, <em>human</em> /ˈhjuːmən/."
+    },
+    {
+      "id": 3,
+      "instruction": "Quel mot n'a pas &lt;o&gt; → /ʌ/ (SR7a) ?",
+      "words": ["l<b>o</b>ve", "c<b>o</b>me", "s<b>o</b>me", "h<b>o</b>me"],
+      "intrus": 3,
+      "explanation": "<em>home</em> /həʊm/ → &lt;o&gt; libre ordinaire → /əʊ/ ; les autres ont &lt;o&gt; → /ʌ/ (SR7a) : <em>love</em> /lʌv/, <em>come</em> /kʌm/, <em>some</em> /sʌm/."
+    },
+    {
+      "id": 4,
+      "instruction": "Quel mot n'a pas &lt;wor&gt; → /wɜː/ (SR7d) ?",
+      "words": ["w<b>or</b>d", "w<b>or</b>k", "w<b>or</b>ld", "w<b>o</b>ke"],
+      "intrus": 3,
+      "explanation": "<em>woke</em> /wəʊk/ → &lt;o&gt; libre → /əʊ/ ; les autres ont &lt;wor&gt; → /wɜː/ : <em>word</em> /wɜːd/, <em>work</em> /wɜːk/, <em>world</em> /wɜːld/."
+    },
+    {
+      "id": 5,
+      "instruction": "Quel mot a &lt;o&gt; → /uː/ (SR7b) ?",
+      "words": ["m<b>o</b>ve", "l<b>o</b>ve", "d<b>o</b>ne", "s<b>o</b>n"],
+      "intrus": 0,
+      "explanation": "<em>move</em> /muːv/ → SR7b : &lt;o&gt; → /uː/ ; les autres ont &lt;o&gt; → /ʌ/ (SR7a) : <em>love</em>, <em>done</em>, <em>son</em>."
+    }
+  ]
+}

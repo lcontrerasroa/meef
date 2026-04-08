@@ -20,5 +20,32 @@
     "exercises": [
       { "title": "Place de l'accent tonique", "description": "Cliquez la syllabe qui porte l'accent primaire.", "type": "accentuation", "url": "accentuation.html?data=data/ex-accentuation-01.json" }
     ]
+  },
+  {
+    "td": "TD 07",
+    "exercises": [
+      { "title": "R-modification — QCM", "description": "Identifiez la prononciation des voyelles suivies de r.", "type": "qcm", "url": "qcm.html?data=data/ex-qcm-02.json" },
+      { "title": "L'intrus — r-modification", "description": "Trouvez le mot dont la voyelle + r se prononce différemment.", "type": "intrus", "url": "intrus.html?data=data/ex-intrus-02.json" },
+      { "title": "Correction — r-modification", "description": "Corrigez l'erreur de r-modification dans la transcription.", "type": "correction", "url": "correction.html?data=data/ex-correction-02.json" },
+      { "title": "Transcription — r-modification", "description": "Transcrivez les mots en appliquant la r-modification.", "type": "trans", "url": "transcription.html?data=data/ex-trans-02.json" }
+    ]
+  },
+  {
+    "td": "TD 08",
+    "exercises": [
+      { "title": "Sous-règles 5–7 — QCM", "description": "Mots ASK, règle de Luick, ⟨o⟩ spéciaux.", "type": "qcm", "url": "qcm.html?data=data/ex-qcm-03.json" },
+      { "title": "L'intrus — sous-règles 5–7", "description": "Identifiez le mot qui n'applique pas la même sous-règle.", "type": "intrus", "url": "intrus.html?data=data/ex-intrus-03.json" },
+      { "title": "Correction — sous-règles 5–7", "description": "Corrigez l'erreur liée aux sous-règles 5, 6 ou 7.", "type": "correction", "url": "correction.html?data=data/ex-correction-03.json" },
+      { "title": "Transcription — sous-règles 5–7", "description": "Transcrivez les mots en appliquant la bonne sous-règle.", "type": "trans", "url": "transcription.html?data=data/ex-trans-03.json" }
+    ]
+  },
+  {
+    "td": "TD 09",
+    "exercises": [
+      { "title": "Digraphes vocaliques — QCM", "description": "Identifiez la valeur des principaux digraphes vocaliques.", "type": "qcm", "url": "qcm.html?data=data/ex-qcm-04.json" },
+      { "title": "L'intrus — digraphes vocaliques", "description": "Trouvez le mot dont le digraphe se prononce différemment.", "type": "intrus", "url": "intrus.html?data=data/ex-intrus-04.json" },
+      { "title": "Correction — digraphes vocaliques", "description": "Corrigez l'erreur de transcription des digraphes.", "type": "correction", "url": "correction.html?data=data/ex-correction-04.json" },
+      { "title": "Transcription — digraphes vocaliques", "description": "Transcrivez les mots en identifiant la valeur du digraphe.", "type": "trans", "url": "transcription.html?data=data/ex-trans-04.json" }
+    ]
   }
 ]

@@ -1,0 +1,15 @@
+{
+  "title": "Transcription — r-modification",
+  "td": "TD 07",
+  "description": "Transcrivez chaque mot en tenant compte de la r-modification.",
+  "items": [
+    { "id": 1, "word": "car",     "answer": "/kɑː/",      "hint": "&lt;ar&gt; → /ɑː/" },
+    { "id": 2, "word": "bird",    "answer": "/bɜːd/",     "hint": "&lt;ir&gt; → /ɜː/ (r non prononcé)" },
+    { "id": 3, "word": "here",    "answer": "/hɪə/",      "hint": "&lt;ere&gt; → /ɪə/" },
+    { "id": 4, "word": "care",    "answer": "/keə/",      "hint": "&lt;are&gt; → /eə/" },
+    { "id": 5, "word": "turn",    "answer": "/tɜːn/",     "hint": "&lt;ur&gt; → /ɜː/" },
+    { "id": 6, "word": "more",    "answer": "/mɔː/",      "hint": "&lt;ore&gt; → /ɔː/" },
+    { "id": 7, "word": "poor",    "answer": "/pʊə/",      "hint": "&lt;oor&gt; → /ʊə/" },
+    { "id": 8, "word": "teacher", "answer": "/ˈtiːtʃə/",  "hint": "-er non accentué → /ə/ ; accent sur 1re syllabe" }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "title": "R-modification — QCM",
+  "td": "TD 07",
+  "description": "Identifiez la prononciation correcte du graphème souligné (voyelle + r).",
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "Comment se prononce &lt;ar&gt; dans <em>c<u>ar</u></em> ?",
+      "options": ["/ɜː/", "/ɑː/", "/eə/", "/ɔː/"],
+      "answer": 1,
+      "feedback": "&lt;ar&gt; → /ɑː/ (r-modification de &lt;a&gt; : voyelle longue /ɑː/, r non prononcé)."
+    },
+    {
+      "id": 2,
+      "prompt": "Comment se prononce &lt;er&gt; non accentué dans <em>teach<u>er</u></em> ?",
+      "options": ["/ɜː/", "/eə/", "/ə/", "/ɪə/"],
+      "answer": 2,
+      "feedback": "&lt;er&gt; en syllabe non accentuée → schwa /ə/. La r-modification donne /ɜː/ uniquement sous accent."
+    },
+    {
+      "id": 3,
+      "prompt": "Comment se prononce &lt;ir&gt; dans <em>b<u>ir</u>d</em> ?",
+      "options": ["/ɪə/", "/aɪ/", "/ɜː/", "/ɪr/"],
+      "answer": 2,
+      "feedback": "&lt;ir&gt; → /ɜː/ (r-modification de &lt;i&gt; entravé : /ɪ/ + r → /ɜː/)."
+    },
+    {
+      "id": 4,
+      "prompt": "Comment se prononce &lt;ur&gt; dans <em>t<u>ur</u>n</em> ?",
+      "options": ["/ʊə/", "/ɜː/", "/ɔː/", "/ʌ/"],
+      "answer": 1,
+      "feedback": "&lt;ur&gt; → /ɜː/ (même résultat que &lt;er&gt; et &lt;ir&gt; sous accent : convergence vers /ɜː/)."
+    },
+    {
+      "id": 5,
+      "prompt": "Comment se prononce &lt;or&gt; dans <em>f<u>or</u></em> ?",
+      "options": ["/ɒ/", "/ɜː/", "/ɔː/", "/əʊ/"],
+      "answer": 2,
+      "feedback": "&lt;or&gt; → /ɔː/ (r-modification de &lt;o&gt; : /ɒ/ + r → /ɔː/)."
+    },
+    {
+      "id": 6,
+      "prompt": "Comment se prononce &lt;ear&gt; dans <em>h<u>ear</u></em> ?",
+      "options": ["/eə/", "/ɪə/", "/ɜː/", "/ɑː/"],
+      "answer": 1,
+      "feedback": "&lt;ear&gt; → /ɪə/ en général. Attention : &lt;ear&gt; → /ɜː/ dans <em>heard</em>, <em>early</em>, <em>earth</em> (devant consonne)."
+    },
+    {
+      "id": 7,
+      "prompt": "Comment se prononce &lt;air&gt; dans <em>h<u>air</u></em> ?",
+      "options": ["/ɪə/", "/ɑː/", "/eə/", "/ɜː/"],
+      "answer": 2,
+      "feedback": "&lt;air&gt; → /eə/ (r-modification de &lt;ai&gt; = /eɪ/ → /eə/ devant r)."
+    },
+    {
+      "id": 8,
+      "prompt": "Comment se prononce &lt;oor&gt; dans <em>p<u>oor</u></em> ?",
+      "options": ["/ɔː/", "/uː/", "/ʊə/", "/ɜː/"],
+      "answer": 2,
+      "feedback": "&lt;oor&gt; → /ʊə/ (r-modification de &lt;oo&gt; = /uː/ → /ʊə/ devant r). Comparer : <em>floor</em> /flɔː/, <em>door</em> /dɔː/ (exceptions → /ɔː/)."
+    }
+  ]
+}

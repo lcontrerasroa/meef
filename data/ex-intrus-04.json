@@ -1,0 +1,42 @@
+{
+  "title": "L'intrus phonétique — digraphes vocaliques",
+  "td": "TD 09",
+  "description": "Dans chaque série, trouvez le mot dont le digraphe en gras se prononce différemment.",
+  "sets": [
+    {
+      "id": 1,
+      "instruction": "Quel mot a &lt;ea&gt; ≠ /iː/ ?",
+      "words": ["s<b>ea</b>", "t<b>ea</b>", "p<b>ea</b>", "br<b>ea</b>d"],
+      "intrus": 3,
+      "explanation": "<em>bread</em> /bred/ → &lt;ea&gt; = /e/ (exception) ; les autres ont &lt;ea&gt; = /iː/ : <em>sea</em> /siː/, <em>tea</em> /tiː/, <em>pea</em> /piː/."
+    },
+    {
+      "id": 2,
+      "instruction": "Quel mot a &lt;oo&gt; = /ʊ/ (et non /uː/) ?",
+      "words": ["f<b>oo</b>d", "m<b>oo</b>n", "c<b>oo</b>l", "b<b>oo</b>k"],
+      "intrus": 3,
+      "explanation": "<em>book</em> /bʊk/ → &lt;oo&gt; = /ʊ/ ; les autres ont &lt;oo&gt; = /uː/ : <em>food</em> /fuːd/, <em>moon</em> /muːn/, <em>cool</em> /kuːl/."
+    },
+    {
+      "id": 3,
+      "instruction": "Quel mot a &lt;ou&gt; ≠ /aʊ/ ?",
+      "words": ["<b>ou</b>t", "l<b>ou</b>d", "f<b>ou</b>r", "n<b>ou</b>n"],
+      "intrus": 2,
+      "explanation": "<em>four</em> /fɔː/ → &lt;our&gt; = /ɔː/ (r-modification) ; les autres ont &lt;ou&gt; = /aʊ/ : <em>out</em>, <em>loud</em>, <em>noun</em>."
+    },
+    {
+      "id": 4,
+      "instruction": "Quel mot a &lt;ow&gt; = /aʊ/ (et non /əʊ/) ?",
+      "words": ["l<b>ow</b>", "kn<b>ow</b>", "c<b>ow</b>", "sn<b>ow</b>"],
+      "intrus": 2,
+      "explanation": "<em>cow</em> /kaʊ/ → &lt;ow&gt; = /aʊ/ ; les autres ont &lt;ow&gt; = /əʊ/ : <em>low</em> /ləʊ/, <em>know</em> /nəʊ/, <em>snow</em> /snəʊ/."
+    },
+    {
+      "id": 5,
+      "instruction": "Quel mot a &lt;ai&gt; ≠ /eɪ/ ?",
+      "words": ["r<b>ai</b>n", "p<b>ai</b>n", "s<b>ai</b>d", "tr<b>ai</b>n"],
+      "intrus": 2,
+      "explanation": "<em>said</em> /sed/ → &lt;ai&gt; = /e/ (exception) ; les autres ont &lt;ai&gt; = /eɪ/ : <em>rain</em>, <em>pain</em>, <em>train</em>."
+    }
+  ]
+}

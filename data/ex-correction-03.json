@@ -1,0 +1,67 @@
+{
+  "title": "Correction de transcriptions — sous-règles 5–7",
+  "td": "TD 08",
+  "description": "Chaque transcription contient un phonème incorrect. Cliquez l'erreur et sélectionnez la correction.",
+  "items": [
+    {
+      "word": "bath",
+      "transcription_shown": "/bæθ/",
+      "correct_transcription": "/bɑːθ/",
+      "error_index": 1,
+      "replacement": "ɑː",
+      "options": ["æ", "ɑː", "eɪ", "ə"],
+      "hint": "Sous-règle 5 : &lt;a&gt; devant fricative dentale",
+      "explanation": "Mot ASK (SR5) : &lt;a&gt; devant /θ/ → /ɑː/. <em>bath</em> /bɑːθ/, non */bæθ/."
+    },
+    {
+      "word": "pass",
+      "transcription_shown": "/pæs/",
+      "correct_transcription": "/pɑːs/",
+      "error_index": 1,
+      "replacement": "ɑː",
+      "options": ["æ", "ɑː", "eɪ", "ɑ"],
+      "hint": "Sous-règle 5 : &lt;a&gt; devant /s/ en fin de mot",
+      "explanation": "Mot ASK (SR5) : &lt;a&gt; devant /s/ final → /ɑː/. <em>pass</em> /pɑːs/. Même règle pour <em>glass</em>, <em>grass</em>, <em>mass</em>…"
+    },
+    {
+      "word": "music",
+      "transcription_shown": "/ˈmuːzɪk/",
+      "correct_transcription": "/ˈmjuːzɪk/",
+      "error_index": 1,
+      "replacement": "mjuː",
+      "options": ["muː", "mjuː", "mʊ", "mjʊ"],
+      "hint": "Règle de Luick : &lt;u&gt; libre après /m/ → avec ou sans yod ?",
+      "explanation": "SR6 : après /m/ (labiale), &lt;u&gt; libre → /juː/ (avec yod). <em>music</em> /ˈmjuːzɪk/."
+    },
+    {
+      "word": "love",
+      "transcription_shown": "/ləʊv/",
+      "correct_transcription": "/lʌv/",
+      "error_index": 1,
+      "replacement": "ʌ",
+      "options": ["əʊ", "ʌ", "uː", "ɒ"],
+      "hint": "Sous-règle 7a : &lt;o&gt; dans ce mot est-il réellement libre ?",
+      "explanation": "SR7a : <em>love</em> fait partie des mots à &lt;o&gt; → /ʌ/. L'apparence d'une syllabe libre est trompeuse ici."
+    },
+    {
+      "word": "move",
+      "transcription_shown": "/məʊv/",
+      "correct_transcription": "/muːv/",
+      "error_index": 1,
+      "replacement": "uː",
+      "options": ["əʊ", "uː", "ʌ", "ʊ"],
+      "hint": "Sous-règle 7b : liste de mots à &lt;o&gt; → /uː/",
+      "explanation": "SR7b : <em>move</em> /muːv/ — &lt;o&gt; → /uː/ (liste à mémoriser : <em>move</em>, <em>prove</em>, <em>lose</em>, <em>whose</em>, <em>tomb</em>…)."
+    },
+    {
+      "word": "work",
+      "transcription_shown": "/wɔːk/",
+      "correct_transcription": "/wɜːk/",
+      "error_index": 1,
+      "replacement": "ɜː",
+      "options": ["ɔː", "ɜː", "ɑː", "ɒ"],
+      "hint": "Sous-règle 7d : &lt;wor&gt; → ?",
+      "explanation": "SR7d : &lt;wor&gt; → /wɜː/. Ne pas confondre &lt;or&gt; → /ɔː/ (more, for) et &lt;wor&gt; → /wɜː/ (work, word, world)."
+    }
+  ]
+}

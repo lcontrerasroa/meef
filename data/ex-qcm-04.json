@@ -1,0 +1,63 @@
+{
+  "title": "Digraphes vocaliques — QCM",
+  "td": "TD 09",
+  "description": "Identifiez la prononciation correcte du digraphe vocalique souligné.",
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "Comment se prononce &lt;ee&gt; dans <em>s<u>ee</u></em> ?",
+      "options": ["/e/", "/eɪ/", "/iː/", "/ɪ/"],
+      "answer": 2,
+      "feedback": "&lt;ee&gt; → /iː/ de façon quasi systématique : <em>see</em>, <em>tree</em>, <em>free</em>, <em>feet</em>…"
+    },
+    {
+      "id": 2,
+      "prompt": "Comment se prononce &lt;ea&gt; dans <em>br<u>ea</u>d</em> ?",
+      "options": ["/iː/", "/eɪ/", "/e/", "/ɪ/"],
+      "answer": 2,
+      "feedback": "&lt;ea&gt; → /e/ dans un groupe de mots courants : <em>bread</em>, <em>dead</em>, <em>head</em>, <em>health</em>, <em>wealth</em>, <em>death</em>, <em>sweat</em>… (à mémoriser)."
+    },
+    {
+      "id": 3,
+      "prompt": "Comment se prononce &lt;oo&gt; dans <em>f<u>oo</u>d</em> ?",
+      "options": ["/ʊ/", "/uː/", "/əʊ/", "/ɔː/"],
+      "answer": 1,
+      "feedback": "&lt;oo&gt; → /uː/ dans la majorité des cas : <em>food</em>, <em>moon</em>, <em>cool</em>, <em>school</em>…"
+    },
+    {
+      "id": 4,
+      "prompt": "Comment se prononce &lt;oo&gt; dans <em>b<u>oo</u>k</em> ?",
+      "options": ["/uː/", "/ɔː/", "/ʊ/", "/ə/"],
+      "answer": 2,
+      "feedback": "&lt;oo&gt; → /ʊ/ devant /k/ et dans quelques autres mots : <em>book</em>, <em>cook</em>, <em>look</em>, <em>foot</em>, <em>wood</em>, <em>good</em>…"
+    },
+    {
+      "id": 5,
+      "prompt": "Comment se prononce &lt;ou&gt; dans <em><u>ou</u>t</em> ?",
+      "options": ["/əʊ/", "/uː/", "/aʊ/", "/ɔː/"],
+      "answer": 2,
+      "feedback": "&lt;ou&gt; → /aʊ/ dans <em>out</em>, <em>loud</em>, <em>found</em>, <em>round</em>… C'est la valeur la plus fréquente de &lt;ou&gt;."
+    },
+    {
+      "id": 6,
+      "prompt": "Comment se prononce &lt;ow&gt; dans <em>kn<u>ow</u></em> ?",
+      "options": ["/aʊ/", "/əʊ/", "/ɔː/", "/uː/"],
+      "answer": 1,
+      "feedback": "&lt;ow&gt; → /əʊ/ dans <em>know</em>, <em>low</em>, <em>snow</em>, <em>own</em>, <em>show</em>… mais /aʊ/ dans <em>now</em>, <em>how</em>, <em>cow</em>…"
+    },
+    {
+      "id": 7,
+      "prompt": "Comment se prononce &lt;oi&gt; dans <em><u>oi</u>l</em> ?",
+      "options": ["/aɪ/", "/ɔɪ/", "/wɑː/", "/ɔː/"],
+      "answer": 1,
+      "feedback": "&lt;oi&gt; → /ɔɪ/ de façon systématique : <em>oil</em>, <em>coin</em>, <em>voice</em>, <em>noise</em>… Même chose pour &lt;oy&gt; : <em>boy</em>, <em>toy</em>."
+    },
+    {
+      "id": 8,
+      "prompt": "Comment se prononce &lt;ai&gt; dans <em>r<u>ai</u>n</em> ?",
+      "options": ["/æ/", "/eɪ/", "/iː/", "/e/"],
+      "answer": 1,
+      "feedback": "&lt;ai&gt; → /eɪ/ de façon quasi systématique : <em>rain</em>, <em>pain</em>, <em>train</em>, <em>wait</em>… Même chose pour &lt;ay&gt; : <em>say</em>, <em>day</em>."
+    }
+  ]
+}

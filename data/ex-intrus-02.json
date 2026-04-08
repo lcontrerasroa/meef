@@ -1,0 +1,42 @@
+{
+  "title": "L'intrus phonétique — r-modification",
+  "td": "TD 07",
+  "description": "Dans chaque série, trouvez le mot dont la voyelle en gras se prononce différemment.",
+  "sets": [
+    {
+      "id": 1,
+      "instruction": "Quel mot a une voyelle différente ?",
+      "words": ["c<b>ar</b>", "f<b>ar</b>", "st<b>ar</b>", "w<b>ar</b>"],
+      "intrus": 3,
+      "explanation": "<em>war</em> /wɔː/ → &lt;ar&gt; après w → /ɔː/ ; les autres ont &lt;ar&gt; → /ɑː/ : <em>car</em> /kɑː/, <em>far</em> /fɑː/, <em>star</em> /stɑː/."
+    },
+    {
+      "id": 2,
+      "instruction": "Quel mot a une voyelle différente ?",
+      "words": ["f<b>ear</b>", "h<b>ear</b>", "b<b>ear</b>", "n<b>ear</b>"],
+      "intrus": 2,
+      "explanation": "<em>bear</em> /beə/ → &lt;ear&gt; = /eə/ ; les autres ont &lt;ear&gt; = /ɪə/ : <em>fear</em> /fɪə/, <em>hear</em> /hɪə/, <em>near</em> /nɪə/."
+    },
+    {
+      "id": 3,
+      "instruction": "Quel mot a une voyelle différente ?",
+      "words": ["t<b>ur</b>n", "b<b>ur</b>n", "n<b>ur</b>se", "s<b>ur</b>e"],
+      "intrus": 3,
+      "explanation": "<em>sure</em> /ʃʊə/ → &lt;ur&gt; + e final → /ʊə/ (comme &lt;oor&gt;) ; les autres ont &lt;ur&gt; entravé → /ɜː/."
+    },
+    {
+      "id": 4,
+      "instruction": "Quel mot a une voyelle différente ?",
+      "words": ["m<b>or</b>e", "f<b>or</b>", "w<b>or</b>d", "sh<b>or</b>e"],
+      "intrus": 2,
+      "explanation": "<em>word</em> /wɜːd/ → &lt;wor&gt; → /wɜː/ (sous-règle 7d) ; les autres ont &lt;or&gt; → /ɔː/."
+    },
+    {
+      "id": 5,
+      "instruction": "Quel mot a une voyelle différente ?",
+      "words": ["b<b>ir</b>d", "g<b>ir</b>l", "f<b>ir</b>m", "f<b>ir</b>e"],
+      "intrus": 3,
+      "explanation": "<em>fire</em> /faɪə/ → &lt;ir&gt; + e final → /aɪ/ libre + r vocalique ; les autres ont &lt;ir&gt; entravé → /ɜː/."
+    }
+  ]
+}

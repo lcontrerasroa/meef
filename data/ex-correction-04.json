@@ -1,0 +1,67 @@
+{
+  "title": "Correction de transcriptions — digraphes vocaliques",
+  "td": "TD 09",
+  "description": "Chaque transcription contient un phonème incorrect. Cliquez l'erreur et sélectionnez la correction.",
+  "items": [
+    {
+      "word": "bread",
+      "transcription_shown": "/briːd/",
+      "correct_transcription": "/bred/",
+      "error_index": 1,
+      "replacement": "e",
+      "options": ["iː", "e", "eɪ", "ɪ"],
+      "hint": "&lt;ea&gt; dans ce mot est-il régulier ?",
+      "explanation": "&lt;ea&gt; → /e/ dans <em>bread</em> (exception). La valeur régulière /iː/ s'applique à <em>sea</em>, <em>tea</em>…"
+    },
+    {
+      "word": "book",
+      "transcription_shown": "/buːk/",
+      "correct_transcription": "/bʊk/",
+      "error_index": 1,
+      "replacement": "ʊ",
+      "options": ["uː", "ʊ", "ɔː", "ə"],
+      "hint": "&lt;oo&gt; devant /k/ → valeur courte ou longue ?",
+      "explanation": "&lt;oo&gt; devant /k/ → /ʊ/ : <em>book</em>, <em>cook</em>, <em>look</em>, <em>hook</em>… (exception au /uː/ général)."
+    },
+    {
+      "word": "rain",
+      "transcription_shown": "/rɪn/",
+      "correct_transcription": "/reɪn/",
+      "error_index": 1,
+      "replacement": "eɪ",
+      "options": ["ɪ", "eɪ", "iː", "e"],
+      "hint": "&lt;ai&gt; → valeur régulière ?",
+      "explanation": "&lt;ai&gt; → /eɪ/ de façon quasi systématique. <em>rain</em> /reɪn/."
+    },
+    {
+      "word": "oil",
+      "transcription_shown": "/aɪl/",
+      "correct_transcription": "/ɔɪl/",
+      "error_index": 1,
+      "replacement": "ɔɪ",
+      "options": ["aɪ", "ɔɪ", "ɔː", "ɒɪ"],
+      "hint": "&lt;oi&gt; ≠ &lt;i&gt; libre",
+      "explanation": "&lt;oi&gt; → /ɔɪ/ (diphtongue montante). Ne pas confondre avec &lt;i&gt; libre → /aɪ/."
+    },
+    {
+      "word": "out",
+      "transcription_shown": "/əʊt/",
+      "correct_transcription": "/aʊt/",
+      "error_index": 1,
+      "replacement": "aʊ",
+      "options": ["əʊ", "aʊ", "uː", "ɔː"],
+      "hint": "&lt;ou&gt; dans ce contexte → diphtongue descendante ou montante ?",
+      "explanation": "&lt;ou&gt; → /aʊ/ dans <em>out</em>, <em>loud</em>, <em>found</em>… /əʊ/ est la valeur de &lt;o&gt; libre ou &lt;ow&gt; dans <em>know</em>, <em>low</em>."
+    },
+    {
+      "word": "cause",
+      "transcription_shown": "/kaʊz/",
+      "correct_transcription": "/kɔːz/",
+      "error_index": 1,
+      "replacement": "ɔː",
+      "options": ["aʊ", "ɔː", "ɑː", "uː"],
+      "hint": "&lt;au&gt; → quelle voyelle longue ?",
+      "explanation": "&lt;au&gt; et &lt;aw&gt; → /ɔː/ de façon systématique : <em>cause</em>, <em>pause</em>, <em>sauce</em>, <em>saw</em>, <em>law</em>…"
+    }
+  ]
+}

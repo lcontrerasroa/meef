@@ -1,0 +1,15 @@
+{
+  "title": "Transcription — sous-règles 5–7",
+  "td": "TD 08",
+  "description": "Transcrivez chaque mot en appliquant la sous-règle indiquée.",
+  "items": [
+    { "id": 1, "word": "bath",  "answer": "/bɑːθ/",       "hint": "SR5 : mot ASK — &lt;a&gt; devant /θ/" },
+    { "id": 2, "word": "class", "answer": "/klɑːs/",      "hint": "SR5 : mot ASK — &lt;a&gt; devant /s/ final" },
+    { "id": 3, "word": "cute",  "answer": "/kjuːt/",      "hint": "SR6 : &lt;u&gt; libre après /k/ → /juː/" },
+    { "id": 4, "word": "music", "answer": "/ˈmjuːzɪk/",  "hint": "SR6 : &lt;u&gt; libre après /m/ → /juː/ ; accent sur 1re syllabe" },
+    { "id": 5, "word": "love",  "answer": "/lʌv/",        "hint": "SR7a : &lt;o&gt; → /ʌ/ (liste à mémoriser)" },
+    { "id": 6, "word": "move",  "answer": "/muːv/",       "hint": "SR7b : &lt;o&gt; → /uː/ (liste à mémoriser)" },
+    { "id": 7, "word": "work",  "answer": "/wɜːk/",       "hint": "SR7d : &lt;wor&gt; → /wɜː/" },
+    { "id": 8, "word": "one",   "answer": "/wʌn/",        "hint": "SR7c : &lt;o&gt; initial → /wʌ/ (yod épenthétique)" }
+  ]
+}

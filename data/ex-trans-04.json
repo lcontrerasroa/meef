@@ -1,0 +1,15 @@
+{
+  "title": "Transcription — digraphes vocaliques",
+  "td": "TD 09",
+  "description": "Transcrivez chaque mot en identifiant la valeur du digraphe vocalique.",
+  "items": [
+    { "id": 1, "word": "see",   "answer": "/siː/",   "hint": "&lt;ee&gt; → /iː/" },
+    { "id": 2, "word": "bread", "answer": "/bred/",  "hint": "&lt;ea&gt; exception → /e/" },
+    { "id": 3, "word": "food",  "answer": "/fuːd/",  "hint": "&lt;oo&gt; → /uː/ (valeur régulière)" },
+    { "id": 4, "word": "book",  "answer": "/bʊk/",   "hint": "&lt;oo&gt; devant /k/ → /ʊ/" },
+    { "id": 5, "word": "out",   "answer": "/aʊt/",   "hint": "&lt;ou&gt; → /aʊ/ (valeur régulière)" },
+    { "id": 6, "word": "know",  "answer": "/nəʊ/",   "hint": "&lt;ow&gt; → /əʊ/ ; &lt;kn&gt; → /n/ (k muet)" },
+    { "id": 7, "word": "oil",   "answer": "/ɔɪl/",   "hint": "&lt;oi&gt; → /ɔɪ/" },
+    { "id": 8, "word": "cause", "answer": "/kɔːz/",  "hint": "&lt;au&gt; → /ɔː/ ; &lt;s&gt; intervocalique → /z/" }
+  ]
+}
