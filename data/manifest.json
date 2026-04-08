@@ -2,32 +2,23 @@
   {
     "td": "TD 02",
     "exercises": [
-      {
-        "title": "Voyelles libres et entravées",
-        "description": "Identifiez la prononciation correcte de la voyelle graphique.",
-        "type": "qcm",
-        "file": "data/ex-qcm-01.json",
-        "url": "qcm.html?data=data/ex-qcm-01.json"
-      },
-      {
-        "title": "L'intrus phonétique — voyelles",
-        "description": "Trouvez le mot dont la voyelle se prononce différemment.",
-        "type": "intrus",
-        "file": "data/ex-intrus-01.json",
-        "url": "intrus.html?data=data/ex-intrus-01.json"
-      }
+      { "title": "Voyelles libres et entravées", "description": "Identifiez la prononciation correcte du graphème vocalique.", "type": "qcm", "url": "qcm.html?data=data/ex-qcm-01.json" },
+      { "title": "L'intrus phonétique — voyelles", "description": "Trouvez le mot dont la voyelle se prononce différemment.", "type": "intrus", "url": "intrus.html?data=data/ex-intrus-01.json" },
+      { "title": "Correction de transcriptions", "description": "Repérez le phonème erroné et choisissez la correction.", "type": "correction", "url": "correction.html?data=data/ex-correction-01.json" },
+      { "title": "Classement par voyelle", "description": "Classez les mots selon la prononciation de leur graphème vocalique.", "type": "classement", "url": "classement.html?data=data/ex-classement-01.json" }
     ]
   },
   {
     "td": "TD 04",
     "exercises": [
-      {
-        "title": "Transcription de mots simples",
-        "description": "Transcrivez les mots en utilisant le clavier IPA.",
-        "type": "trans",
-        "file": "data/ex-trans-01.json",
-        "url": "transcription.html?data=data/ex-trans-01.json"
-      }
+      { "title": "Transcription de mots simples", "description": "Transcrivez les mots en utilisant le clavier IPA.", "type": "trans", "url": "transcription.html?data=data/ex-trans-01.json" },
+      { "title": "Appariement mot ↔ transcription", "description": "Associez chaque mot à sa transcription phonémique.", "type": "appariement", "url": "appariement.html?data=data/ex-appariement-01.json" }
+    ]
+  },
+  {
+    "td": "TD 06",
+    "exercises": [
+      { "title": "Place de l'accent tonique", "description": "Cliquez la syllabe qui porte l'accent primaire.", "type": "accentuation", "url": "accentuation.html?data=data/ex-accentuation-01.json" }
     ]
   }
 ]

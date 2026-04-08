@@ -1,0 +1,67 @@
+{
+  "title": "Correction de transcriptions erronées",
+  "td": "TD 02",
+  "description": "Chaque transcription contient un phonème incorrect. Cliquez l'erreur et sélectionnez la correction.",
+  "items": [
+    {
+      "word": "name",
+      "transcription_shown": "/næm/",
+      "correct_transcription": "/neɪm/",
+      "error_index": 1,
+      "replacement": "eɪ",
+      "options": ["æ", "eɪ", "ɑː", "e"],
+      "hint": "&lt;a&gt; + consonne + e final → syllabe libre",
+      "explanation": "&lt;a&gt; en syllabe libre donne /eɪ/, non /æ/ (qui est la voyelle entravée de &lt;a&gt;)."
+    },
+    {
+      "word": "fine",
+      "transcription_shown": "/fɪn/",
+      "correct_transcription": "/faɪn/",
+      "error_index": 1,
+      "replacement": "aɪ",
+      "options": ["ɪ", "iː", "aɪ", "e"],
+      "hint": "&lt;i&gt; en syllabe libre → quelle est sa forme longue ?",
+      "explanation": "&lt;i&gt; en syllabe libre → /aɪ/. Attention : la forme longue de &lt;i&gt; est /aɪ/, non /iː/."
+    },
+    {
+      "word": "think",
+      "transcription_shown": "/θɪŋk/",
+      "correct_transcription": "/θɪŋk/",
+      "error_index": 0,
+      "replacement": "θ",
+      "options": ["θ", "ð", "t", "s"],
+      "hint": "&lt;th&gt; sourd ou sonore dans ce mot ?",
+      "explanation": "&lt;th&gt; dans <em>think</em> est sourd → /θ/. La transcription est correcte ici — /ð/ serait la variante sonore (ex. : <em>this</em>, <em>that</em>)."
+    },
+    {
+      "word": "church",
+      "transcription_shown": "/tʃɜːtʃ/",
+      "correct_transcription": "/tʃɜːtʃ/",
+      "error_index": 1,
+      "replacement": "ɜː",
+      "options": ["ɜː", "ɜ", "ʌ", "ə"],
+      "hint": "&lt;ur&gt; en syllabe accentuée → r-modification",
+      "explanation": "&lt;ur&gt; en syllabe accentuée → r-modification → /ɜː/ (voyelle longue). /ɜ/ seul n'existe pas en anglais standard."
+    },
+    {
+      "word": "note",
+      "transcription_shown": "/nɒt/",
+      "correct_transcription": "/nəʊt/",
+      "error_index": 1,
+      "replacement": "əʊ",
+      "options": ["ɒ", "əʊ", "ɔː", "ʌ"],
+      "hint": "&lt;o&gt; en syllabe libre (C + e final) → ?",
+      "explanation": "&lt;o&gt; en syllabe libre → /əʊ/. /ɒ/ est la voyelle entravée de &lt;o&gt; (ex. : <em>hot</em>, <em>stop</em>)."
+    },
+    {
+      "word": "bath",
+      "transcription_shown": "/bæθ/",
+      "correct_transcription": "/bɑːθ/",
+      "error_index": 1,
+      "replacement": "ɑː",
+      "options": ["æ", "ɑː", "eɪ", "ə"],
+      "hint": "Pensez aux mots ASK — quelle sous-règle s'applique ?",
+      "explanation": "<em>bath</em> est un mot ASK : &lt;a&gt; devant consonne fricative → /ɑː/ en anglais britannique standard."
+    }
+  ]
+}

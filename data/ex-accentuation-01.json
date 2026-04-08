@@ -1,0 +1,55 @@
+{
+  "title": "Place de l'accent tonique",
+  "td": "TD 06",
+  "description": "Cliquez la syllabe qui porte l'accent primaire (ˈ).",
+  "items": [
+    {
+      "word": "nature",
+      "syllables": ["na", "ture"],
+      "stress": 0,
+      "schema": "/10/",
+      "hint": "Suffixe neutre -ure, mot dissyllabique → règle générale",
+      "explanation": "<em>nature</em> /ˈneɪtʃə/ — suffixe neutre (-ure), accent sur la première syllabe. Schéma /10/."
+    },
+    {
+      "word": "important",
+      "syllables": ["im", "por", "tant"],
+      "stress": 1,
+      "schema": "/010/",
+      "hint": "Préfixe inséparable im- ; regardez le groupe consonantique médial",
+      "explanation": "<em>important</em> /ɪmˈpɔːtənt/ — préfixe inséparable im- + agrégat consonantique -rt- → accent sur la 2e syllabe. Schéma /010/."
+    },
+    {
+      "word": "education",
+      "syllables": ["ed", "u", "ca", "tion"],
+      "stress": 2,
+      "schema": "/0100/",
+      "hint": "Suffixe contraignant -tion → accent sur la syllabe précédente",
+      "explanation": "<em>education</em> /ˌedʒʊˈkeɪʃən/ — suffixe contraignant -tion : accent primaire sur la syllabe qui précède immédiatement. Schéma /2100/."
+    },
+    {
+      "word": "photograph",
+      "syllables": ["pho", "to", "graph"],
+      "stress": 0,
+      "schema": "/100/",
+      "hint": "Suffixe neutre -graph ; trisyllabe avec syllabe finale légère",
+      "explanation": "<em>photograph</em> /ˈfəʊtəɡrɑːf/ — suffixe neutre, trisyllabe → accent sur la première syllabe. Schéma /100/."
+    },
+    {
+      "word": "photography",
+      "syllables": ["pho", "tog", "ra", "phy"],
+      "stress": 1,
+      "schema": "/0100/",
+      "hint": "Suffixe neutre -phy ; comparez avec <em>photograph</em>",
+      "explanation": "<em>photography</em> /fəˈtɒɡrəfi/ — l'ajout de -y (suffixe neutre) déplace l'accent en fonction de la règle du train de voyelles. Schéma /0100/."
+    },
+    {
+      "word": "politician",
+      "syllables": ["pol", "i", "ti", "cian"],
+      "stress": 2,
+      "schema": "/0010/",
+      "hint": "Suffixe contraignant -cian",
+      "explanation": "<em>politician</em> /ˌpɒlɪˈtɪʃən/ — suffixe contraignant -cian → accent primaire sur la syllabe précédente. Schéma /2010/."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Appariement mot ↔ transcription",
+  "td": "TD 04",
+  "description": "Associez chaque mot à sa transcription phonémique.",
+  "rounds": [
+    {
+      "instruction": "Associez chaque mot à sa transcription. (Voyelles libres et entravées)",
+      "pairs": [
+        { "word": "name",  "transcription": "/neɪm/" },
+        { "word": "cat",   "transcription": "/kæt/" },
+        { "word": "note",  "transcription": "/nəʊt/" },
+        { "word": "hot",   "transcription": "/hɒt/" },
+        { "word": "fine",  "transcription": "/faɪn/" }
+      ]
+    },
+    {
+      "instruction": "Associez chaque mot à sa transcription. (Consonnes particulières)",
+      "pairs": [
+        { "word": "think",  "transcription": "/θɪŋk/" },
+        { "word": "this",   "transcription": "/ðɪs/" },
+        { "word": "church", "transcription": "/tʃɜːtʃ/" },
+        { "word": "judge",  "transcription": "/dʒʌdʒ/" },
+        { "word": "shine",  "transcription": "/ʃaɪn/" }
+      ]
+    },
+    {
+      "instruction": "Associez chaque mot à sa transcription. (R-modification)",
+      "pairs": [
+        { "word": "bird",   "transcription": "/bɜːd/" },
+        { "word": "car",    "transcription": "/kɑː/" },
+        { "word": "here",   "transcription": "/hɪə/" },
+        { "word": "turn",   "transcription": "/tɜːn/" },
+        { "word": "poor",   "transcription": "/pʊə/" }
+      ]
+    }
+  ]
+}

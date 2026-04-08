@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accentuation — Phonologie</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .syllables-row { display: flex; gap: .6rem; flex-wrap: wrap; justify-content: center; padding: .8rem 0 1rem; }
+    .syl-btn {
+      padding: .6rem 1.1rem; border: 2px solid var(--border); border-radius: 7px;
+      background: white; cursor: pointer; font-size: 1.1rem; font-family: inherit;
+      transition: border-color .15s, background .15s;
+      position: relative;
+    }
+    .syl-btn:hover:not(:disabled) { border-color: var(--primary); background: #eef2f7; }
+    .syl-btn.correct { border-color: var(--success); background: #d1e7dd; }
+    .syl-btn.wrong   { border-color: var(--accent);  background: #f8d7da; }
+    .syl-btn.correct-reveal { border-color: var(--success); background: #d1e7dd; opacity: .7; }
+    .syl-btn:disabled { cursor: default; }
+    /* stress mark above */
+    .syl-btn.correct::before,
+    .syl-btn.correct-reveal::before { content: 'ˈ'; position: absolute; top: -1rem; left: 50%; transform: translateX(-50%); color: var(--success); font-size: 1.2rem; font-family: 'Noto Sans','DejaVu Sans',sans-serif; }
+    .sep { font-size: 1.4rem; color: var(--muted); align-self: center; }
+    .schema-display { text-align: center; font-size: .88rem; color: var(--muted); margin-top: -.4rem; margin-bottom: .4rem; font-family: 'Noto Sans','DejaVu Sans',sans-serif; }
+    .hint-toggle { font-size: .82rem; color: var(--muted); cursor: pointer; text-decoration: underline; text-align: right; }
+    .hint-box { background: #fff3cd; border: 1px solid #ffe69c; border-radius: 6px; padding: .6rem .9rem; font-size: .88rem; margin: .4rem 0; display: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← Accueil</a>
+    <h1 id="ex-title">Chargement…</h1>
+    <span id="ex-td" class="badge badge-accent" style="background:#d0f0e8;color:#0a4a33;">Accentuation</span>
+  </header>
+  <div class="container">
+    <div class="progress-bar"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+    <div id="item-area"></div>
+    <div id="score-box" class="score-box" style="display:none">
+      <h2>Résultat</h2>
+      <div class="score-number" id="score-num">—</div>
+      <div class="score-label" id="score-label"></div>
+      <div class="nav-row" style="justify-content:center">
+        <button class="btn btn-primary" onclick="restart()">Recommencer</button>
+        <a href="index.html" class="btn btn-outline">Accueil</a>
+      </div>
+    </div>
+  </div>
+  <script>
+  const params = new URLSearchParams(location.search);
+  const dataFile = params.get('data') || 'data/ex-accentuation-01.json';
+  let data, score = 0, answered = [];
+
+  fetch(dataFile).then(r => r.json()).then(d => {
+    data = d;
+    document.title = d.title + ' — Accentuation';
+    document.getElementById('ex-title').textContent = d.title;
+    document.getElementById('ex-td').textContent = d.td || '';
+    answered = Array(d.items.length).fill(null);
+    render(0);
+  });
+
+  function render(i) {
+    const it = data.items[i];
+    const pct = Math.round(i / data.items.length * 100);
+    document.getElementById('progress').style.width = pct + '%';
+
+    document.getElementById('item-area').innerHTML = `
+      <div class="card">
+        <p class="counter">Mot ${i+1} / ${data.items.length}</p>
+        <p class="question-prompt" style="text-align:center">${it.context || 'Cliquez sur la syllabe qui porte l\'accent primaire.'}</p>
+        <div class="syllables-row" id="syls">
+          ${it.syllables.map((s, j) =>
+            `${j > 0 ? '<span class="sep">·</span>' : ''}
+             <button class="syl-btn" id="syl-${j}" onclick="pick(${i},${j})">${s}</button>`
+          ).join('')}
+        </div>
+        ${it.schema ? `<div class="schema-display">Schéma accentuel : ${it.schema}</div>` : ''}
+        <div class="hint-toggle" onclick="toggleHint()">💡 Indice</div>
+        <div class="hint-box" id="hint">${it.hint || ''}</div>
+        <div id="fb" class="feedback" style="display:none"></div>
+        <div class="nav-row" id="nav" style="display:none">
+          ${i < data.items.length - 1
+            ? `<button class="btn btn-primary" onclick="render(${i+1})">Suivant →</button>`
+            : `<button class="btn btn-primary" onclick="showScore()">Voir le résultat</button>`}
+        </div>
+      </div>`;
+  }
+
+  function pick(ii, j) {
+    if (answered[ii] !== null) return;
+    const it = data.items[ii];
+    const ok = j === it.stress;
+    answered[ii] = ok;
+    if (ok) score++;
+
+    document.querySelectorAll('.syl-btn').forEach((b, k) => {
+      b.disabled = true;
+      if (k === it.stress) b.classList.add(ok && k === j ? 'correct' : 'correct-reveal');
+      else if (k === j)    b.classList.add('wrong');
+    });
+
+    const fb = document.getElementById('fb');
+    fb.style.display = 'block';
+    fb.className = 'feedback ' + (ok ? 'ok' : 'ko');
+    fb.innerHTML = (ok
+      ? `<span class="ok-text">✓ Correct !</span> `
+      : `<span class="ko-text">✗ Incorrect.</span> L'accent tombe sur <strong>${it.syllables[it.stress]}</strong>. `)
+      + it.explanation;
+    document.getElementById('nav').style.display = 'flex';
+  }
+
+  function toggleHint() {
+    const h = document.getElementById('hint');
+    h.style.display = h.style.display === 'none' ? 'block' : 'none';
+  }
+
+  function showScore() {
+    document.getElementById('item-area').style.display = 'none';
+    document.getElementById('progress').style.width = '100%';
+    document.getElementById('score-box').style.display = 'block';
+    const pct = Math.round(score / data.items.length * 100);
+    document.getElementById('score-num').textContent = score + ' / ' + data.items.length;
+    document.getElementById('score-label').textContent =
+      pct >= 80 ? '🎉 Excellent !' : pct >= 60 ? '👍 Bien !' : '📚 À retravailler.';
+  }
+
+  function restart() {
+    score = 0; answered = Array(data.items.length).fill(null);
+    document.getElementById('score-box').style.display = 'none';
+    document.getElementById('item-area').style.display = 'block';
+    render(0);
+  }
+  </script>
+</body>
+</html>

@@ -9,8 +9,8 @@
     .hero { background: var(--primary); color: white; padding: 2.5rem 2rem 2rem; }
     .hero h1 { font-size: 1.6rem; margin-bottom: .3rem; }
     .hero p { opacity: .8; font-size: .95rem; }
-    .type-icon { font-size: 1.3rem; width: 2.2rem; text-align: center; }
-    .legend { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; font-size: .82rem; color: var(--muted); }
+    .type-icon { font-size: 1.3rem; width: 2.2rem; text-align: center; flex-shrink: 0; }
+    .legend { display: flex; gap: .7rem; flex-wrap: wrap; margin-bottom: 1rem; font-size: .82rem; color: var(--muted); }
     .legend span { display: flex; align-items: center; gap: .3rem; }
   </style>
 </head>
@@ -24,32 +24,45 @@
       <span><span class="badge badge-qcm">QCM</span> Choix multiple</span>
       <span><span class="badge badge-trans">Trans.</span> Transcription IPA</span>
       <span><span class="badge badge-intrus">Intrus</span> Trouver l'intrus</span>
+      <span><span class="badge" style="background:#e8d5f5;color:#4a1580">Correction</span> Corriger l'erreur</span>
+      <span><span class="badge" style="background:#fce4d0;color:#7d3000">Classement</span> Classer des mots</span>
+      <span><span class="badge" style="background:#d0f0e8;color:#0a4a33">Accentuation</span> Syllabe accentuée</span>
+      <span><span class="badge" style="background:#d4e9ff;color:#003a75">Appariement</span> Mot ↔ transcription</span>
     </div>
     <div id="ex-list"><p style="color:var(--muted)">Chargement…</p></div>
   </div>
   <script>
-    const ICONS = { qcm: '❓', trans: '⌨️', intrus: '🔍' };
-    fetch('data/manifest.json')
-      .then(r => r.json())
-      .then(manifest => {
-        const list = document.getElementById('ex-list');
-        list.innerHTML = manifest.map(group => `
-          <div class="td-group">
-            <h2>${group.td}</h2>
-            ${group.exercises.map(ex => `
-              <a href="${ex.url}" class="ex-card">
-                <div class="type-icon">${ICONS[ex.type] || '📄'}</div>
-                <div class="ex-info">
-                  <div class="ex-title">${ex.title}</div>
-                  <div class="ex-desc">${ex.description}</div>
-                </div>
-                <span class="badge badge-${ex.type}">${ex.type}</span>
-                <span class="ex-arrow">›</span>
-              </a>
-            `).join('')}
-          </div>
-        `).join('');
-      });
+    const ICONS  = { qcm:'❓', trans:'⌨️', intrus:'🔍', correction:'✏️', classement:'🗂️', accentuation:'🎯', appariement:'🔗' };
+    const LABELS = { qcm:'QCM', trans:'Trans.', intrus:'Intrus', correction:'Correction', classement:'Classement', accentuation:'Accentuation', appariement:'Appariement' };
+    const STYLES = {
+      qcm:         'badge-qcm', trans:'badge-trans', intrus:'badge-intrus',
+      correction:  'background:#e8d5f5;color:#4a1580',
+      classement:  'background:#fce4d0;color:#7d3000',
+      accentuation:'background:#d0f0e8;color:#0a4a33',
+      appariement: 'background:#d4e9ff;color:#003a75'
+    };
+    function badge(type) {
+      const s = STYLES[type] || '';
+      const attr = s.startsWith('badge') ? `class="badge ${s}"` : `class="badge" style="${s}"`;
+      return `<span ${attr}>${LABELS[type]||type}</span>`;
+    }
+    fetch('data/manifest.json').then(r=>r.json()).then(manifest => {
+      document.getElementById('ex-list').innerHTML = manifest.map(group => `
+        <div class="td-group">
+          <h2>${group.td}</h2>
+          ${group.exercises.map(ex => `
+            <a href="${ex.url}" class="ex-card">
+              <div class="type-icon">${ICONS[ex.type]||'📄'}</div>
+              <div class="ex-info">
+                <div class="ex-title">${ex.title}</div>
+                <div class="ex-desc">${ex.description}</div>
+              </div>
+              ${badge(ex.type)}
+              <span class="ex-arrow">›</span>
+            </a>
+          `).join('')}
+        </div>`).join('');
+    });
   </script>
 </body>
 </html>

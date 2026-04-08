@@ -1,0 +1,46 @@
+{
+  "title": "Classement par voyelle",
+  "td": "TD 02",
+  "description": "Classez chaque mot dans la colonne correspondant à la prononciation de sa voyelle.",
+  "rounds": [
+    {
+      "instruction": "Classez les mots selon la prononciation du graphème &lt;a&gt;.",
+      "categories": ["/æ/", "/eɪ/", "/ɑː/"],
+      "words": [
+        { "word": "cat",   "category": 0 },
+        { "word": "name",  "category": 1 },
+        { "word": "bath",  "category": 2 },
+        { "word": "hat",   "category": 0 },
+        { "word": "lake",  "category": 1 },
+        { "word": "class", "category": 2 }
+      ],
+      "explanation": "Rappel : &lt;a&gt; entravé → /æ/ ; &lt;a&gt; libre (C + e final) → /eɪ/ ; mots ASK (devant fricative) → /ɑː/."
+    },
+    {
+      "instruction": "Classez les mots selon la prononciation du graphème &lt;i&gt;.",
+      "categories": ["/ɪ/", "/aɪ/"],
+      "words": [
+        { "word": "fine",  "category": 1 },
+        { "word": "fit",   "category": 0 },
+        { "word": "mine",  "category": 1 },
+        { "word": "sit",   "category": 0 },
+        { "word": "bite",  "category": 1 },
+        { "word": "hid",   "category": 0 }
+      ],
+      "explanation": "&lt;i&gt; entravé → /ɪ/ ; &lt;i&gt; libre (C + e final) → /aɪ/."
+    },
+    {
+      "instruction": "Classez les mots selon la prononciation du graphème &lt;o&gt;.",
+      "categories": ["/ɒ/", "/əʊ/", "/uː/"],
+      "words": [
+        { "word": "hot",   "category": 0 },
+        { "word": "note",  "category": 1 },
+        { "word": "lose",  "category": 2 },
+        { "word": "stop",  "category": 0 },
+        { "word": "hope",  "category": 1 },
+        { "word": "move",  "category": 2 }
+      ],
+      "explanation": "&lt;o&gt; entravé → /ɒ/ ; &lt;o&gt; libre → /əʊ/ ; prononciation spéciale → /uː/ (sous-règle 7 : <em>lose</em>, <em>move</em>, <em>prove</em>…)."
+    }
+  ]
+}
