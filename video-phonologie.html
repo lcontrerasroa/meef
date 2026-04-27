@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activité vidéo · Phonologie anglaise</title>
+  <style>
+    :root {
+      --primary: #1e3a5f;
+      --accent:  #c0392b;
+      --success: #27ae60;
+      --border:  #dee2e6;
+      --light:   #f8f9fa;
+      --muted:   #6c757d;
+      --text:    #212529;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    /* ── Header ── */
+    .hero {
+      background: var(--primary);
+      color: #fff;
+      padding: 1.25rem 1.75rem;
+    }
+    .hero h1  { font-size: 1.15rem; font-weight: 700; margin-bottom: .2rem; }
+    .hero .sub { font-size: .82rem; opacity: .75; }
+
+    /* ── Progress ── */
+    .prog-wrap {
+      background: #16304f;
+      padding: .45rem 1.75rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .prog-bar  { flex: 1; height: 5px; background: rgba(255,255,255,.2); border-radius: 3px; overflow: hidden; }
+    .prog-fill { height: 100%; background: #6dbfff; border-radius: 3px; transition: width .3s ease; }
+    .prog-label { color: #fff; font-size: .78rem; white-space: nowrap; }
+
+    /* ── Section banner ── */
+    .section-banner {
+      background: #e8f0fb;
+      border-left: 4px solid var(--primary);
+      padding: .45rem 1.75rem;
+      font-size: .78rem; font-weight: 700; color: var(--primary);
+      letter-spacing: .04em; text-transform: uppercase;
+    }
+
+    /* ── Layout ── */
+    main { max-width: 1180px; margin: 0 auto; padding: 1.5rem 1.25rem 2rem; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 640px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+    @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+    /* ── Video panel ── */
+    .video-panel { background: #111; border-radius: 8px; overflow: hidden; min-height: 385px; }
+    #yg-widget   { width: 100%; min-height: 385px; }
+
+    /* ── Exercise card ── */
+    .ex-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+    }
+
+    .badge {
+      display: inline-block; font-size: .68rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .05em;
+      padding: .2em .65em; border-radius: 4px; margin-bottom: .85rem;
+    }
+    .badge-qcm          { background: #cfe2ff; color: #084298; }
+    .badge-transcription { background: #d1e7dd; color: #0a3622; }
+    .badge-correction   { background: #e8d5f5; color: #4a1580; }
+
+    .question { font-size: .92rem; margin-bottom: 1rem; }
+    .question em { font-style: italic; font-weight: 600; color: var(--primary); }
+
+    .wrong-box {
+      background: #fff3cd; border: 1px solid #ffc107;
+      border-radius: 6px; padding: .55rem .85rem; margin-bottom: .85rem; font-size: .8rem;
+    }
+    .wrong-box .wrong-label { color: var(--muted); margin-bottom: .2rem; }
+    .wrong-box code {
+      font-family: 'Noto Sans', 'DejaVu Sans', 'Segoe UI', sans-serif;
+      font-size: 1.05rem; color: var(--accent);
+    }
+
+    /* ── QCM ── */
+    .options { display: flex; flex-direction: column; gap: .45rem; margin-bottom: .9rem; }
+    .option {
+      display: flex; align-items: center; gap: .7rem;
+      padding: .55rem .8rem; border: 2px solid var(--border); border-radius: 7px;
+      cursor: pointer;
+      font-family: 'Noto Sans', 'DejaVu Sans', 'Segoe UI', sans-serif;
+      font-size: 1rem;
+      transition: border-color .12s, background .12s;
+      user-select: none;
+    }
+    .option:hover:not(.locked) { border-color: var(--primary); background: #eef3fb; }
+    .option.sel    { border-color: var(--primary); background: #dde9f7; }
+    .option.ok     { border-color: var(--success); background: #d4edda; }
+    .option.bad    { border-color: var(--accent);  background: #f8d7da; }
+    .option.locked { cursor: default; }
+    .opt-letter {
+      width: 22px; height: 22px; display: flex; align-items: center; justify-content: center;
+      background: #e9ecef; border-radius: 50%; font-size: .72rem; font-weight: 700;
+      font-family: system-ui; flex-shrink: 0;
+    }
+
+    /* ── IPA input ── */
+    .ipa-field {
+      width: 100%;
+      font-family: 'Noto Sans', 'DejaVu Sans', 'Segoe UI', sans-serif;
+      font-size: 1.1rem; padding: .5rem .75rem;
+      border: 2px solid var(--border); border-radius: 7px; outline: none;
+      margin-bottom: .85rem; transition: border-color .15s;
+    }
+    .ipa-field:focus { border-color: var(--primary); }
+    .ipa-field.ok    { border-color: var(--success); background: #d4edda; }
+    .ipa-field.bad   { border-color: var(--accent);  background: #f8d7da; }
+
+    /* ── Feedback ── */
+    .feedback { display: none; margin-top: .85rem; padding: .65rem .9rem; border-radius: 7px; font-size: .875rem; line-height: 1.55; }
+    .feedback.show { display: block; }
+    .feedback.ok  { background: #d4edda; border-left: 3px solid var(--success); }
+    .feedback.bad { background: #fff3cd; border-left: 3px solid #e0a800; }
+    .feedback.ans { background: #f8f9fa; border-left: 3px solid #adb5bd; }
+    .feedback .ans-val { font-family: 'Noto Sans','DejaVu Sans','Segoe UI',sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--primary); }
+
+    /* ── Buttons ── */
+    .btn-row { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .75rem; }
+    .btn {
+      padding: .45rem 1.1rem; font-size: .83rem; font-weight: 600;
+      border: none; border-radius: 6px; cursor: pointer; transition: filter .12s;
+    }
+    .btn:hover:not(:disabled) { filter: brightness(.9); }
+    .btn:disabled { opacity: .4; cursor: default; }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-outline { background: #fff; color: var(--text); border: 1px solid var(--border); }
+    .btn-ghost   { background: #f0f0f0; color: var(--muted); font-weight: 400; }
+
+    /* ── IPA Keyboard ── */
+    .keyboard { display: none; background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: .9rem 1.1rem; margin-top: 1.4rem; }
+    .keyboard.show { display: block; }
+    .kb-row-label { font-size: .68rem; font-weight: 700; text-transform: uppercase; color: var(--muted); letter-spacing: .05em; margin: .55rem 0 .25rem; }
+    .kb-row-label:first-child { margin-top: 0; }
+    .kb-row { display: flex; flex-wrap: wrap; gap: 4px; }
+    .k {
+      font-family: 'Noto Sans', 'DejaVu Sans', 'Segoe UI', sans-serif;
+      font-size: .92rem; padding: .3rem .55rem; min-width: 36px; text-align: center;
+      background: #f4f4f4; border: 1px solid #d8d8d8; border-radius: 5px;
+      cursor: pointer; user-select: none; transition: background .08s, border-color .08s;
+    }
+    .k:hover  { background: #dde9f7; border-color: var(--primary); }
+    .k:active { background: #bdd2ee; }
+    .k.del    { background: #fff0f0; border-color: #f5c0c0; color: var(--accent); font-size: .8rem; }
+    .k.del:hover { background: #ffe0e0; }
+
+    /* ── Nav ── */
+    .nav-row { display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+    .nav-info { font-size: .82rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<!-- ══ Inline activity data (no server required) ══ -->
+<script id="activity-data" type="application/json">
+{
+  "meta": {
+    "title": "Phonologie de l'anglais standard — Activité vidéo n°1",
+    "subtitle": "Voyelles, accentuation et formes réduites du SSBE",
+    "duree": 60
+  },
+  "exercises": [
+    {
+      "id": 1,
+      "section": "Section 1 — Voyelles brèves et schwa",
+      "type": "qcm",
+      "word": "important",
+      "lang": "english/uk",
+      "question": "Parmi ces transcriptions, laquelle est correcte pour le mot <em>important</em> en anglais standard britannique (SSBE) ?",
+      "options": ["/ɪmˈpɔːtənt/", "/ɪmˈpɔːrtənt/", "/ɛ̃pɔːˈtɑnt/", "/ɪmˈpɒtənt/"],
+      "correct": 0,
+      "feedback": "La voyelle tonique est /ɔː/ (classe THOUGHT). Le SSBE est <strong>non-rhotique</strong> : le -r orthographique ne se prononce pas après une voyelle en position finale ou préconsonantique. /ɛ̃/ n'existe pas en anglais, et /ɒ/ (classe LOT) est la mauvaise voyelle."
+    },
+    {
+      "id": 2,
+      "section": "Section 1 — Voyelles brèves et schwa",
+      "type": "correction",
+      "word": "government",
+      "lang": "english/uk",
+      "question": "La transcription ci-dessous contient trois erreurs. Corrigez-la en vous aidant de la vidéo.",
+      "wrong": "/ˈɡɒvɛrnmɛnt/",
+      "answer": "/ˈɡʌvənmənt/",
+      "feedback": "Trois corrections : (1) la voyelle tonique est <strong>/ʌ/</strong> (classe STRUT), pas /ɒ/ ; (2) <strong>-vern-</strong> se réduit à <strong>-vən-</strong> (schwa + perte du /r/ non-rhotique) ; (3) la finale est <strong>/-mənt/</strong> avec schwa."
+    },
+    {
+      "id": 3,
+      "section": "Section 1 — Voyelles brèves et schwa",
+      "type": "transcription",
+      "word": "better",
+      "lang": "english/uk",
+      "question": "Écoutez la vidéo et transcrivez le mot <em>better</em> tel qu'il se prononce en SSBE.",
+      "answer": "/ˈbetə/",
+      "feedback": "La voyelle tonique est <strong>/e/</strong> (classe DRESS). La finale <em>-ter</em> devient <strong>/-tə/</strong> : le SSBE est non-rhotique (le /r/ disparaît) et le /ɛ/ se réduit à /ə/."
+    },
+    {
+      "id": 4,
+      "section": "Section 1 — Voyelles brèves et schwa",
+      "type": "qcm",
+      "word": "national",
+      "lang": "english/uk",
+      "question": "Quelle est la transcription correcte de <em>national</em> en SSBE ?",
+      "options": ["/ˈnæʃnəl/", "/ˈnæʃɪɒnəl/", "/ˈnɑːʃnəl/", "/ˈnæʃɪonal/"],
+      "correct": 0,
+      "feedback": "La voyelle tonique est <strong>/æ/</strong> (classe TRAP). La séquence <em>-tion-</em> se réduit à <strong>/-ʃn-/</strong> par élision du /ɪ/ entre deux consonnes. /ɑː/ est la voyelle de START ; /ɒ/ ou /o/ dans la 2e syllabe sont des interférences du français."
+    },
+    {
+      "id": 5,
+      "section": "Section 1 — Voyelles brèves et schwa",
+      "type": "correction",
+      "word": "comfortable",
+      "lang": "english/uk",
+      "question": "La transcription ci-dessous contient plusieurs erreurs d'accentuation et de voyelles. Corrigez-la.",
+      "wrong": "/kɒmˈfɔːtɑːbl/",
+      "answer": "/ˈkʌmftəbl/",
+      "feedback": "Quatre corrections : (1) l'accent est sur la <strong>1re syllabe</strong> ; (2) voyelle tonique <strong>/ʌ/</strong> (classe STRUT) ; (3) élision de la syllabe médiane → <strong>/kʌmft-/</strong> ; (4) finale <strong>/-əbl/</strong> avec schwa et /l/ syllabique."
+    },
+    {
+      "id": 6,
+      "section": "Section 1 — Voyelles brèves et schwa",
+      "type": "transcription",
+      "word": "about",
+      "lang": "english/uk",
+      "question": "Transcrivez le mot <em>about</em> en API (SSBE). Faites attention à la syllabe initiale.",
+      "answer": "/əˈbaʊt/",
+      "feedback": "La syllabe initiale <em>a-</em> est un <strong>schwa /ə/</strong> (atone). La voyelle tonique est la diphtongue <strong>/aʊ/</strong> (classe MOUTH). L'accent porte toujours sur la deuxième syllabe."
+    },
+    {
+      "id": 7,
+      "section": "Section 2 — Diphtongues et voyelles longues",
+      "type": "qcm",
+      "word": "beautiful",
+      "lang": "english/uk",
+      "question": "Quelle est la transcription correcte de <em>beautiful</em> en SSBE ?",
+      "options": ["/ˈbjuːtɪfl/", "/ˈbjuːtɪfʊl/", "/ˈbjuːtɪfəl/", "/bjuːˈtɪfl/"],
+      "correct": 0,
+      "feedback": "L'accent est sur la <strong>1re syllabe</strong>. <em>beau-</em> se prononce <strong>/bjuː/</strong> (yod + voyelle longue). La finale <em>-ful</em> se réalise <strong>/fl/</strong> avec /l/ syllabique : le schwa interconsonantique est élidé."
+    },
+    {
+      "id": 8,
+      "section": "Section 2 — Diphtongues et voyelles longues",
+      "type": "correction",
+      "word": "always",
+      "lang": "english/uk",
+      "question": "La transcription ci-dessous est incorrecte. Corrigez-la.",
+      "wrong": "/ˈalweɪz/",
+      "answer": "/ˈɔːlweɪz/",
+      "feedback": "La voyelle tonique appartient à la classe THOUGHT : <strong>/ɔːl/</strong>, pas */al/. La diphtongue <strong>/eɪ/</strong> (classe FACE) est correctement représentée dans <em>-ways</em>."
+    },
+    {
+      "id": 9,
+      "section": "Section 2 — Diphtongues et voyelles longues",
+      "type": "transcription",
+      "word": "people",
+      "lang": "english/uk",
+      "question": "Transcrivez le mot <em>people</em> en API (SSBE). Faites attention à la finale.",
+      "answer": "/ˈpiːpl/",
+      "feedback": "La voyelle tonique est <strong>/iː/</strong> (classe FLEECE). La finale <em>-ple</em> se réalise <strong>/pl/</strong> : le schwa entre deux consonnes est élidé et /l/ devient syllabique."
+    },
+    {
+      "id": 10,
+      "section": "Section 2 — Diphtongues et voyelles longues",
+      "type": "qcm",
+      "word": "because",
+      "lang": "english/uk",
+      "question": "Dans un énoncé en débit normal, quelle est la forme habituelle de <em>because</em> en SSBE ?",
+      "options": ["/bɪˈkəz/", "/bɪˈkɒz/", "/bɪˈkɔːz/", "/biːˈkɒz/"],
+      "correct": 0,
+      "feedback": "En débit normal, <em>because</em> prend sa <strong>forme faible /bɪˈkəz/</strong> : la voyelle de la 2e syllabe se réduit à /ə/. La forme forte <strong>/bɪˈkɒz/</strong> s'emploie en position focale ou en fin d'énoncé."
+    },
+    {
+      "id": 11,
+      "section": "Section 2 — Diphtongues et voyelles longues",
+      "type": "correction",
+      "word": "university",
+      "lang": "english/uk",
+      "question": "La transcription ci-dessous contient des erreurs d'accentuation et de voyelles. Corrigez-la.",
+      "wrong": "/ˈjuːnɪvɛrsɪti/",
+      "answer": "/ˌjuːnɪˈvɜːsɪti/",
+      "feedback": "Trois corrections : (1) l'accent principal est sur <strong>-ver-</strong> (3e syllabe) ; (2) la 1re syllabe porte un <strong>accent secondaire /ˌ/</strong> ; (3) la voyelle de <em>-ver-</em> est <strong>/ɜː/</strong> (classe NURSE) — le SSBE est non-rhotique, pas de /r/ après la voyelle."
+    },
+    {
+      "id": 12,
+      "section": "Section 2 — Diphtongues et voyelles longues",
+      "type": "transcription",
+      "word": "probably",
+      "lang": "english/uk",
+      "question": "Transcrivez <em>probably</em> en API (SSBE). Donnez la forme élidée usuelle en débit normal.",
+      "answer": ["/ˈprɒbəbli/", "/ˈprɒbli/"],
+      "feedback": "La forme pleine est <strong>/ˈprɒbəbli/</strong>. En débit normal, le schwa médian est souvent élidé → <strong>/ˈprɒbli/</strong>. Les deux formes sont acceptées. Voyelle tonique : <strong>/ɒ/</strong> (classe LOT)."
+    },
+    {
+      "id": 13,
+      "section": "Section 3 — Accentuation et formes réduites",
+      "type": "qcm",
+      "word": "interesting",
+      "lang": "english/uk",
+      "question": "Quelle transcription correspond à la prononciation usuelle de <em>interesting</em> en SSBE spontané ?",
+      "options": ["/ˈɪntrɪstɪŋ/", "/ˈɪntərɪstɪŋ/", "/ɪnˈterɪstɪŋ/", "/ˈɪntɛrɛstɪŋ/"],
+      "correct": 0,
+      "feedback": "En SSBE spontané, la syllabe <em>/-ər-/</em> est élidée → <strong>/ˈɪntrɪstɪŋ/</strong>. La forme pleine <strong>/ˈɪntərɪstɪŋ/</strong> est aussi correcte. L'accent est invariablement sur la <strong>1re syllabe</strong>. /ɛ/ n'est pas utilisé en SSBE (le manuel note <strong>/e/</strong> pour la classe DRESS)."
+    },
+    {
+      "id": 14,
+      "section": "Section 3 — Accentuation et formes réduites",
+      "type": "correction",
+      "word": "necessary",
+      "lang": "english/uk",
+      "question": "La transcription ci-dessous est incorrecte. Corrigez-la.",
+      "wrong": "/nɛˈsɛsɛri/",
+      "answer": "/ˈnesɪsəri/",
+      "feedback": "Trois corrections : (1) l'accent est sur la <strong>1re syllabe</strong> ; (2) la voyelle tonique est <strong>/e/</strong> (classe DRESS, pas /ɛ/) ; (3) les voyelles atones se réduisent : <strong>/-ɪs-/</strong> en 2e syllabe, <strong>/-əri/</strong> en finale."
+    },
+    {
+      "id": 15,
+      "section": "Section 3 — Accentuation et formes réduites",
+      "type": "transcription",
+      "word": "particular",
+      "lang": "english/uk",
+      "question": "Transcrivez <em>particular</em> en API (SSBE). Faites attention au schwa, au yod et à l'accent.",
+      "answer": "/pəˈtɪkjʊlə/",
+      "feedback": "La 1re syllabe <em>par-</em> → <strong>/pə/</strong> (schwa, atone). Voyelle tonique : <strong>/ɪ/</strong> (classe KIT). Le <strong>/j/</strong> de <em>-cular</em> est un yod. Finale <em>-lar</em> → <strong>/lə/</strong> (non-rhotique)."
+    },
+    {
+      "id": 16,
+      "section": "Section 3 — Accentuation et formes réduites",
+      "type": "qcm",
+      "word": "February",
+      "lang": "english/uk",
+      "question": "Parmi ces transcriptions de <em>February</em>, laquelle correspond au SSBE en débit soigné ?",
+      "options": ["/ˈfebrʊəri/", "/ˈfɛbrɥɛri/", "/ˈfebrʊɑːri/", "/ˈfɛbjuːri/"],
+      "correct": 0,
+      "feedback": "Voyelle tonique : <strong>/e/</strong> (classe DRESS). Diphtongue finale : <strong>/ʊə/</strong> (classe CURE). En débit rapide, /br/ → /bj/ par dissimilation → <strong>/ˈfebjʊəri/</strong> est aussi acceptable. /ɑː/ serait la classe START ; /ɥ/ n'existe pas en anglais."
+    },
+    {
+      "id": 17,
+      "section": "Section 3 — Accentuation et formes réduites",
+      "type": "correction",
+      "word": "business",
+      "lang": "english/uk",
+      "question": "La transcription ci-dessous est incorrecte. Corrigez-la.",
+      "wrong": "/ˈbjuːzɪnɛs/",
+      "answer": "/ˈbɪznɪs/",
+      "feedback": "Trois corrections : (1) la voyelle tonique est <strong>/ɪ/</strong> (classe KIT) : le <em>-u-</em> de <em>busi-</em> ne vaut pas /juː/ ; (2) la syllabe médiane est élidée → <strong>/bɪz.nɪs/</strong> ; (3) la finale <em>-ness</em> se prononce <strong>/nɪs/</strong>."
+    },
+    {
+      "id": 18,
+      "section": "Section 3 — Accentuation et formes réduites",
+      "type": "transcription",
+      "word": "temperature",
+      "lang": "english/uk",
+      "question": "Transcrivez <em>temperature</em> en API (SSBE). Donnez la forme élidée courante en débit normal.",
+      "answer": ["/ˈtemprɪtʃə/", "/ˈtempərɪtʃə/"],
+      "feedback": "La forme élidée <strong>/ˈtemprɪtʃə/</strong> est courante en SSBE spontané (élision du schwa de <em>-per-</em>). La forme pleine <strong>/ˈtempərɪtʃə/</strong> est aussi correcte. L'affriquée <strong>/tʃ/</strong> correspond à <em>-ture</em>. Finale non-rhotique : <strong>/-tʃə/</strong>."
+    }
+  ]
+}
+</script>
+
+<div class="hero">
+  <h1 id="act-title"></h1>
+  <div class="sub" id="act-sub"></div>
+</div>
+
+<div class="prog-wrap">
+  <div class="prog-bar"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+  <span class="prog-label" id="prog-label"></span>
+</div>
+
+<div class="section-banner" id="sec-banner">&nbsp;</div>
+
+<main>
+  <div class="layout">
+    <div class="video-panel"><div id="yg-widget"></div></div>
+    <div class="ex-card" id="ex-card"></div>
+  </div>
+
+  <div class="keyboard" id="keyboard">
+    <div class="kb-row-label">Voyelles brèves</div>
+    <div class="kb-row" id="kr-v-short"></div>
+    <div class="kb-row-label">Voyelles longues</div>
+    <div class="kb-row" id="kr-v-long"></div>
+    <div class="kb-row-label">Diphtongues</div>
+    <div class="kb-row" id="kr-diph"></div>
+    <div class="kb-row-label">Consonnes</div>
+    <div class="kb-row" id="kr-cons"></div>
+    <div class="kb-row-label">Suprasegmentaux</div>
+    <div class="kb-row" id="kr-supra"></div>
+  </div>
+
+  <div class="nav-row">
+    <button class="btn btn-outline" id="btn-prev" onclick="nav(-1)" disabled>← Précédent</button>
+    <span class="nav-info" id="nav-info"></span>
+    <button class="btn btn-primary" id="btn-next" onclick="nav(1)">Suivant →</button>
+  </div>
+</main>
+
+<script>
+/* ── IPA Keyboard ── */
+const KB = {
+  'kr-v-short': ['ɪ','e','æ','ɒ','ʌ','ʊ','ə','a'],
+  'kr-v-long':  ['iː','ɑː','ɔː','uː','ɜː'],
+  'kr-diph':    ['eɪ','aɪ','ɔɪ','əʊ','aʊ','ɪə','eə','ʊə'],
+  'kr-cons':    ['p','b','t','d','k','g','ʔ','f','v','θ','ð','s','z','ʃ','ʒ','h','tʃ','dʒ','m','n','ŋ','l','r','w','j'],
+  'kr-supra':   ['ˈ','ˌ','ː','.',' ','/'],
+};
+
+function buildKeyboard() {
+  for (const [rowId, keys] of Object.entries(KB)) {
+    const row = document.getElementById(rowId);
+    keys.forEach(k => {
+      const btn = document.createElement('button');
+      btn.className = 'k';
+      btn.textContent = k === ' ' ? '␣' : k;
+      btn.addEventListener('mousedown', e => { e.preventDefault(); insertChar(k); });
+      row.appendChild(btn);
+    });
+  }
+  const del = document.createElement('button');
+  del.className = 'k del'; del.textContent = '⌫';
+  del.addEventListener('mousedown', e => { e.preventDefault(); deleteChar(); });
+  document.getElementById('kr-supra').appendChild(del);
+}
+
+function getInput() { return document.getElementById('ipa-inp'); }
+
+function insertChar(ch) {
+  const el = getInput(); if (!el) return;
+  const s = el.selectionStart ?? el.value.length;
+  const e = el.selectionEnd   ?? el.value.length;
+  el.value = el.value.slice(0, s) + ch + el.value.slice(e);
+  el.selectionStart = el.selectionEnd = s + ch.length;
+  el.focus();
+}
+
+function deleteChar() {
+  const el = getInput(); if (!el) return;
+  const s = el.selectionStart, e = el.selectionEnd;
+  if (s !== e) { el.value = el.value.slice(0,s) + el.value.slice(e); el.selectionStart = el.selectionEnd = s; }
+  else if (s > 0) {
+    const before = [...el.value.slice(0,s)]; before.pop();
+    el.value = before.join('') + el.value.slice(s);
+    el.selectionStart = el.selectionEnd = before.join('').length;
+  }
+  el.focus();
+}
+
+/* ── YouGlish ── */
+let ygW = null, _ygWord = null, _ygLang = null;
+
+window.ygReady = function () {
+  ygW = new YG.Widget('yg-widget', {
+    width: document.getElementById('yg-widget').offsetWidth || 640,
+    components: 7,
+  });
+  if (_ygWord) { ygW.fetch(_ygWord, _ygLang); _ygWord = null; }
+};
+
+function loadWord(word, lang) {
+  if (ygW) { ygW.fetch(word, lang || 'english/uk'); }
+  else { _ygWord = word; _ygLang = lang || 'english/uk'; }
+}
+
+/* ── State ── */
+let DATA, idx = 0, ans = [];
+
+function initAns(exs) {
+  ans = exs.map(ex => ({ val: ex.type === 'correction' ? ex.wrong : '', choice: null, done: false, shown: false }));
+}
+
+function saveInput() { const el = getInput(); if (el) ans[idx].val = el.value; }
+
+/* ── Render ── */
+function render(i) {
+  const ex = DATA.exercises[i], a = ans[i], total = DATA.exercises.length;
+
+  document.getElementById('prog-fill').style.width  = ((i+1)/total*100).toFixed(1)+'%';
+  document.getElementById('prog-label').textContent = `${i+1} / ${total}`;
+  document.getElementById('sec-banner').textContent = ex.section || '';
+  document.getElementById('nav-info').textContent   = `Exercice ${i+1} sur ${total}`;
+  document.getElementById('btn-prev').disabled = i === 0;
+  document.getElementById('btn-next').textContent = i === total-1 ? 'Terminer' : 'Suivant →';
+  document.getElementById('keyboard').classList.toggle('show', ex.type !== 'qcm' && !a.done);
+
+  const badges = { qcm:'<span class="badge badge-qcm">QCM</span>', transcription:'<span class="badge badge-transcription">Transcription</span>', correction:'<span class="badge badge-correction">Correction</span>' };
+  let html = badges[ex.type] + `<p class="question">${ex.question}</p>`;
+
+  if (ex.type === 'qcm') {
+    html += '<div class="options">';
+    ex.options.forEach((opt, oi) => {
+      let cls = 'option';
+      if (a.done || a.shown) { cls += ' locked'; if (oi===ex.correct) cls+=' ok'; else if (a.choice===oi) cls+=' bad'; }
+      else if (a.choice === oi) cls += ' sel';
+      const click = (!a.done && !a.shown) ? `onclick="pick(${i},${oi})"` : '';
+      html += `<div class="${cls}" ${click}><span class="opt-letter">${'ABCD'[oi]}</span><span>${opt}</span></div>`;
+    });
+    html += '</div>';
+  } else {
+    if (ex.type === 'correction')
+      html += `<div class="wrong-box"><div class="wrong-label">Transcription incorrecte :</div><code>${ex.wrong}</code></div><p style="font-size:.85rem;margin-bottom:.5rem;color:var(--muted)">Transcription correcte :</p>`;
+    const cls = 'ipa-field' + (a.done ? (a.correct ? ' ok' : ' bad') : '');
+    html += `<input id="ipa-inp" type="text" class="${cls}" value="${esc(a.val)}" placeholder="/…/" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" ${a.done?'readonly':''} />`;
+  }
+
+  html += '<div class="btn-row">';
+  if (!a.done) {
+    const dis = ex.type === 'qcm' && a.choice === null;
+    html += `<button class="btn btn-primary" ${dis?'disabled':''} onclick="check(${i})">Vérifier</button>`;
+  }
+  if (!a.shown && !a.done)
+    html += `<button class="btn btn-ghost" onclick="reveal(${i})">Voir la réponse</button>`;
+  html += '</div>';
+
+  if (a.done || a.shown) {
+    const cv = Array.isArray(ex.answer) ? ex.answer[0] : (ex.type==='qcm' ? ex.options[ex.correct] : ex.answer);
+    let fbCls = 'feedback show ', fbContent = '';
+    if (a.done) {
+      fbCls += a.correct ? 'ok' : 'bad';
+      fbContent = a.correct
+        ? `<strong>✓ Correct !</strong><br>${ex.feedback}`
+        : `<strong>✗ Incorrect.</strong> Réponse correcte : <span class="ans-val">${cv}</span><br><br>${ex.feedback}`;
+    } else {
+      fbCls += 'ans';
+      fbContent = `Réponse : <span class="ans-val">${cv}</span><br><br>${ex.feedback}`;
+    }
+    html += `<div class="${fbCls}">${fbContent}</div>`;
+  }
+
+  document.getElementById('ex-card').innerHTML = html;
+  const el = getInput();
+  if (el && !a.done) { el.focus(); el.setSelectionRange(el.value.length, el.value.length); }
+  loadWord(ex.word, ex.lang);
+}
+
+function esc(s) {
+  return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* ── Answer handling ── */
+function normalise(s) {
+  return (s||'').replace(/^\s*\/?\s*/,'').replace(/\s*\/?\s*$/,'').replace(/\s+/g,' ').trim();
+}
+
+window.pick = function(ei, oi) { if (!ans[ei].done && !ans[ei].shown) { ans[ei].choice = oi; render(ei); } };
+
+window.check = function(ei) {
+  const ex = DATA.exercises[ei], a = ans[ei];
+  if (ex.type === 'qcm') { a.done = true; a.correct = a.choice === ex.correct; }
+  else {
+    saveInput(); a.done = true;
+    const given = normalise(a.val);
+    const acceptable = Array.isArray(ex.answer) ? ex.answer : [ex.answer];
+    a.correct = acceptable.some(v => normalise(v) === given);
+  }
+  render(ei);
+};
+
+window.reveal = function(ei) { saveInput(); ans[ei].shown = true; render(ei); };
+
+/* ── Navigation ── */
+window.nav = function(d) {
+  saveInput();
+  const next = idx + d;
+  if (next < 0 || next >= DATA.exercises.length) return;
+  idx = next; render(idx);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+/* ── Init (reads inline data — no server required) ── */
+function init() {
+  DATA = JSON.parse(document.getElementById('activity-data').textContent);
+  document.title = DATA.meta.title;
+  document.getElementById('act-title').textContent = DATA.meta.title;
+  document.getElementById('act-sub').textContent   = DATA.meta.subtitle || '';
+  initAns(DATA.exercises);
+  buildKeyboard();
+  render(0);
+}
+
+init();
+</script>
+
+<script src="https://youglish.com/api/button" type="text/javascript" onload="ygReady()"></script>
+</body>
+</html>
