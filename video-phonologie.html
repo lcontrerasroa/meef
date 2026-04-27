@@ -469,36 +469,15 @@ function deleteChar() {
   el.focus();
 }
 
-/* ── YouGlish ── */
-let ygW = null, _ygWord = null, _ygLang = null;
-
-// Canonical callback — YouGlish calls this once its API is fully ready
-window.onYouGlishAPIReady = function () {
-  ygW = new YG.Widget('yg-widget', {
-    width: 640,
-    components: 3,   // 1=player + 2=navigation
-  });
-  if (_ygWord) { ygW.fetch(_ygWord, _ygLang); _ygWord = null; }
-};
-
-function ygFallback(word, lang) {
-  const url = `https://youglish.com/pronounce/${encodeURIComponent(word)}/${lang || 'english/uk'}`;
-  document.getElementById('yg-widget').innerHTML =
-    `<div style="height:385px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;color:#aaa;padding:2rem;text-align:center">
-       <p style="font-size:.9rem">Widget non disponible dans cet environnement.<br>Ouvrez le lien ci-dessous dans un nouvel onglet.</p>
-       <a href="${url}" target="_blank" rel="noopener"
-          style="color:#6dbfff;font-size:1rem;font-weight:600">${word} — YouGlish UK ↗</a>
-     </div>`;
-}
-
+/* ── YouGlish (iframe) ── */
 function loadWord(word, lang) {
-  if (ygW) {
-    ygW.fetch(word, lang || 'english/uk');
-  } else {
-    _ygWord = word; _ygLang = lang || 'english/uk';
-    // Show fallback link while widget loads (replaced once onYouGlishAPIReady fires)
-    ygFallback(word, lang);
-  }
+  const c = document.getElementById('yg-widget');
+  const url = `https://youglish.com/pronounce/${encodeURIComponent(word)}/${lang || 'english/uk'}`;
+  // Recreate iframe to force a fresh load for each exercise
+  c.innerHTML = `<iframe src="${url}"
+    style="width:100%;height:385px;border:none;display:block;"
+    allow="autoplay; fullscreen *; clipboard-write"
+    allowfullscreen></iframe>`;
 }
 
 /* ── State ── */
@@ -620,6 +599,5 @@ function init() {
 init();
 </script>
 
-<script src="https://youglish.com/api/button" type="text/javascript" async></script>
 </body>
 </html>
