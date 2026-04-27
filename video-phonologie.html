@@ -472,17 +472,33 @@ function deleteChar() {
 /* ── YouGlish ── */
 let ygW = null, _ygWord = null, _ygLang = null;
 
-window.ygReady = function () {
+// Canonical callback — YouGlish calls this once its API is fully ready
+window.onYouGlishAPIReady = function () {
   ygW = new YG.Widget('yg-widget', {
-    width: document.getElementById('yg-widget').offsetWidth || 640,
-    components: 7,
+    width: 640,
+    components: 3,   // 1=player + 2=navigation
   });
   if (_ygWord) { ygW.fetch(_ygWord, _ygLang); _ygWord = null; }
 };
 
+function ygFallback(word, lang) {
+  const url = `https://youglish.com/pronounce/${encodeURIComponent(word)}/${lang || 'english/uk'}`;
+  document.getElementById('yg-widget').innerHTML =
+    `<div style="height:385px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;color:#aaa;padding:2rem;text-align:center">
+       <p style="font-size:.9rem">Widget non disponible dans cet environnement.<br>Ouvrez le lien ci-dessous dans un nouvel onglet.</p>
+       <a href="${url}" target="_blank" rel="noopener"
+          style="color:#6dbfff;font-size:1rem;font-weight:600">${word} — YouGlish UK ↗</a>
+     </div>`;
+}
+
 function loadWord(word, lang) {
-  if (ygW) { ygW.fetch(word, lang || 'english/uk'); }
-  else { _ygWord = word; _ygLang = lang || 'english/uk'; }
+  if (ygW) {
+    ygW.fetch(word, lang || 'english/uk');
+  } else {
+    _ygWord = word; _ygLang = lang || 'english/uk';
+    // Show fallback link while widget loads (replaced once onYouGlishAPIReady fires)
+    ygFallback(word, lang);
+  }
 }
 
 /* ── State ── */
@@ -604,6 +620,6 @@ function init() {
 init();
 </script>
 
-<script src="https://youglish.com/api/button" type="text/javascript" onload="ygReady()"></script>
+<script src="https://youglish.com/api/button" type="text/javascript" async></script>
 </body>
 </html>
