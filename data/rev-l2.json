@@ -1,81 +1,555 @@
 {
   "title": "Révisions L2 : accentologie, semaines 1 à 4",
   "td": "Révisions ET",
-  "intro": "Programme de l'examen : notation de l'accent, accent secondaire, suffixes neutres. Tous les mots sont <b>nouveaux</b> : aucun n'a été vu en cours. Schémas accentuels : <b>1</b> = accent primaire, <b>2</b> = secondaire, <b>0</b> = atone. On compte les syllabes <b>phonétiques</b>. Tapez le schéma sans barres : <code>0100</code>.",
+  "intro": "Programme de l'examen : notation de l'accent, accent secondaire, suffixes neutres. Tous les mots sont <b>nouveaux</b> : aucun n'a été vu en cours. Chaque mot est accompagné d'un enregistrement britannique : <b>écoutez-le</b> avant de noter le schéma (pour les suffixes, c'est la base que vous entendez). Schémas accentuels : <b>1</b> = accent primaire, <b>2</b> = secondaire, <b>0</b> = atone. On compte les syllabes <b>phonétiques</b>. Tapez le schéma sans barres : <code>0100</code>.",
   "credits": [
-    { "file": "En-uk-Leicester.ogg", "author": "The Voice of Hassocks", "license": "domaine public" },
-    { "file": "En-uk-Wednesday.ogg", "author": "Association Shtooka, Judith Franck", "license": "CC BY 3.0" }
+    {
+      "file": "En-uk-Leicester.ogg",
+      "author": "The Voice of Hassocks",
+      "license": "domaine public"
+    },
+    {
+      "file": "En-uk-Wednesday.ogg",
+      "author": "Association Shtooka, Judith Franck",
+      "license": "CC BY 3.0"
+    }
   ],
   "sections": [
     {
       "title": "1. Compter les syllabes, noter l'accent",
       "instructions": "Donnez le schéma accentuel de chaque mot.",
       "items": [
-        { "type": "text", "keyboard": "stress", "prompt": "<span class=\"big\">kaleidoscope</span>", "accept": ["0100"], "show": "/0100/", "feedback": "ka-LEI-do-scope, <span class=\"ipa\">/kəˈlaɪdəskəʊp/</span>. Accent sur l'antépénultième : proparoxyton." },
-        { "type": "text", "keyboard": "stress", "prompt": "<span class=\"big\">chandelier</span>", "accept": ["201"], "show": "/201/", "feedback": "<span class=\"ipa\">/ˌʃændəˈlɪə/</span>. Accent primaire sur la dernière syllabe : oxyton, avec un secondaire deux syllabes avant." },
-        { "type": "text", "keyboard": "stress", "prompt": "<span class=\"big\">catastrophe</span>", "accept": ["0100"], "show": "/0100/", "feedback": "<span class=\"ipa\">/kəˈtæstrəfi/</span> : 4 syllabes, le ‹e› final se prononce <span class=\"ipa\">/i/</span>. Proparoxyton." },
-        { "type": "text", "keyboard": "stress", "prompt": "<span class=\"big\">boomerang</span>", "accept": ["100"], "show": "/100/", "feedback": "<span class=\"ipa\">/ˈbuːməræŋ/</span>. Proparoxyton." },
-        { "type": "text", "keyboard": "stress", "prompt": "<span class=\"big\">mischievous</span>", "accept": ["100"], "show": "/100/", "feedback": "<span class=\"ipa\">/ˈmɪstʃɪvəs/</span> : 3 syllabes seulement, il n'y a pas de <span class=\"ipa\">/i/</span> avant <i>-ous</i> (la prononciation « mis-CHIE-vi-ous » est fautive)." },
-        { "type": "text", "keyboard": "stress", "prompt": "<span class=\"big\">Leicester</span> (la ville)", "audio": { "src": "https://upload.wikimedia.org/wikipedia/commons/b/bb/En-uk-Leicester.ogg", "label": "britannique" }, "accept": ["10"], "show": "/10/", "feedback": "<span class=\"ipa\">/ˈlestə/</span> : 4 syllabes graphiques, mais 2 syllabes phonétiques seulement. Paroxyton." },
-        { "type": "text", "keyboard": "stress", "prompt": "<span class=\"big\">Wednesday</span>", "audio": { "src": "https://upload.wikimedia.org/wikipedia/commons/d/d3/En-uk-Wednesday.ogg", "label": "britannique" }, "accept": ["10"], "show": "/10/", "feedback": "<span class=\"ipa\">/ˈwenzdeɪ/</span> ou <span class=\"ipa\">/ˈwenzdi/</span> : le premier ‹d› et le ‹e› du milieu ne se prononcent pas. Paroxyton." },
-        { "type": "text", "keyboard": "stress", "prompt": "<span class=\"big\">anemone</span>", "accept": ["0100"], "show": "/0100/", "feedback": "<span class=\"ipa\">/əˈneməni/</span>. Proparoxyton." },
-        { "type": "qcm", "prompt": "Lequel de ces mots est un <b>oxyton</b> ?", "options": ["catastrophe", "chandelier", "mischievous", "Wednesday"], "answer": 1, "feedback": "<i>chandelier</i> /201/ porte l'accent primaire sur sa dernière syllabe." }
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "<span class=\"big\">kaleidoscope</span>",
+          "accept": [
+            "0100"
+          ],
+          "show": "/0100/",
+          "feedback": "ka-LEI-do-scope, <span class=\"ipa\">/kəˈlaɪdəskəʊp/</span>. Accent sur l'antépénultième : proparoxyton.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/kaleidoscope0205.mp3",
+            "label": "britannique"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "<span class=\"big\">chandelier</span>",
+          "accept": [
+            "201"
+          ],
+          "show": "/201/",
+          "feedback": "<span class=\"ipa\">/ˌʃændəˈlɪə/</span>. Accent primaire sur la dernière syllabe : oxyton, avec un secondaire deux syllabes avant.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/chandelier0205.mp3",
+            "label": "britannique"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "<span class=\"big\">catastrophe</span>",
+          "accept": [
+            "0100"
+          ],
+          "show": "/0100/",
+          "feedback": "<span class=\"ipa\">/kəˈtæstrəfi/</span> : 4 syllabes, le ‹e› final se prononce <span class=\"ipa\">/i/</span>. Proparoxyton.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/catastrophe0205.mp3",
+            "label": "britannique"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "<span class=\"big\">boomerang</span>",
+          "accept": [
+            "100"
+          ],
+          "show": "/100/",
+          "feedback": "<span class=\"ipa\">/ˈbuːməræŋ/</span>. Proparoxyton.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/boomerang_n0205.mp3",
+            "label": "britannique"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "<span class=\"big\">mischievous</span>",
+          "accept": [
+            "100"
+          ],
+          "show": "/100/",
+          "feedback": "<span class=\"ipa\">/ˈmɪstʃɪvəs/</span> : 3 syllabes seulement, il n'y a pas de <span class=\"ipa\">/i/</span> avant <i>-ous</i> (la prononciation « mis-CHIE-vi-ous » est fautive).",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/mischievous0205.mp3",
+            "label": "britannique"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "<span class=\"big\">Leicester</span> (la ville)",
+          "audio": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/b/bb/En-uk-Leicester.ogg",
+            "label": "britannique"
+          },
+          "accept": [
+            "10"
+          ],
+          "show": "/10/",
+          "feedback": "<span class=\"ipa\">/ˈlestə/</span> : 4 syllabes graphiques, mais 2 syllabes phonétiques seulement. Paroxyton."
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "<span class=\"big\">Wednesday</span>",
+          "audio": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/d/d3/En-uk-Wednesday.ogg",
+            "label": "britannique"
+          },
+          "accept": [
+            "10"
+          ],
+          "show": "/10/",
+          "feedback": "<span class=\"ipa\">/ˈwenzdeɪ/</span> ou <span class=\"ipa\">/ˈwenzdi/</span> : le premier ‹d› et le ‹e› du milieu ne se prononcent pas. Paroxyton."
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "<span class=\"big\">anemone</span>",
+          "accept": [
+            "0100"
+          ],
+          "show": "/0100/",
+          "feedback": "<span class=\"ipa\">/əˈneməni/</span>. Proparoxyton.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/anemone0205.mp3",
+            "label": "britannique"
+          }
+        },
+        {
+          "type": "qcm",
+          "prompt": "Lequel de ces mots est un <b>oxyton</b> ?",
+          "options": [
+            "catastrophe",
+            "chandelier",
+            "mischievous",
+            "Wednesday"
+          ],
+          "answer": 1,
+          "feedback": "<i>chandelier</i> /201/ porte l'accent primaire sur sa dernière syllabe."
+        }
       ]
     },
     {
       "title": "2. Accent primaire et accent secondaire",
       "instructions": "Donnez le schéma, accent secondaire compris.",
       "items": [
-        { "type": "text", "keyboard": "stress", "prompt": "<span class=\"big\">abracadabra</span>", "accept": ["20010"], "show": "/20010/", "feedback": "ˌabracaˈdabra : primaire sur la 4e syllabe, secondaire sur la 1re." },
-        { "type": "text", "keyboard": "stress", "prompt": "<span class=\"big\">hullabaloo</span>", "accept": ["2001"], "show": "/2001/", "feedback": "ˌhullabaˈloo <span class=\"ipa\">/ˌhʌləbəˈluː/</span>." },
-        { "type": "text", "keyboard": "stress", "prompt": "<span class=\"big\">personification</span>", "accept": ["020010"], "show": "/020010/", "feedback": "perˌsonifiˈcation : le secondaire tombe sur <i>-son-</i>, l'ancien primaire de perˈsonify. Le début <i>per-</i> reste atone." },
-        { "type": "text", "keyboard": "stress", "prompt": "<span class=\"big\">kaleidoscopic</span>", "accept": ["02010"], "show": "/02010/", "feedback": "kaˌleidoˈscopic <span class=\"ipa\">/kəˌlaɪdəˈskɒpɪk/</span>. Comparez avec <i>kaleidoscope</i> /0100/." },
-        { "type": "text", "keyboard": "stress", "prompt": "<span class=\"big\">operetta</span>", "accept": ["2010"], "show": "/2010/", "feedback": "ˌopeˈretta <span class=\"ipa\">/ˌɒpəˈretə/</span>." },
-        { "type": "text", "keyboard": "stress", "prompt": "<span class=\"big\">aquamarine</span>", "accept": ["2001"], "show": "/2001/", "feedback": "ˌaquamaˈrine <span class=\"ipa\">/ˌækwəməˈriːn/</span>." },
-        { "type": "text", "keyboard": "stress", "prompt": "<span class=\"big\">abominable</span>", "accept": ["01000"], "show": "/01000/", "feedback": "aˈbominable : une seule syllabe avant le primaire, donc pas de secondaire." },
-        { "type": "text", "keyboard": "stress", "prompt": "<span class=\"big\">electrocardiogram</span>", "accept": ["0201000"], "show": "/0201000/", "feedback": "eˌlectroˈcardiogram <span class=\"ipa\">/ɪˌlektrəʊˈkɑːdiəʊɡræm/</span>." },
-        { "type": "text", "keyboard": "stress", "prompt": "<span class=\"big\">unforgettable</span>", "accept": ["20100"], "show": "/20100/", "feedback": "ˌunforˈgettable : l'accent de <i>forˈget</i> ne bouge pas, <i>-able</i> est neutre." },
-        { "type": "qcm", "prompt": "De <i>kaleidoscope</i> à <i>kaleidoscopic</i>, que se passe-t-il ?", "options": [
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "<span class=\"big\">abracadabra</span>",
+          "accept": [
+            "20010"
+          ],
+          "show": "/20010/",
+          "feedback": "ˌabracaˈdabra : primaire sur la 4e syllabe, secondaire sur la 1re.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/ld41abracadabra.mp3",
+            "label": "britannique"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "<span class=\"big\">hullabaloo</span>",
+          "accept": [
+            "2001"
+          ],
+          "show": "/2001/",
+          "feedback": "ˌhullabaˈloo <span class=\"ipa\">/ˌhʌləbəˈluː/</span>.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/hullabaloo0205.mp3",
+            "label": "britannique"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "<span class=\"big\">personification</span>",
+          "accept": [
+            "020010"
+          ],
+          "show": "/020010/",
+          "feedback": "perˌsonifiˈcation : le secondaire tombe sur <i>-son-</i>, l'ancien primaire de perˈsonify. Le début <i>per-</i> reste atone.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/ld41personificatio.mp3",
+            "label": "britannique"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "<span class=\"big\">kaleidoscopic</span>",
+          "accept": [
+            "02010"
+          ],
+          "show": "/02010/",
+          "feedback": "kaˌleidoˈscopic <span class=\"ipa\">/kəˌlaɪdəˈskɒpɪk/</span>. Comparez avec <i>kaleidoscope</i> /0100/.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/kaleidoscopic0205.mp3",
+            "label": "britannique"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "<span class=\"big\">operetta</span>",
+          "accept": [
+            "2010"
+          ],
+          "show": "/2010/",
+          "feedback": "ˌopeˈretta <span class=\"ipa\">/ˌɒpəˈretə/</span>.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/ld41operetta.mp3",
+            "label": "britannique"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "<span class=\"big\">aquamarine</span>",
+          "accept": [
+            "2001"
+          ],
+          "show": "/2001/",
+          "feedback": "ˌaquamaˈrine <span class=\"ipa\">/ˌækwəməˈriːn/</span>.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/ld41aquamarine.mp3",
+            "label": "britannique"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "<span class=\"big\">abominable</span>",
+          "accept": [
+            "01000"
+          ],
+          "show": "/01000/",
+          "feedback": "aˈbominable : une seule syllabe avant le primaire, donc pas de secondaire.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/abominable0205.mp3",
+            "label": "britannique"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "<span class=\"big\">electrocardiogram</span>",
+          "accept": [
+            "0201000"
+          ],
+          "show": "/0201000/",
+          "feedback": "eˌlectroˈcardiogram <span class=\"ipa\">/ɪˌlektrəʊˈkɑːdiəʊɡræm/</span>.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/ld41electrocardiog.mp3",
+            "label": "britannique"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "<span class=\"big\">unforgettable</span>",
+          "accept": [
+            "20100"
+          ],
+          "show": "/20100/",
+          "feedback": "ˌunforˈgettable : l'accent de <i>forˈget</i> ne bouge pas, <i>-able</i> est neutre.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/unforgettable0205.mp3",
+            "label": "britannique"
+          }
+        },
+        {
+          "type": "qcm",
+          "prompt": "De <i>kaleidoscope</i> à <i>kaleidoscopic</i>, que se passe-t-il ?",
+          "options": [
             "Rien : l'accent reste sur <i>-lei-</i>",
             "Le primaire passe sur <i>-sco-</i>, l'ancien primaire devient secondaire, et <span class=\"ipa\">/əʊ/</span> devient <span class=\"ipa\">/ɒ/</span>",
             "Le primaire passe sur la première syllabe <i>ka-</i>",
             "Le primaire passe sur <i>-sco-</i> et <i>-lei-</i> devient atone"
-          ], "answer": 1, "feedback": "<span class=\"ipa\">/kəˈlaɪdəskəʊp/</span> → <span class=\"ipa\">/kəˌlaɪdəˈskɒpɪk/</span> : déplacement d'accent et changement de la voyelle accentuée." },
-        { "type": "qcm", "prompt": "Pourquoi <i>electrocardiogram</i> a-t-il un accent secondaire, et pas <i>abominable</i> ?", "options": [
+          ],
+          "answer": 1,
+          "feedback": "<span class=\"ipa\">/kəˈlaɪdəskəʊp/</span> → <span class=\"ipa\">/kəˌlaɪdəˈskɒpɪk/</span> : déplacement d'accent et changement de la voyelle accentuée."
+        },
+        {
+          "type": "qcm",
+          "prompt": "Pourquoi <i>electrocardiogram</i> a-t-il un accent secondaire, et pas <i>abominable</i> ?",
+          "options": [
             "Parce que les mots longs ont toujours un accent secondaire",
             "Parce qu'un mot ne peut pas commencer par plusieurs syllabes atones avant le primaire",
             "Parce que <i>-gram</i> attire l'accent",
             "Parce que deux accents doivent être adjacents"
-          ], "answer": 1, "feedback": "Contrainte « pas de début totalement atone » : <i>e-lec-tro-</i> fait trois syllabes avant le primaire, il faut un secondaire. <i>a-</i> n'en fait qu'une. Et le secondaire ne peut pas être adjacent au primaire : il tombe sur <i>-lec-</i>, pas sur <i>-tro-</i>." }
+          ],
+          "answer": 1,
+          "feedback": "Contrainte « pas de début totalement atone » : <i>e-lec-tro-</i> fait trois syllabes avant le primaire, il faut un secondaire. <i>a-</i> n'en fait qu'une. Et le secondaire ne peut pas être adjacent au primaire : il tombe sur <i>-lec-</i>, pas sur <i>-tro-</i>."
+        }
       ]
     },
     {
       "title": "3. Suffixes neutres",
       "instructions": "Ajoutez le suffixe et donnez le schéma du dérivé.",
       "items": [
-        { "type": "text", "keyboard": "stress", "prompt": "astonish + <b>-ment</b>", "accept": ["0100"], "show": "aˈstonishment /0100/", "feedback": "<span class=\"ipa\">/əˈstɒnɪʃmənt/</span> : <i>-ment</i> est neutre et se réduit en <span class=\"ipa\">/mənt/</span>." },
-        { "type": "text", "keyboard": "stress", "prompt": "bewilder + <b>-ment</b>", "accept": ["0100"], "show": "beˈwilderment /0100/", "feedback": "<span class=\"ipa\">/bɪˈwɪldəmənt/</span>." },
-        { "type": "text", "keyboard": "stress", "prompt": "apprentice + <b>-ship</b>", "accept": ["0100"], "show": "apˈprenticeship /0100/", "feedback": "<span class=\"ipa\">/əˈprentɪsʃɪp/</span>." },
-        { "type": "text", "keyboard": "stress", "prompt": "ambassador + <b>-ship</b>", "accept": ["01000"], "show": "amˈbassadorship /01000/", "feedback": "<span class=\"ipa\">/æmˈbæsədəʃɪp/</span>." },
-        { "type": "text", "keyboard": "stress", "prompt": "hooligan + <b>-ism</b>", "accept": ["10000"], "show": "ˈhooliganism /10000/", "feedback": "<span class=\"ipa\">/ˈhuːlɪɡənɪzəm/</span> : <i>-ism</i> ajoute <b>deux</b> syllabes, <span class=\"ipa\">/ɪzəm/</span>." },
-        { "type": "text", "keyboard": "stress", "prompt": "jeopardy + <b>-ize</b>", "accept": ["100"], "show": "ˈjeopardize /100/", "feedback": "<span class=\"ipa\">/ˈdʒepədaɪz/</span> : <i>-ize</i> remplace le <i>-y</i>, le mot garde 3 syllabes. <i>-ize</i> garde une voyelle pleine <span class=\"ipa\">/aɪ/</span>." },
-        { "type": "text", "keyboard": "stress", "prompt": "pilgrim + <b>-age</b>", "accept": ["100"], "show": "ˈpilgrimage /100/", "feedback": "<span class=\"ipa\">/ˈpɪlɡrɪmɪdʒ/</span> : <i>-age</i> se réduit en <span class=\"ipa\">/ɪdʒ/</span>." },
-        { "type": "text", "keyboard": "stress", "prompt": "steward + <b>-ship</b>", "accept": ["100"], "show": "ˈstewardship /100/", "feedback": "<span class=\"ipa\">/ˈstjuːədʃɪp/</span>." },
-        { "type": "text", "keyboard": "stress", "prompt": "burden → burdensome → <b>burdensomeness</b>", "accept": ["1000"], "show": "ˈburdensomeness /1000/", "feedback": "ˈburden /10/ → ˈburdensome /100/ → ˈburdensomeness /1000/. <i>-some</i> <span class=\"ipa\">/səm/</span>, <i>-ness</i> <span class=\"ipa\">/nəs/</span>." },
-        { "type": "text", "keyboard": "stress", "prompt": "remorse → remorseless → <b>remorselessly</b>", "accept": ["0100"], "show": "reˈmorselessly /0100/", "feedback": "reˈmorse /01/ → reˈmorseless /010/ → reˈmorselessly /0100/. <i>-less</i> <span class=\"ipa\">/ləs/</span>." },
-        { "type": "text", "keyboard": "stress", "prompt": "enjoy → enjoyable → <b>enjoyably</b>", "accept": ["0100"], "show": "enˈjoyably /0100/", "feedback": "<span class=\"ipa\">/ɪnˈdʒɔɪəbli/</span>." },
-        { "type": "qcm", "prompt": "Que devient l'accent quand on empile plusieurs suffixes neutres ?", "options": ["Il avance d'une syllabe à chaque suffixe", "Il reste sur la même syllabe de la base", "Il passe sur le dernier suffixe", "Il devient secondaire"], "answer": 1, "feedback": "Un suffixe neutre ne change rien à la place de l'accent : il faut accentuer la base, puis ajouter les suffixes." },
-        { "type": "qcm", "prompt": "Comment se prononce le suffixe de <i>pilgrimage</i> ?", "options": ["<span class=\"ipa\">/eɪdʒ/</span>", "<span class=\"ipa\">/ɑːʒ/</span>", "<span class=\"ipa\">/ɪdʒ/</span>", "<span class=\"ipa\">/æʒ/</span>"], "answer": 2, "feedback": "Atone, <i>-age</i> se réduit en <span class=\"ipa\">/ɪdʒ/</span>." }
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "astonish + <b>-ment</b>",
+          "accept": [
+            "0100"
+          ],
+          "show": "aˈstonishment /0100/",
+          "feedback": "<span class=\"ipa\">/əˈstɒnɪʃmənt/</span> : <i>-ment</i> est neutre et se réduit en <span class=\"ipa\">/mənt/</span>.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/astonish0205.mp3",
+            "label": "britannique, la base : astonish"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "bewilder + <b>-ment</b>",
+          "accept": [
+            "0100"
+          ],
+          "show": "beˈwilderment /0100/",
+          "feedback": "<span class=\"ipa\">/bɪˈwɪldəmənt/</span>.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/ld41bewilder.mp3",
+            "label": "britannique, la base : bewilder"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "apprentice + <b>-ship</b>",
+          "accept": [
+            "0100"
+          ],
+          "show": "apˈprenticeship /0100/",
+          "feedback": "<span class=\"ipa\">/əˈprentɪsʃɪp/</span>.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/apprentice0205.mp3",
+            "label": "britannique, la base : apprentice"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "ambassador + <b>-ship</b>",
+          "accept": [
+            "01000"
+          ],
+          "show": "amˈbassadorship /01000/",
+          "feedback": "<span class=\"ipa\">/æmˈbæsədəʃɪp/</span>.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/ambassador0205.mp3",
+            "label": "britannique, la base : ambassador"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "hooligan + <b>-ism</b>",
+          "accept": [
+            "10000"
+          ],
+          "show": "ˈhooliganism /10000/",
+          "feedback": "<span class=\"ipa\">/ˈhuːlɪɡənɪzəm/</span> : <i>-ism</i> ajoute <b>deux</b> syllabes, <span class=\"ipa\">/ɪzəm/</span>.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/hooligan0205.mp3",
+            "label": "britannique, la base : hooligan"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "jeopardy + <b>-ize</b>",
+          "accept": [
+            "100"
+          ],
+          "show": "ˈjeopardize /100/",
+          "feedback": "<span class=\"ipa\">/ˈdʒepədaɪz/</span> : <i>-ize</i> remplace le <i>-y</i>, le mot garde 3 syllabes. <i>-ize</i> garde une voyelle pleine <span class=\"ipa\">/aɪ/</span>.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/jeopardy0205.mp3",
+            "label": "britannique, la base : jeopardy"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "pilgrim + <b>-age</b>",
+          "accept": [
+            "100"
+          ],
+          "show": "ˈpilgrimage /100/",
+          "feedback": "<span class=\"ipa\">/ˈpɪlɡrɪmɪdʒ/</span> : <i>-age</i> se réduit en <span class=\"ipa\">/ɪdʒ/</span>.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/brelasdepilgrim.mp3",
+            "label": "britannique, la base : pilgrim"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "steward + <b>-ship</b>",
+          "accept": [
+            "100"
+          ],
+          "show": "ˈstewardship /100/",
+          "feedback": "<span class=\"ipa\">/ˈstjuːədʃɪp/</span>.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/steward0205.mp3",
+            "label": "britannique, la base : steward"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "burden → burdensome → <b>burdensomeness</b>",
+          "accept": [
+            "1000"
+          ],
+          "show": "ˈburdensomeness /1000/",
+          "feedback": "ˈburden /10/ → ˈburdensome /100/ → ˈburdensomeness /1000/. <i>-some</i> <span class=\"ipa\">/səm/</span>, <i>-ness</i> <span class=\"ipa\">/nəs/</span>.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/b287new3.mp3",
+            "label": "britannique, la base : burdensome"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "remorse → remorseless → <b>remorselessly</b>",
+          "accept": [
+            "0100"
+          ],
+          "show": "reˈmorselessly /0100/",
+          "feedback": "reˈmorse /01/ → reˈmorseless /010/ → reˈmorselessly /0100/. <i>-less</i> <span class=\"ipa\">/ləs/</span>.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/remorseless0205.mp3",
+            "label": "britannique, la base : remorseless"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "stress",
+          "prompt": "enjoy → enjoyable → <b>enjoyably</b>",
+          "accept": [
+            "0100"
+          ],
+          "show": "enˈjoyably /0100/",
+          "feedback": "<span class=\"ipa\">/ɪnˈdʒɔɪəbli/</span>.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/enjoyable0205.mp3",
+            "label": "britannique, la base : enjoyable"
+          }
+        },
+        {
+          "type": "qcm",
+          "prompt": "Que devient l'accent quand on empile plusieurs suffixes neutres ?",
+          "options": [
+            "Il avance d'une syllabe à chaque suffixe",
+            "Il reste sur la même syllabe de la base",
+            "Il passe sur le dernier suffixe",
+            "Il devient secondaire"
+          ],
+          "answer": 1,
+          "feedback": "Un suffixe neutre ne change rien à la place de l'accent : il faut accentuer la base, puis ajouter les suffixes."
+        },
+        {
+          "type": "qcm",
+          "prompt": "Comment se prononce le suffixe de <i>pilgrimage</i> ?",
+          "options": [
+            "<span class=\"ipa\">/eɪdʒ/</span>",
+            "<span class=\"ipa\">/ɑːʒ/</span>",
+            "<span class=\"ipa\">/ɪdʒ/</span>",
+            "<span class=\"ipa\">/æʒ/</span>"
+          ],
+          "answer": 2,
+          "feedback": "Atone, <i>-age</i> se réduit en <span class=\"ipa\">/ɪdʒ/</span>."
+        }
       ]
     },
     {
       "title": "4. Vrai suffixe ou pas ?",
       "instructions": "Cochez les mots qui contiennent réellement le suffixe : la base doit exister, et le sens du mot doit s'en déduire.",
       "items": [
-        { "type": "multi", "prompt": "Suffixe <b>-ER</b>", "options": ["baker", "hammer", "stapler", "thunder", "ruler", "copper", "jogger", "cider"], "answers": [0, 2, 4, 6], "feedback": "bake, staple, rule, jog + <i>-er</i>. <i>Hammer, thunder, copper, cider</i> n'ont pas de base." },
-        { "type": "multi", "prompt": "Suffixe <b>-LY</b>", "options": ["costly", "bully", "elderly", "rally", "lovely", "lily", "monopoly", "jelly"], "answers": [0, 2, 4], "feedback": "cost, elder, love + <i>-ly</i>. Les autres n'ont pas de base." },
-        { "type": "multi", "prompt": "Suffixe <b>-MENT</b>", "options": ["pigment", "amazement", "fragment", "puzzlement", "cement", "enjoyment"], "answers": [1, 3, 5], "feedback": "amaze, puzzle, enjoy + <i>-ment</i>. Piège : <i>pigment</i> n'a rien à voir avec <i>pig</i>." }
+        {
+          "type": "multi",
+          "prompt": "Suffixe <b>-ER</b>",
+          "options": [
+            "baker",
+            "hammer",
+            "stapler",
+            "thunder",
+            "ruler",
+            "copper",
+            "jogger",
+            "cider"
+          ],
+          "answers": [
+            0,
+            2,
+            4,
+            6
+          ],
+          "feedback": "bake, staple, rule, jog + <i>-er</i>. <i>Hammer, thunder, copper, cider</i> n'ont pas de base."
+        },
+        {
+          "type": "multi",
+          "prompt": "Suffixe <b>-LY</b>",
+          "options": [
+            "costly",
+            "bully",
+            "elderly",
+            "rally",
+            "lovely",
+            "lily",
+            "monopoly",
+            "jelly"
+          ],
+          "answers": [
+            0,
+            2,
+            4
+          ],
+          "feedback": "cost, elder, love + <i>-ly</i>. Les autres n'ont pas de base."
+        },
+        {
+          "type": "multi",
+          "prompt": "Suffixe <b>-MENT</b>",
+          "options": [
+            "pigment",
+            "amazement",
+            "fragment",
+            "puzzlement",
+            "cement",
+            "enjoyment"
+          ],
+          "answers": [
+            1,
+            3,
+            5
+          ],
+          "feedback": "amaze, puzzle, enjoy + <i>-ment</i>. Piège : <i>pigment</i> n'a rien à voir avec <i>pig</i>."
+        }
       ]
     }
-  ]
+  ],
+  "audioNote": "Longman Dictionary of Contemporary English en ligne (<a href=\"https://www.ldoceonline.com/\" target=\"_blank\" rel=\"noopener\">ldoceonline.com</a>, © Pearson), écoute directe depuis le site."
 }

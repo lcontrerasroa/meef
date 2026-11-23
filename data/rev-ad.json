@@ -3,96 +3,567 @@
   "td": "Révisions ET",
   "intro": "Programme de l'examen : séances 1 à 3 (transcription, consonnes, voyelles). Norme : SSBE. Tous les mots sont <b>nouveaux</b>, et la plupart viennent du vocabulaire juridique. Pour vérifier une prononciation : <a href=\"https://dictionary.cambridge.org/\" target=\"_blank\">Cambridge Dictionary</a>, audio UK.",
   "credits": [
-    { "file": "En-uk-tort.ogg", "author": "auteur non indiqué", "license": "domaine public" }
+    {
+      "file": "En-uk-tort.ogg",
+      "author": "auteur non indiqué",
+      "license": "domaine public"
+    }
   ],
   "sections": [
     {
       "title": "1. Décrire une consonne",
       "instructions": "Quel son notent les lettres en gras ? Rappel : phonation, lieu, mode.",
       "items": [
-        { "type": "qcm", "prompt": "<span class=\"big\"><b>th</b>eft</span>", "options": ["<span class=\"ipa\">/ð/</span> voiced dental fricative", "<span class=\"ipa\">/θ/</span> voiceless dental fricative", "<span class=\"ipa\">/t/</span> voiceless alveolar stop", "<span class=\"ipa\">/f/</span> voiceless labiodental fricative"], "answer": 1, "feedback": "<i>theft</i> <span class=\"ipa\">/θeft/</span>." },
-        { "type": "qcm", "prompt": "<span class=\"big\">collu<b>s</b>ion</span>", "options": ["<span class=\"ipa\">/s/</span> voiceless alveolar fricative", "<span class=\"ipa\">/z/</span> voiced alveolar fricative", "<span class=\"ipa\">/ʃ/</span> voiceless postalveolar fricative", "<span class=\"ipa\">/ʒ/</span> voiced postalveolar fricative"], "answer": 3, "feedback": "<i>collusion</i> <span class=\"ipa\">/kəˈluːʒn̩/</span>, comme <i>decision</i> ou <i>conclusion</i>." },
-        { "type": "qcm", "prompt": "<span class=\"big\">bindi<b>ng</b></span>", "options": ["<span class=\"ipa\">/n/</span> alveolar nasal", "<span class=\"ipa\">/ŋ/</span> velar nasal", "<span class=\"ipa\">/ŋɡ/</span> velar nasal + voiced velar stop", "<span class=\"ipa\">/ɡ/</span> voiced velar stop"], "answer": 1, "feedback": "<span class=\"ipa\">/ˈbaɪndɪŋ/</span> : ‹ng› final note un seul son, la nasale vélaire, sans /ɡ/ après." },
-        { "type": "qcm", "prompt": "<span class=\"big\"><b>ch</b>arge</span>", "options": ["<span class=\"ipa\">/ʃ/</span> voiceless postalveolar fricative", "<span class=\"ipa\">/tʃ/</span> voiceless postalveolar affricate", "<span class=\"ipa\">/k/</span> voiceless velar stop", "<span class=\"ipa\">/dʒ/</span> voiced postalveolar affricate"], "answer": 1, "feedback": "<i>charge</i> <span class=\"ipa\">/tʃɑːdʒ/</span> commence par une affriquée, pas par le <i>ch</i> français de <i>charger</i>." },
-        { "type": "qcm", "prompt": "<span class=\"big\">char<b>ge</b></span>", "options": ["<span class=\"ipa\">/ʒ/</span> voiced postalveolar fricative", "<span class=\"ipa\">/ɡ/</span> voiced velar stop", "<span class=\"ipa\">/dʒ/</span> voiced postalveolar affricate", "<span class=\"ipa\">/tʃ/</span> voiceless postalveolar affricate"], "answer": 2, "feedback": "Le ‹ge› final de <i>charge</i> note l'affriquée voisée <span class=\"ipa\">/dʒ/</span>." },
-        { "type": "qcm", "prompt": "<span class=\"big\"><b>v</b>oid</span>", "options": ["<span class=\"ipa\">/v/</span> voiced labiodental fricative", "<span class=\"ipa\">/f/</span> voiceless labiodental fricative", "<span class=\"ipa\">/b/</span> voiced bilabial stop", "<span class=\"ipa\">/w/</span> approximant"], "answer": 0, "feedback": "<i>void</i> <span class=\"ipa\">/vɔɪd/</span>." },
-        { "type": "qcm", "prompt": "<span class=\"big\"><b>y</b>ield</span>", "options": ["<span class=\"ipa\">/dʒ/</span> voiced postalveolar affricate", "<span class=\"ipa\">/j/</span> palatal approximant", "<span class=\"ipa\">/i/</span> close front vowel", "<span class=\"ipa\">/ʒ/</span> voiced postalveolar fricative"], "answer": 1, "feedback": "<i>yield</i> <span class=\"ipa\">/jiːld/</span>. Le symbole <span class=\"ipa\">/j/</span> note le son de <i>yes</i>, pas celui de <i>jour</i>." },
-        { "type": "qcm", "prompt": "<span class=\"big\"><b>l</b>iable</span>", "options": ["<span class=\"ipa\">/r/</span> approximant", "<span class=\"ipa\">/l/</span> alveolar lateral approximant", "<span class=\"ipa\">/n/</span> alveolar nasal", "<span class=\"ipa\">/j/</span> palatal approximant"], "answer": 1, "feedback": "<i>liable</i> <span class=\"ipa\">/ˈlaɪəbl̩/</span> : l'air sort par les côtés de la langue, d'où « latérale »." },
-        { "type": "qcm", "prompt": "<span class=\"big\"><b>h</b>eir</span>", "options": ["<span class=\"ipa\">/h/</span> voiceless glottal fricative", "<span class=\"ipa\">/x/</span> voiceless velar fricative", "aucun son : le ‹h› est muet", "<span class=\"ipa\">/ʔ/</span> glottal stop"], "answer": 2, "feedback": "<i>heir</i> <span class=\"ipa\">/eə/</span> se prononce exactement comme <i>air</i>. Même chose dans <i>heiress</i>, <i>honest</i>, <i>hour</i>." }
+        {
+          "type": "qcm",
+          "prompt": "<span class=\"big\"><b>th</b>eft</span>",
+          "options": [
+            "<span class=\"ipa\">/ð/</span> voiced dental fricative",
+            "<span class=\"ipa\">/θ/</span> voiceless dental fricative",
+            "<span class=\"ipa\">/t/</span> voiceless alveolar stop",
+            "<span class=\"ipa\">/f/</span> voiceless labiodental fricative"
+          ],
+          "answer": 1,
+          "feedback": "<i>theft</i> <span class=\"ipa\">/θeft/</span>."
+        },
+        {
+          "type": "qcm",
+          "prompt": "<span class=\"big\">collu<b>s</b>ion</span>",
+          "options": [
+            "<span class=\"ipa\">/s/</span> voiceless alveolar fricative",
+            "<span class=\"ipa\">/z/</span> voiced alveolar fricative",
+            "<span class=\"ipa\">/ʃ/</span> voiceless postalveolar fricative",
+            "<span class=\"ipa\">/ʒ/</span> voiced postalveolar fricative"
+          ],
+          "answer": 3,
+          "feedback": "<i>collusion</i> <span class=\"ipa\">/kəˈluːʒn̩/</span>, comme <i>decision</i> ou <i>conclusion</i>."
+        },
+        {
+          "type": "qcm",
+          "prompt": "<span class=\"big\">bindi<b>ng</b></span>",
+          "options": [
+            "<span class=\"ipa\">/n/</span> alveolar nasal",
+            "<span class=\"ipa\">/ŋ/</span> velar nasal",
+            "<span class=\"ipa\">/ŋɡ/</span> velar nasal + voiced velar stop",
+            "<span class=\"ipa\">/ɡ/</span> voiced velar stop"
+          ],
+          "answer": 1,
+          "feedback": "<span class=\"ipa\">/ˈbaɪndɪŋ/</span> : ‹ng› final note un seul son, la nasale vélaire, sans /ɡ/ après."
+        },
+        {
+          "type": "qcm",
+          "prompt": "<span class=\"big\"><b>ch</b>arge</span>",
+          "options": [
+            "<span class=\"ipa\">/ʃ/</span> voiceless postalveolar fricative",
+            "<span class=\"ipa\">/tʃ/</span> voiceless postalveolar affricate",
+            "<span class=\"ipa\">/k/</span> voiceless velar stop",
+            "<span class=\"ipa\">/dʒ/</span> voiced postalveolar affricate"
+          ],
+          "answer": 1,
+          "feedback": "<i>charge</i> <span class=\"ipa\">/tʃɑːdʒ/</span> commence par une affriquée, pas par le <i>ch</i> français de <i>charger</i>."
+        },
+        {
+          "type": "qcm",
+          "prompt": "<span class=\"big\">char<b>ge</b></span>",
+          "options": [
+            "<span class=\"ipa\">/ʒ/</span> voiced postalveolar fricative",
+            "<span class=\"ipa\">/ɡ/</span> voiced velar stop",
+            "<span class=\"ipa\">/dʒ/</span> voiced postalveolar affricate",
+            "<span class=\"ipa\">/tʃ/</span> voiceless postalveolar affricate"
+          ],
+          "answer": 2,
+          "feedback": "Le ‹ge› final de <i>charge</i> note l'affriquée voisée <span class=\"ipa\">/dʒ/</span>."
+        },
+        {
+          "type": "qcm",
+          "prompt": "<span class=\"big\"><b>v</b>oid</span>",
+          "options": [
+            "<span class=\"ipa\">/v/</span> voiced labiodental fricative",
+            "<span class=\"ipa\">/f/</span> voiceless labiodental fricative",
+            "<span class=\"ipa\">/b/</span> voiced bilabial stop",
+            "<span class=\"ipa\">/w/</span> approximant"
+          ],
+          "answer": 0,
+          "feedback": "<i>void</i> <span class=\"ipa\">/vɔɪd/</span>."
+        },
+        {
+          "type": "qcm",
+          "prompt": "<span class=\"big\"><b>y</b>ield</span>",
+          "options": [
+            "<span class=\"ipa\">/dʒ/</span> voiced postalveolar affricate",
+            "<span class=\"ipa\">/j/</span> palatal approximant",
+            "<span class=\"ipa\">/i/</span> close front vowel",
+            "<span class=\"ipa\">/ʒ/</span> voiced postalveolar fricative"
+          ],
+          "answer": 1,
+          "feedback": "<i>yield</i> <span class=\"ipa\">/jiːld/</span>. Le symbole <span class=\"ipa\">/j/</span> note le son de <i>yes</i>, pas celui de <i>jour</i>."
+        },
+        {
+          "type": "qcm",
+          "prompt": "<span class=\"big\"><b>l</b>iable</span>",
+          "options": [
+            "<span class=\"ipa\">/r/</span> approximant",
+            "<span class=\"ipa\">/l/</span> alveolar lateral approximant",
+            "<span class=\"ipa\">/n/</span> alveolar nasal",
+            "<span class=\"ipa\">/j/</span> palatal approximant"
+          ],
+          "answer": 1,
+          "feedback": "<i>liable</i> <span class=\"ipa\">/ˈlaɪəbl̩/</span> : l'air sort par les côtés de la langue, d'où « latérale »."
+        },
+        {
+          "type": "qcm",
+          "prompt": "<span class=\"big\"><b>h</b>eir</span>",
+          "options": [
+            "<span class=\"ipa\">/h/</span> voiceless glottal fricative",
+            "<span class=\"ipa\">/x/</span> voiceless velar fricative",
+            "aucun son : le ‹h› est muet",
+            "<span class=\"ipa\">/ʔ/</span> glottal stop"
+          ],
+          "answer": 2,
+          "feedback": "<i>heir</i> <span class=\"ipa\">/eə/</span> se prononce exactement comme <i>air</i>. Même chose dans <i>heiress</i>, <i>honest</i>, <i>hour</i>."
+        }
       ]
     },
     {
       "title": "2. Trouvez l'intrus",
       "instructions": "Un son ne partage pas une propriété commune aux autres.",
       "items": [
-        { "type": "qcm", "prompt": "<span class=\"ipa big\">/p t k b/</span>", "options": ["/p/", "/t/", "/k/", "/b/"], "answer": 3, "feedback": "/b/ est la seule voisée : les autres sont des occlusives sourdes." },
-        { "type": "qcm", "prompt": "<span class=\"ipa big\">/m n ŋ l/</span>", "options": ["/m/", "/n/", "/ŋ/", "/l/"], "answer": 3, "feedback": "/l/ est une latérale ; les autres sont des nasales." },
-        { "type": "qcm", "prompt": "<span class=\"ipa big\">/s z t ʃ n/</span>", "options": ["/s/", "/z/", "/t/", "/ʃ/", "/n/"], "answer": 3, "feedback": "/ʃ/ est postalvéolaire ; les autres sont alvéolaires." },
-        { "type": "qcm", "prompt": "<span class=\"ipa big\">/θ ð f v d/</span>", "options": ["/θ/", "/ð/", "/f/", "/v/", "/d/"], "answer": 4, "feedback": "/d/ est une occlusive ; les autres sont des fricatives." },
-        { "type": "qcm", "prompt": "<span class=\"ipa big\">/iː ɪ e æ ɒ/</span>", "options": ["/iː/", "/ɪ/", "/e/", "/æ/", "/ɒ/"], "answer": 4, "feedback": "/ɒ/ est postérieure et arrondie ; les autres sont antérieures et non arrondies." },
-        { "type": "qcm", "prompt": "<span class=\"ipa big\">/uː ʊ ɔː ɒ ʌ/</span>", "options": ["/uː/", "/ʊ/", "/ɔː/", "/ɒ/", "/ʌ/"], "answer": 4, "feedback": "/ʌ/ est la seule non arrondie." }
+        {
+          "type": "qcm",
+          "prompt": "<span class=\"ipa big\">/p t k b/</span>",
+          "options": [
+            "/p/",
+            "/t/",
+            "/k/",
+            "/b/"
+          ],
+          "answer": 3,
+          "feedback": "/b/ est la seule voisée : les autres sont des occlusives sourdes."
+        },
+        {
+          "type": "qcm",
+          "prompt": "<span class=\"ipa big\">/m n ŋ l/</span>",
+          "options": [
+            "/m/",
+            "/n/",
+            "/ŋ/",
+            "/l/"
+          ],
+          "answer": 3,
+          "feedback": "/l/ est une latérale ; les autres sont des nasales."
+        },
+        {
+          "type": "qcm",
+          "prompt": "<span class=\"ipa big\">/s z t ʃ n/</span>",
+          "options": [
+            "/s/",
+            "/z/",
+            "/t/",
+            "/ʃ/",
+            "/n/"
+          ],
+          "answer": 3,
+          "feedback": "/ʃ/ est postalvéolaire ; les autres sont alvéolaires."
+        },
+        {
+          "type": "qcm",
+          "prompt": "<span class=\"ipa big\">/θ ð f v d/</span>",
+          "options": [
+            "/θ/",
+            "/ð/",
+            "/f/",
+            "/v/",
+            "/d/"
+          ],
+          "answer": 4,
+          "feedback": "/d/ est une occlusive ; les autres sont des fricatives."
+        },
+        {
+          "type": "qcm",
+          "prompt": "<span class=\"ipa big\">/iː ɪ e æ ɒ/</span>",
+          "options": [
+            "/iː/",
+            "/ɪ/",
+            "/e/",
+            "/æ/",
+            "/ɒ/"
+          ],
+          "answer": 4,
+          "feedback": "/ɒ/ est postérieure et arrondie ; les autres sont antérieures et non arrondies."
+        },
+        {
+          "type": "qcm",
+          "prompt": "<span class=\"ipa big\">/uː ʊ ɔː ɒ ʌ/</span>",
+          "options": [
+            "/uː/",
+            "/ʊ/",
+            "/ɔː/",
+            "/ɒ/",
+            "/ʌ/"
+          ],
+          "answer": 4,
+          "feedback": "/ʌ/ est la seule non arrondie."
+        }
       ]
     },
     {
       "title": "3. Mots-témoins",
       "instructions": "Pour chaque mot, choisissez le mot-témoin qui a la même voyelle accentuée.",
       "items": [
-        { "type": "classify", "prompt": "Voyelles simples", "audio": { "src": "https://upload.wikimedia.org/wikipedia/commons/d/d9/En-uk-tort.ogg", "label": "tort (britannique)" },
-          "categories": ["FLEECE", "KIT", "DRESS", "TRAP", "LOT", "STRUT", "FOOT", "GOOSE", "NURSE", "THOUGHT", "PALM"],
-          "words": [
-            { "w": "plea", "cat": "FLEECE" }, { "w": "deed", "cat": "FLEECE" }, { "w": "will", "cat": "KIT" },
-            { "w": "debt", "cat": "DRESS" }, { "w": "act", "cat": "TRAP" }, { "w": "bond", "cat": "LOT" },
-            { "w": "warrant", "cat": "LOT" }, { "w": "smuggle", "cat": "STRUT" }, { "w": "custody", "cat": "STRUT" },
-            { "w": "goods", "cat": "FOOT" }, { "w": "proof", "cat": "GOOSE" }, { "w": "perjury", "cat": "NURSE" },
-            { "w": "fraud", "cat": "THOUGHT" }, { "w": "tort", "cat": "THOUGHT" }, { "w": "charter", "cat": "PALM" }
+        {
+          "type": "classify",
+          "prompt": "Voyelles simples",
+          "audio": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/d/d9/En-uk-tort.ogg",
+            "label": "tort (britannique)"
+          },
+          "categories": [
+            "FLEECE",
+            "KIT",
+            "DRESS",
+            "TRAP",
+            "LOT",
+            "STRUT",
+            "FOOT",
+            "GOOSE",
+            "NURSE",
+            "THOUGHT",
+            "PALM"
           ],
-          "feedback": "Pièges : <i>warrant</i> a la voyelle de LOT malgré le ‹a› ; <i>tort</i> et <i>fraud</i> riment en SSBE, puisque le ‹r› de <i>tort</i> ne se prononce pas ; <i>debt</i> a un ‹b› muet." },
-        { "type": "classify", "prompt": "Diphtongues",
-          "categories": ["FACE", "PRICE", "CHOICE", "GOAT", "MOUTH", "NEAR", "SQUARE", "CURE"],
           "words": [
-            { "w": "bail", "cat": "FACE" }, { "w": "crime", "cat": "PRICE" }, { "w": "void", "cat": "CHOICE" },
-            { "w": "oath", "cat": "GOAT" }, { "w": "council", "cat": "MOUTH" }, { "w": "heir", "cat": "SQUARE" },
-            { "w": "appear", "cat": "NEAR" }
+            {
+              "w": "plea",
+              "cat": "FLEECE"
+            },
+            {
+              "w": "deed",
+              "cat": "FLEECE"
+            },
+            {
+              "w": "will",
+              "cat": "KIT"
+            },
+            {
+              "w": "debt",
+              "cat": "DRESS"
+            },
+            {
+              "w": "act",
+              "cat": "TRAP"
+            },
+            {
+              "w": "bond",
+              "cat": "LOT"
+            },
+            {
+              "w": "warrant",
+              "cat": "LOT"
+            },
+            {
+              "w": "smuggle",
+              "cat": "STRUT"
+            },
+            {
+              "w": "custody",
+              "cat": "STRUT"
+            },
+            {
+              "w": "goods",
+              "cat": "FOOT"
+            },
+            {
+              "w": "proof",
+              "cat": "GOOSE"
+            },
+            {
+              "w": "perjury",
+              "cat": "NURSE"
+            },
+            {
+              "w": "fraud",
+              "cat": "THOUGHT"
+            },
+            {
+              "w": "tort",
+              "cat": "THOUGHT"
+            },
+            {
+              "w": "charter",
+              "cat": "PALM"
+            }
           ],
-          "feedback": "<i>heir</i> <span class=\"ipa\">/eə/</span> et <i>appear</i> <span class=\"ipa\">/əˈpɪə/</span> ont des diphtongues centrantes : le ‹r› ne se prononce pas." }
+          "feedback": "Pièges : <i>warrant</i> a la voyelle de LOT malgré le ‹a› ; <i>tort</i> et <i>fraud</i> riment en SSBE, puisque le ‹r› de <i>tort</i> ne se prononce pas ; <i>debt</i> a un ‹b› muet."
+        },
+        {
+          "type": "classify",
+          "prompt": "Diphtongues",
+          "categories": [
+            "FACE",
+            "PRICE",
+            "CHOICE",
+            "GOAT",
+            "MOUTH",
+            "NEAR",
+            "SQUARE",
+            "CURE"
+          ],
+          "words": [
+            {
+              "w": "bail",
+              "cat": "FACE"
+            },
+            {
+              "w": "crime",
+              "cat": "PRICE"
+            },
+            {
+              "w": "void",
+              "cat": "CHOICE"
+            },
+            {
+              "w": "oath",
+              "cat": "GOAT"
+            },
+            {
+              "w": "council",
+              "cat": "MOUTH"
+            },
+            {
+              "w": "heir",
+              "cat": "SQUARE"
+            },
+            {
+              "w": "appear",
+              "cat": "NEAR"
+            }
+          ],
+          "feedback": "<i>heir</i> <span class=\"ipa\">/eə/</span> et <i>appear</i> <span class=\"ipa\">/əˈpɪə/</span> ont des diphtongues centrantes : le ‹r› ne se prononce pas."
+        }
       ]
     },
     {
       "title": "4. Transcrire",
       "instructions": "Transcrivez en SSBE, accent compris pour les mots de plus d'une syllabe. Bouton ⌨ API pour les symboles.",
       "items": [
-        { "type": "text", "keyboard": "ipa", "prompt": "<span class=\"big\">plaintiff</span>", "accept": ["ˈpleɪntɪf"], "show": "/ˈpleɪntɪf/", "feedback": "" },
-        { "type": "text", "keyboard": "ipa", "prompt": "<span class=\"big\">guilty</span>", "accept": ["ˈɡɪlti"], "show": "/ˈɡɪlti/", "feedback": "Le ‹u› ne se prononce pas." },
-        { "type": "text", "keyboard": "ipa", "prompt": "<span class=\"big\">bribe</span>", "accept": ["braɪb"], "show": "/braɪb/", "feedback": "" },
-        { "type": "text", "keyboard": "ipa", "prompt": "<span class=\"big\">murder</span>", "accept": ["ˈmɜːdə"], "show": "/ˈmɜːdə/", "feedback": "En SSBE, aucun des deux ‹r› ne se prononce." },
-        { "type": "text", "keyboard": "ipa", "prompt": "<span class=\"big\">evidence</span>", "accept": ["ˈevɪdəns", "ˈevɪdns", "ˈevədəns"], "show": "/ˈevɪdəns/", "feedback": "Accent sur la 1re syllabe ; les deux autres voyelles sont réduites." },
-        { "type": "text", "keyboard": "ipa", "prompt": "<span class=\"big\">appeal</span>", "accept": ["əˈpiːl"], "show": "/əˈpiːl/", "feedback": "" },
-        { "type": "text", "keyboard": "ipa", "prompt": "<span class=\"big\">fees</span>", "accept": ["fiːz"], "show": "/fiːz/", "feedback": "Le ‹s› final se prononce <span class=\"ipa\">/z/</span> après une voyelle." },
-        { "type": "text", "keyboard": "ipa", "prompt": "<span class=\"big\">trial</span>", "accept": ["ˈtraɪəl"], "show": "/ˈtraɪəl/", "feedback": "Deux syllabes : <span class=\"ipa\">/aɪ/</span> puis <span class=\"ipa\">/ə/</span>." }
+        {
+          "type": "text",
+          "keyboard": "ipa",
+          "prompt": "<span class=\"big\">plaintiff</span>",
+          "accept": [
+            "ˈpleɪntɪf"
+          ],
+          "show": "/ˈpleɪntɪf/",
+          "feedback": "",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/plaintiff0205.mp3",
+            "label": "britannique"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "ipa",
+          "prompt": "<span class=\"big\">guilty</span>",
+          "accept": [
+            "ˈɡɪlti"
+          ],
+          "show": "/ˈɡɪlti/",
+          "feedback": "Le ‹u› ne se prononce pas.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/guilty0205.mp3",
+            "label": "britannique"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "ipa",
+          "prompt": "<span class=\"big\">bribe</span>",
+          "accept": [
+            "braɪb"
+          ],
+          "show": "/braɪb/",
+          "feedback": "",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/bribe_n0205.mp3",
+            "label": "britannique"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "ipa",
+          "prompt": "<span class=\"big\">murder</span>",
+          "accept": [
+            "ˈmɜːdə"
+          ],
+          "show": "/ˈmɜːdə/",
+          "feedback": "En SSBE, aucun des deux ‹r› ne se prononce.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/murder_v0205.mp3",
+            "label": "britannique"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "ipa",
+          "prompt": "<span class=\"big\">evidence</span>",
+          "accept": [
+            "ˈevɪdəns",
+            "ˈevɪdns",
+            "ˈevədəns"
+          ],
+          "show": "/ˈevɪdəns/",
+          "feedback": "Accent sur la 1re syllabe ; les deux autres voyelles sont réduites.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/evidence_n0205.mp3",
+            "label": "britannique"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "ipa",
+          "prompt": "<span class=\"big\">appeal</span>",
+          "accept": [
+            "əˈpiːl"
+          ],
+          "show": "/əˈpiːl/",
+          "feedback": "",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/appeal_n0205.mp3",
+            "label": "britannique"
+          }
+        },
+        {
+          "type": "text",
+          "keyboard": "ipa",
+          "prompt": "<span class=\"big\">fees</span>",
+          "accept": [
+            "fiːz"
+          ],
+          "show": "/fiːz/",
+          "feedback": "Le ‹s› final se prononce <span class=\"ipa\">/z/</span> après une voyelle."
+        },
+        {
+          "type": "text",
+          "keyboard": "ipa",
+          "prompt": "<span class=\"big\">trial</span>",
+          "accept": [
+            "ˈtraɪəl"
+          ],
+          "show": "/ˈtraɪəl/",
+          "feedback": "Deux syllabes : <span class=\"ipa\">/aɪ/</span> puis <span class=\"ipa\">/ə/</span>.",
+          "audio": {
+            "src": "https://www.ldoceonline.com/media/english/breProns/trial_las2_br.mp3",
+            "label": "britannique"
+          }
+        }
       ]
     },
     {
       "title": "5. Diphtongue ou hiatus ?",
       "instructions": "Diphtongue : deux timbres dans une seule syllabe. Hiatus : deux voyelles dans deux syllabes.",
       "items": [
-        { "type": "classify", "prompt": "Classez les mots.", "categories": ["diphtongue", "hiatus"],
-          "words": [
-            { "w": "trial", "cat": "hiatus" }, { "w": "bias", "cat": "hiatus" }, { "w": "fair", "cat": "diphtongue" },
-            { "w": "crime", "cat": "diphtongue" }, { "w": "chaos", "cat": "hiatus" }, { "w": "heir", "cat": "diphtongue" }
+        {
+          "type": "classify",
+          "prompt": "Classez les mots.",
+          "categories": [
+            "diphtongue",
+            "hiatus"
           ],
-          "feedback": "<i>trial</i> <span class=\"ipa\">/ˈtraɪ.əl/</span>, <i>bias</i> <span class=\"ipa\">/ˈbaɪ.əs/</span>, <i>chaos</i> <span class=\"ipa\">/ˈkeɪ.ɒs/</span> ; <i>fair</i> <span class=\"ipa\">/feə/</span>, <i>crime</i> <span class=\"ipa\">/kraɪm/</span>, <i>heir</i> <span class=\"ipa\">/eə/</span>." }
+          "words": [
+            {
+              "w": "trial",
+              "cat": "hiatus"
+            },
+            {
+              "w": "bias",
+              "cat": "hiatus"
+            },
+            {
+              "w": "fair",
+              "cat": "diphtongue"
+            },
+            {
+              "w": "crime",
+              "cat": "diphtongue"
+            },
+            {
+              "w": "chaos",
+              "cat": "hiatus"
+            },
+            {
+              "w": "heir",
+              "cat": "diphtongue"
+            }
+          ],
+          "feedback": "<i>trial</i> <span class=\"ipa\">/ˈtraɪ.əl/</span>, <i>bias</i> <span class=\"ipa\">/ˈbaɪ.əs/</span>, <i>chaos</i> <span class=\"ipa\">/ˈkeɪ.ɒs/</span> ; <i>fair</i> <span class=\"ipa\">/feə/</span>, <i>crime</i> <span class=\"ipa\">/kraɪm/</span>, <i>heir</i> <span class=\"ipa\">/eə/</span>."
+        }
       ]
     },
     {
       "title": "6. Décrire une voyelle",
       "instructions": "Hauteur, antériorité, arrondissement de la voyelle accentuée.",
       "items": [
-        { "type": "qcm", "prompt": "<span class=\"big\">act</span>", "options": ["fermée, antérieure, non arrondie", "pré-ouverte, antérieure, non arrondie", "ouverte, postérieure, non arrondie", "mi-ouverte, postérieure, arrondie"], "answer": 1, "feedback": "<span class=\"ipa\">/æ/</span>." },
-        { "type": "qcm", "prompt": "<span class=\"big\">proof</span>", "options": ["fermée, postérieure, arrondie", "près de fermée, postérieure, arrondie", "fermée, antérieure, arrondie", "mi-fermée, postérieure, arrondie"], "answer": 0, "feedback": "<span class=\"ipa\">/uː/</span>. Le <span class=\"ipa\">/ʊ/</span> de <i>goods</i> est un peu plus bas et plus central." },
-        { "type": "qcm", "prompt": "<span class=\"big\">fraud</span>", "options": ["ouverte, postérieure, non arrondie", "mi-ouverte, postérieure, arrondie", "mi-ouverte, antérieure, non arrondie", "fermée, postérieure, arrondie"], "answer": 1, "feedback": "<span class=\"ipa\">/ɔː/</span>." },
-        { "type": "qcm", "prompt": "<span class=\"big\">will</span>", "options": ["fermée, antérieure, non arrondie", "près de fermée, antérieure, non arrondie", "mi-fermée, antérieure, non arrondie", "près de fermée, postérieure, arrondie"], "answer": 1, "feedback": "<span class=\"ipa\">/ɪ/</span>, plus bas et moins tendu que le <span class=\"ipa\">/iː/</span> de <i>deed</i>." },
-        { "type": "qcm", "prompt": "<span class=\"big\">debt</span>", "options": ["mi-fermée, antérieure, non arrondie", "pré-ouverte, antérieure, non arrondie", "mi-fermée, centrale, non arrondie", "mi-ouverte, postérieure, arrondie"], "answer": 0, "feedback": "<span class=\"ipa\">/e/</span>." }
+        {
+          "type": "qcm",
+          "prompt": "<span class=\"big\">act</span>",
+          "options": [
+            "fermée, antérieure, non arrondie",
+            "pré-ouverte, antérieure, non arrondie",
+            "ouverte, postérieure, non arrondie",
+            "mi-ouverte, postérieure, arrondie"
+          ],
+          "answer": 1,
+          "feedback": "<span class=\"ipa\">/æ/</span>."
+        },
+        {
+          "type": "qcm",
+          "prompt": "<span class=\"big\">proof</span>",
+          "options": [
+            "fermée, postérieure, arrondie",
+            "près de fermée, postérieure, arrondie",
+            "fermée, antérieure, arrondie",
+            "mi-fermée, postérieure, arrondie"
+          ],
+          "answer": 0,
+          "feedback": "<span class=\"ipa\">/uː/</span>. Le <span class=\"ipa\">/ʊ/</span> de <i>goods</i> est un peu plus bas et plus central."
+        },
+        {
+          "type": "qcm",
+          "prompt": "<span class=\"big\">fraud</span>",
+          "options": [
+            "ouverte, postérieure, non arrondie",
+            "mi-ouverte, postérieure, arrondie",
+            "mi-ouverte, antérieure, non arrondie",
+            "fermée, postérieure, arrondie"
+          ],
+          "answer": 1,
+          "feedback": "<span class=\"ipa\">/ɔː/</span>."
+        },
+        {
+          "type": "qcm",
+          "prompt": "<span class=\"big\">will</span>",
+          "options": [
+            "fermée, antérieure, non arrondie",
+            "près de fermée, antérieure, non arrondie",
+            "mi-fermée, antérieure, non arrondie",
+            "près de fermée, postérieure, arrondie"
+          ],
+          "answer": 1,
+          "feedback": "<span class=\"ipa\">/ɪ/</span>, plus bas et moins tendu que le <span class=\"ipa\">/iː/</span> de <i>deed</i>."
+        },
+        {
+          "type": "qcm",
+          "prompt": "<span class=\"big\">debt</span>",
+          "options": [
+            "mi-fermée, antérieure, non arrondie",
+            "pré-ouverte, antérieure, non arrondie",
+            "mi-fermée, centrale, non arrondie",
+            "mi-ouverte, postérieure, arrondie"
+          ],
+          "answer": 0,
+          "feedback": "<span class=\"ipa\">/e/</span>."
+        }
       ]
     }
-  ]
+  ],
+  "audioNote": "Longman Dictionary of Contemporary English en ligne (<a href=\"https://www.ldoceonline.com/\" target=\"_blank\" rel=\"noopener\">ldoceonline.com</a>, © Pearson), écoute directe depuis le site."
 }

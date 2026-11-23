@@ -115,10 +115,11 @@ fetch(dataFile).then(r => r.json()).then(d => {
     });
     host.appendChild(s);
   });
-  if (d.credits && d.credits.length) {
-    document.getElementById('credits').innerHTML = '<b>Enregistrements</b> : Wikimedia Commons. ' +
-      d.credits.map(c => `${c.file} (${c.author}, ${c.license})`).join(' ; ') + '.';
-  }
+  const cr = [];
+  if (d.audioNote) cr.push(d.audioNote);
+  if (d.credits && d.credits.length) cr.push('Wikimedia Commons : ' +
+      d.credits.map(c => `${c.file} (${c.author}, ${c.license})`).join(' ; ') + '.');
+  if (cr.length) document.getElementById('credits').innerHTML = '<b>Enregistrements</b> : ' + cr.join(' ');
   updateScore();
 });
 
