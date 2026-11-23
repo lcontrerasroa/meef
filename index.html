@@ -32,14 +32,15 @@
     <div id="ex-list"><p style="color:var(--muted)">Chargement…</p></div>
   </div>
   <script>
-    const ICONS  = { qcm:'❓', trans:'⌨️', intrus:'🔍', correction:'✏️', classement:'🗂️', accentuation:'🎯', appariement:'🔗' };
-    const LABELS = { qcm:'QCM', trans:'Trans.', intrus:'Intrus', correction:'Correction', classement:'Classement', accentuation:'Accentuation', appariement:'Appariement' };
+    const ICONS  = { qcm:'❓', trans:'⌨️', intrus:'🔍', correction:'✏️', classement:'🗂️', accentuation:'🎯', appariement:'🔗', revision:'📝' };
+    const LABELS = { qcm:'QCM', trans:'Trans.', intrus:'Intrus', correction:'Correction', classement:'Classement', accentuation:'Accentuation', appariement:'Appariement', revision:'Révisions' };
     const STYLES = {
       qcm:         'badge-qcm', trans:'badge-trans', intrus:'badge-intrus',
       correction:  'background:#e8d5f5;color:#4a1580',
       classement:  'background:#fce4d0;color:#7d3000',
       accentuation:'background:#d0f0e8;color:#0a4a33',
-      appariement: 'background:#d4e9ff;color:#003a75'
+      appariement: 'background:#d4e9ff;color:#003a75',
+      revision:    'background:#ffe0ec;color:#7a0f3a'
     };
     function badge(type) {
       const s = STYLES[type] || '';

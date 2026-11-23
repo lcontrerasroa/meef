@@ -1,0 +1,91 @@
+{
+  "title": "Révisions L3 : SSBE, GA et connected speech",
+  "td": "Révisions ET",
+  "intro": "Programme de l'examen (L3 et CAPES) : différences entre SSBE et GA, processus de la parole continue. Tous les mots sont <b>nouveaux</b>. Les enregistrements sont <b>américains</b> : servez-vous-en pour les parties sur le GA. Pour taper, utilisez le bouton ⌨ API. Les barres obliques sont facultatives.",
+  "credits": [
+    { "file": "En-us-sorcerer.ogg", "author": "Sylvanmoon", "license": "CC BY-SA 4.0" },
+    { "file": "En-us-duty.ogg", "author": "Dvortygirl", "license": "CC BY-SA 3.0" },
+    { "file": "En-uk-duty.ogg", "author": "TaxRebate", "license": "CC BY-SA 4.0" },
+    { "file": "En-us-aftermath.ogg", "author": "Dvortygirl", "license": "CC BY-SA 3.0" },
+    { "file": "En-us-mosquito.ogg", "author": "auteur non indiqué", "license": "CC BY-SA 3.0" },
+    { "file": "En-uk-mosquito.ogg", "author": "auteur non indiqué", "license": "domaine public" },
+    { "file": "En-us-dubious.ogg", "author": "EncycloPetey", "license": "CC BY-SA 3.0" },
+    { "file": "En-us-rapid.ogg", "author": "Dvortygirl", "license": "CC BY-SA 3.0" },
+    { "file": "En-us-hostage.ogg", "author": "Dvortygirl", "license": "CC BY-SA 3.0" },
+    { "file": "En-us-retain.ogg", "author": "TreeMama", "license": "CC BY-SA 3.0" },
+    { "file": "En-us-plenty.ogg", "author": "Dvortygirl", "license": "CC BY-SA 3.0" },
+    { "file": "En-us-atom.ogg", "author": "Sylvanmoon", "license": "CC BY-SA 4.0" },
+    { "file": "En-us-mustard.ogg", "author": "Dvortygirl", "license": "CC BY-SA 3.0" },
+    { "file": "En-us-metallic.ogg", "author": "Neskaya", "license": "CC BY-SA 3.0" },
+    { "file": "En-us-hearty.ogg", "author": "TreeMama", "license": "CC BY-SA 3.0" }
+  ],
+  "sections": [
+    {
+      "title": "1. De SSBE vers GA",
+      "instructions": "On vous donne la transcription SSBE. Tapez la transcription GA. La longueur ː est acceptée ou non pour le GA, <span class=\"ipa\">ɚ</span> = <span class=\"ipa\">ər</span>.",
+      "items": [
+        { "type": "text", "keyboard": "narrow", "prompt": "<span class=\"big\">sorcerer</span> : SSBE <span class=\"ipa\">/ˈsɔːsərə/</span>", "audio": { "src": "https://upload.wikimedia.org/wikipedia/commons/a/a9/En-us-sorcerer.ogg", "label": "GA" }, "accept": ["ˈsɔːrsərər", "ˈsɔrsərər"], "show": "/ˈsɔːrsərər/", "feedback": "Rhoticité : trois ‹r›, trois /r/ en GA, dont deux en coda." },
+        { "type": "text", "keyboard": "narrow", "prompt": "<span class=\"big\">duty</span> : SSBE <span class=\"ipa\">/ˈdjuːti/</span>", "audio": [{ "src": "https://upload.wikimedia.org/wikipedia/commons/6/66/En-us-duty.ogg", "label": "GA" }, { "src": "https://upload.wikimedia.org/wikipedia/commons/2/23/En-uk-duty.ogg", "label": "britannique" }], "accept": ["ˈduːt̬i", "ˈdut̬i"], "show": "/ˈduːt̬i/", "feedback": "Yod-dropping après /d/ et T-voicing (attaque post-accentuelle, intervocalique)." },
+        { "type": "text", "keyboard": "narrow", "prompt": "<span class=\"big\">chancellor</span> : SSBE <span class=\"ipa\">/ˈtʃɑːnsələ/</span>", "accept": ["ˈtʃænsələr"], "show": "/ˈtʃænsələr/", "feedback": "Mot ASK (‹an› + /s/) : <span class=\"ipa\">/ɑː/</span> → <span class=\"ipa\">/æ/</span>. Rhoticité." },
+        { "type": "text", "keyboard": "narrow", "prompt": "<span class=\"big\">aftermath</span> : SSBE <span class=\"ipa\">/ˈɑːftəmæθ/</span>", "audio": { "src": "https://upload.wikimedia.org/wikipedia/commons/5/52/En-us-aftermath.ogg", "label": "GA" }, "accept": ["ˈæftərmæθ"], "show": "/ˈæftərmæθ/", "feedback": "Mot ASK (‹a› + /f/) et rhoticité. Pas de T-voicing : le /t/ suit /f/." },
+        { "type": "text", "keyboard": "narrow", "prompt": "<span class=\"big\">lottery</span> : SSBE <span class=\"ipa\">/ˈlɒtəri/</span>", "accept": ["ˈlɑːt̬əri", "ˈlɑt̬əri"], "show": "/ˈlɑːt̬əri/", "feedback": "LOT : <span class=\"ipa\">/ɒ/</span> → <span class=\"ipa\">/ɑː/</span>. T-voicing." },
+        { "type": "text", "keyboard": "narrow", "prompt": "<span class=\"big\">mosquito</span> : SSBE <span class=\"ipa\">/məˈskiːtəʊ/</span>", "audio": [{ "src": "https://upload.wikimedia.org/wikipedia/commons/c/c3/En-us-mosquito.ogg", "label": "GA" }, { "src": "https://upload.wikimedia.org/wikipedia/commons/b/b8/En-uk-mosquito.ogg", "label": "britannique" }], "accept": ["məˈskiːt̬oʊ", "məˈskit̬oʊ"], "show": "/məˈskiːt̬oʊ/", "feedback": "T-voicing (post-accentuel, intervocalique) et GOAT <span class=\"ipa\">/əʊ/</span> → <span class=\"ipa\">/oʊ/</span>." },
+        { "type": "text", "keyboard": "narrow", "prompt": "<span class=\"big\">tuition</span> : SSBE <span class=\"ipa\">/tjuˈɪʃn̩/</span>", "accept": ["tuˈɪʃən", "tuˈɪʃn̩", "tuːˈɪʃən", "tuːˈɪʃn̩"], "show": "/tuˈɪʃən/", "feedback": "Yod-dropping après /t/. Pas de T-voicing : le /t/ est à l'initiale." },
+        { "type": "text", "keyboard": "narrow", "prompt": "<span class=\"big\">dubious</span> : SSBE <span class=\"ipa\">/ˈdjuːbiəs/</span>", "audio": { "src": "https://upload.wikimedia.org/wikipedia/commons/2/29/En-us-dubious.ogg", "label": "GA" }, "accept": ["ˈduːbiəs", "ˈdubiəs"], "show": "/ˈduːbiəs/", "feedback": "Yod-dropping après /d/." },
+        { "type": "text", "keyboard": "narrow", "prompt": "<span class=\"big\">rapid</span> : SSBE <span class=\"ipa\">/ˈræpɪd/</span>", "audio": { "src": "https://upload.wikimedia.org/wikipedia/commons/e/e0/En-us-rapid.ogg", "label": "GA" }, "accept": ["ˈræpəd"], "show": "/ˈræpəd/", "feedback": "Schwa à la place de <span class=\"ipa\">/ɪ/</span> en syllabe inaccentuée." },
+        { "type": "text", "keyboard": "narrow", "prompt": "<span class=\"big\">hostage</span> : SSBE <span class=\"ipa\">/ˈhɒstɪdʒ/</span>", "audio": { "src": "https://upload.wikimedia.org/wikipedia/commons/c/ca/En-us-hostage.ogg", "label": "GA" }, "accept": ["ˈhɑːstɪdʒ", "ˈhɑstɪdʒ", "ˈhɑːstədʒ", "ˈhɑstədʒ"], "show": "/ˈhɑːstɪdʒ/", "feedback": "LOT : <span class=\"ipa\">/ɒ/</span> → <span class=\"ipa\">/ɑː/</span>." }
+      ]
+    },
+    {
+      "title": "2. T-voicing en GA : oui ou non ?",
+      "instructions": "Le ‹t› souligné est-il réalisé <span class=\"ipa\">[t̬]</span> en GA ?",
+      "items": [
+        { "type": "qcm", "prompt": "pho<u>t</u>ocopy", "options": ["oui", "non"], "answer": 0, "feedback": "<span class=\"ipa\">[ˈfoʊt̬əkɑːpi]</span> : attaque post-accentuelle, après voyelle." },
+        { "type": "qcm", "prompt": "re<u>t</u>ain", "audio": { "src": "https://upload.wikimedia.org/wikipedia/commons/2/29/En-us-retain.ogg", "label": "GA" }, "options": ["oui", "non"], "answer": 1, "feedback": "Le /t/ est en attaque de la syllabe accentuée : pas de T-voicing (il est même aspiré)." },
+        { "type": "qcm", "prompt": "af<u>t</u>er all", "options": ["oui", "non"], "answer": 1, "feedback": "Le /t/ suit /f/ : pas de T-voicing." },
+        { "type": "qcm", "prompt": "wha<u>t</u> abou<u>t</u> it", "options": ["les deux", "seulement le premier", "seulement le second", "aucun"], "answer": 0, "feedback": "<span class=\"ipa\">[ˈwʌt̬ əˈbaʊt̬ ɪt]</span> : intervocaliques, devant syllabe inaccentuée, à travers une frontière de mot." },
+        { "type": "qcm", "prompt": "plen<u>t</u>y", "audio": { "src": "https://upload.wikimedia.org/wikipedia/commons/8/8d/En-us-plenty.ogg", "label": "GA" }, "options": ["oui", "non"], "answer": 0, "feedback": "Après /n/ et post-accentuel : <span class=\"ipa\">[ˈplent̬i]</span>, souvent même <span class=\"ipa\">[ˈpleni]</span>." },
+        { "type": "qcm", "prompt": "a<u>t</u>om", "audio": { "src": "https://upload.wikimedia.org/wikipedia/commons/b/bc/En-us-atom.ogg", "label": "GA" }, "options": ["oui", "non"], "answer": 0, "feedback": "<span class=\"ipa\">[ˈæt̬əm]</span> : en GA, <i>atom</i> et <i>Adam</i> se ressemblent beaucoup." },
+        { "type": "qcm", "prompt": "mus<u>t</u>ard", "audio": { "src": "https://upload.wikimedia.org/wikipedia/commons/c/c6/En-us-mustard.ogg", "label": "GA" }, "options": ["oui", "non"], "answer": 1, "feedback": "Le /t/ suit /s/ : pas de T-voicing." },
+        { "type": "qcm", "prompt": "me<u>t</u>allic", "audio": { "src": "https://upload.wikimedia.org/wikipedia/commons/d/d3/En-us-metallic.ogg", "label": "GA" }, "options": ["oui", "non"], "answer": 1, "feedback": "Le /t/ ouvre la syllabe accentuée. Comparez <i>metal</i> <span class=\"ipa\">[ˈmet̬əl]</span>, où il y a T-voicing." },
+        { "type": "qcm", "prompt": "hear<u>t</u>y", "audio": { "src": "https://upload.wikimedia.org/wikipedia/commons/0/0a/En-us-hearty.ogg", "label": "GA" }, "options": ["oui", "non"], "answer": 0, "feedback": "Après /r/, post-accentuel : <span class=\"ipa\">[ˈhɑːrt̬i]</span>." },
+        { "type": "qcm", "prompt": "A<u>t</u>lan<u>t</u>ic", "options": ["les deux", "seulement le premier", "seulement le second", "aucun"], "answer": 2, "feedback": "Le premier est devant consonne et avant l'accent : non. Le second suit /n/ après l'accent : <span class=\"ipa\">[ətˈlænt̬ɪk]</span>, voire <span class=\"ipa\">[ətˈlænɪk]</span>." }
+      ]
+    },
+    {
+      "title": "3. Processus en parole continue (SSBE)",
+      "instructions": "Choisissez la transcription étroite la plus probable en parole spontanée.",
+      "items": [
+        { "type": "qcm", "prompt": "ten bridges", "options": ["<span class=\"ipa\">[ˈtʰen ˈbrɪdʒɪz]</span>", "<span class=\"ipa\">[ˈtʰem ˈbrɪdʒɪz]</span>", "<span class=\"ipa\">[ˈtʰeŋ ˈbrɪdʒɪz]</span>", "<span class=\"ipa\">[ˈten ˈbʰrɪdʒɪz]</span>"], "answer": 1, "feedback": "Assimilation de lieu : /n/ → [m] devant la bilabiale /b/. Aspiration du /t/ en attaque accentuée." },
+        { "type": "qcm", "prompt": "white cushions", "options": ["<span class=\"ipa\">[ˈwaɪt ˈkʊʃənz]</span>", "<span class=\"ipa\">[ˈwaɪp̚ ˈkʰʊʃn̩z]</span>", "<span class=\"ipa\">[ˈwaɪk̚ ˈkʰʊʃn̩z]</span>", "<span class=\"ipa\">[ˈwaɪt̬ ˈkʰʊʃn̩z]</span>"], "answer": 2, "feedback": "/t/ → [k̚] devant la vélaire /k/ ; /k/ aspiré ; consonne syllabique [n̩]." },
+        { "type": "qcm", "prompt": "a red ballot", "options": ["<span class=\"ipa\">[ə ˈreb̚ ˈbælət]</span>", "<span class=\"ipa\">[eɪ ˈred ˈbælət]</span>", "<span class=\"ipa\">[ə ˈreɡ̚ ˈbælət]</span>", "<span class=\"ipa\">[ə ˈret ˈbælət]</span>"], "answer": 0, "feedback": "/d/ → [b̚] devant /b/ ; <i>a</i> en forme faible [ə]." },
+        { "type": "qcm", "prompt": "his sugar", "options": ["<span class=\"ipa\">[hɪz ˈʃʊɡə]</span>", "<span class=\"ipa\">[hɪʒ ˈʃʊɡə]</span>", "<span class=\"ipa\">[hɪs ˈsʊɡə]</span>", "<span class=\"ipa\">[hɪʃ ˈʒʊɡə]</span>"], "answer": 1, "feedback": "/z/ → [ʒ] devant /ʃ/ : le lieu change, le voisement reste." },
+        { "type": "qcm", "prompt": "his phone", "options": ["<span class=\"ipa\">[hɪz̥ ˈfəʊn]</span>", "<span class=\"ipa\">[hɪz ˈvəʊn]</span>", "<span class=\"ipa\">[hɪʒ ˈfəʊn]</span>", "<span class=\"ipa\">[hɪz ˈpʰəʊn]</span>"], "answer": 0, "feedback": "Assimilation de voisement : /z/ dévoisé devant la sourde /f/ ([z̥], voire [s])." },
+        { "type": "qcm", "prompt": "the last straw", "options": ["<span class=\"ipa\">[ðə ˈlɑːst ˈstrɔː]</span>", "<span class=\"ipa\">[ðə ˈlɑːs ˈstrɔː]</span>", "<span class=\"ipa\">[ðə ˈlɑːt ˈstrɔː]</span>", "<span class=\"ipa\">[ðiː ˈlæs ˈstrɔː]</span>"], "answer": 1, "feedback": "Élision du /t/ au milieu du groupe /stst/." },
+        { "type": "qcm", "prompt": "comfort", "options": ["<span class=\"ipa\">[ˈkʰʌmfət]</span>", "<span class=\"ipa\">[ˈkʰʌnfət]</span>", "<span class=\"ipa\">[ˈkʰʌmpfət]</span>", "<span class=\"ipa\">[ˈkʰɒmfɔːt]</span>"], "answer": 2, "feedback": "Épenthèse : un [p] homorganique de /m/ s'insère entre la nasale et la fricative." },
+        { "type": "qcm", "prompt": "a clear idea", "options": ["<span class=\"ipa\">[ə ˈkʰlɪə aɪˈdɪə]</span>", "<span class=\"ipa\">[ə ˈkʰlɪər‿aɪˈdɪə]</span>", "<span class=\"ipa\">[ə ˈkʰlɪəʲ aɪˈdɪə]</span>", "<span class=\"ipa\">[ə ˈkʰlɪər aɪˈdɪər]</span>"], "answer": 1, "feedback": "Linking r : ‹r› final devant voyelle. Pas de /r/ après <i>idea</i> : il n'y a rien après." },
+        { "type": "qcm", "prompt": "Asia and Africa", "options": ["<span class=\"ipa\">[ˈeɪʒə ænd ˈæfrɪkə]</span>", "<span class=\"ipa\">[ˈeɪʒəʲ ən ˈæfrɪkə]</span>", "<span class=\"ipa\">[ˈeɪʒər‿ən ˈæfrɪkə]</span>", "<span class=\"ipa\">[ˈeɪʃər‿ən ˈæfrɪkər]</span>"], "answer": 2, "feedback": "R intrusif : aucun ‹r› écrit, mais SSBE insère [r] entre /ə/ et une voyelle. <i>and</i> en forme faible." },
+        { "type": "qcm", "prompt": "blue ink", "options": ["<span class=\"ipa\">[ˈbluːʷ ˈɪŋk]</span>", "<span class=\"ipa\">[ˈbluːʲ ˈɪŋk]</span>", "<span class=\"ipa\">[ˈbluːr‿ɪŋk]</span>", "<span class=\"ipa\">[ˈbluː ˈɪnk]</span>"], "answer": 0, "feedback": "Glide linking : après /uː/, on entend un [ʷ]. Et /n/ devient [ŋ] devant /k/ à l'intérieur de <i>ink</i>." },
+        { "type": "qcm", "prompt": "three owls", "options": ["<span class=\"ipa\">[ˈθriːʷ ˈaʊlz]</span>", "<span class=\"ipa\">[ˈθriːʲ ˈaʊɫz]</span>", "<span class=\"ipa\">[ˈθriːr‿aʊlz]</span>", "<span class=\"ipa\">[ˈtriː ˈaʊɫz]</span>"], "answer": 1, "feedback": "Glide linking [ʲ] après /iː/ ; l sombre en coda." },
+        { "type": "qcm", "prompt": "rotten", "options": ["<span class=\"ipa\">[ˈrɒtən]</span>", "<span class=\"ipa\">[ˈrɒtn̩]</span>", "<span class=\"ipa\">[ˈrəʊtn̩]</span>", "<span class=\"ipa\">[ˈrɒt̬n̩]</span>"], "answer": 1, "feedback": "Compression : schwa + /n/ en finale inaccentuée donne une consonne syllabique [n̩]. Pas de T-voicing en SSBE." },
+        { "type": "qcm", "prompt": "shower", "options": ["<span class=\"ipa\">[ˈʃaʊər]</span>", "<span class=\"ipa\">[ˈʃaə]</span>", "<span class=\"ipa\">[ˈʃəʊə]</span>", "<span class=\"ipa\">[ˈʃɔːə]</span>"], "answer": 1, "feedback": "Smoothing de la triphtongue /aʊə/ : [aə], voire [aː]." },
+        { "type": "multi", "prompt": "Cochez les mots où le /p/ est <b>aspiré</b>.", "options": ["escape", "appear", "spectacular", "despotic", "potato (2<sup>e</sup> syllabe)"], "answers": [1], "feedback": "Aspiration seulement en attaque de syllabe accentuée et pas après /s/ : <i>appear</i> [əˈpʰɪə]. Dans <i>potato</i>, la 2<sup>e</sup> syllabe commence par /t/, pas par /p/ : piège." }
+      ]
+    },
+    {
+      "title": "4. Une phrase complète",
+      "instructions": "<i>Fiona and Ruth hid ten green kettles in a soft pillow.</i>",
+      "items": [
+        { "type": "qcm", "prompt": "Quelle transcription étroite est la meilleure ?", "options": [
+            "<span class=\"ipa\">[fiˈəʊnə ænd ˈruːθ ˈhɪd ˈten ˈɡriːn ˈketəlz ɪn ə ˈsɒft ˈpɪləʊ]</span>",
+            "<span class=\"ipa\">[fiˈəʊnər‿ən ˈruːθ ˈhɪd̥ ˈtʰeŋ ˈɡriːŋ ˈkʰetɫ̩z ɪn‿ə ˈsɒf ˈpʰɪləʊ]</span>",
+            "<span class=\"ipa\">[fiˈəʊnəʲ ən ˈruːθ ˈhɪd ˈtʰem ˈɡriːm ˈkʰetɫ̩z ɪn‿ə ˈsɒft ˈpʰɪləʊ]</span>",
+            "<span class=\"ipa\">[fiˈəʊnər‿ən ˈruːθ ˈhɪt ˈteŋ ˈɡriːŋ ˈketlz ɪn‿ə ˈsɒf ˈpɪləʊ]</span>"
+          ], "answer": 1, "feedback": "La 1re n'applique aucun processus ; la 3e se trompe d'assimilation (devant /ɡ/ et /k/, /n/ devient vélaire [ŋ], pas [m]) et de linking ; la 4e oublie l'aspiration." },
+        { "type": "multi", "prompt": "Quels processus apparaissent dans cette phrase ?", "options": [
+            "r intrusif", "dévoisement par assimilation", "aspiration", "assimilation de lieu", "consonne syllabique", "élision", "épenthèse", "T-voicing", "linking C#V"
+          ], "answers": [0, 1, 2, 3, 4, 5, 8], "feedback": "r intrusif (<i>Fiona‿r‿and</i>), dévoisement (<i>hid ten</i>), aspiration (<i>ten, kettles, pillow</i>), assimilation de lieu deux fois (<i>ten green, green kettles</i>), consonne syllabique + l sombre (<i>kettles</i>), élision (<i>soft pillow</i>), linking (<i>in‿a</i>). Pas d'épenthèse, et pas de T-voicing en SSBE." }
+      ]
+    }
+  ]
+}

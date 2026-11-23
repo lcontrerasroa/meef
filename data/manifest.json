@@ -1,5 +1,13 @@
 [
   {
+    "td": "Révisions ET S1 : semaines 1 à 4",
+    "exercises": [
+      { "title": "L2 : accentologie", "description": "Schémas accentuels, accent secondaire, suffixes neutres. Mots nouveaux, audio.", "type": "revision", "url": "revisions.html?data=data/rev-l2.json" },
+      { "title": "L3 et CAPES : SSBE, GA, connected speech", "description": "De SSBE vers GA, T-voicing, processus en parole continue. Enregistrements GA.", "type": "revision", "url": "revisions.html?data=data/rev-l3.json" },
+      { "title": "L3 anglais-droit : consonnes et voyelles", "description": "Décrire les sons, mots-témoins, transcription de vocabulaire juridique.", "type": "revision", "url": "revisions.html?data=data/rev-ad.json" }
+    ]
+  },
+  {
     "td": "TD 02",
     "exercises": [
       { "title": "Voyelles libres et entravées", "description": "Identifiez la prononciation correcte du graphème vocalique.", "type": "qcm", "url": "qcm.html?data=data/ex-qcm-01.json" },
